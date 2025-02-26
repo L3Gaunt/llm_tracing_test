@@ -35,7 +35,7 @@ def generate_challenge(num_vars, initializations_per_symbol, num_symbols, seed=N
     if num_initializations > num_vars:
         raise ValueError("Not enough variables to satisfy initializations per symbol")
 
-    assert num_vars <= 1000, "Number of variables must be less than or equal to 1000"
+    assert num_vars <= 900, "Number of variables must be less than or equal to 900"
 
 
     variables = [f"V_{i:03d}" for i in random.sample(range(100, 1000), k=num_vars)]
@@ -46,6 +46,8 @@ def generate_challenge(num_vars, initializations_per_symbol, num_symbols, seed=N
 
     # Create values list with each symbol appearing exactly initializations_per_symbol times
     values_list = [symbol for symbol in symbols for _ in range(initializations_per_symbol)]
+    
+    
     random.shuffle(values_list)
 
     # Split variables into directly initialized and remaining
@@ -56,12 +58,12 @@ def generate_challenge(num_vars, initializations_per_symbol, num_symbols, seed=N
     currently_unreferenced_vars = list(directly_defined)
 
     # Initialize sequence and value tracking
-    starter_sequence = []
+    sequence = []
     var_values = {}  # Maps each variable to its resolved symbol
 
     # Assign direct initializations
     for var, value in zip(directly_defined, values_list):
-        starter_sequence.append(f"{var} = {value}")
+        sequence.append(f"{var} = {value}")
         var_values[var] = value
 
     sequence_afterwards = []
