@@ -1,105 +1,156 @@
 import random
-import string
 
-def generate_challenge(N=5, M=5, trackback_depth=0, seed=None, order='normal'):
+def generate_challenge(num_vars, initializations_per_symbol, num_symbols, seed=None, mode="normal"):
     """
-    Generates a variable reference challenge with N levels and M variables per level.
-    
-    Args:
-        N (int): Number of levels (0 to N-1)
-        M (int): Number of variables per level
-        trackback_depth (int): How many levels back a variable can reference. 
-                               0 means only previous level, 1 means up to 2 levels back, etc.
-        seed (int, optional): Random seed for reproducibility
-        order (str): Order of equations in output: 'normal', 'randomized', or 'reversed'
-        
+    Generate a variable resolution challenge where each symbol is initialized exactly
+    initializations_per_symbol times.
+
+    Parameters:
+    - num_vars: Total number of variables (e.g., V001, V002, ...)
+    - initializations_per_symbol: Number of times each symbol is directly initialized
+    - num_symbols: Number of distinct 3-digit symbols (e.g., 100, 101, ...)
+    - seed (optional): Random seed for reproducibility
+    - mode (default "normal", can be "normal", "inverse", "random"): Order in which relationships are outputted
+
     Returns:
-        tuple: (challenge_text, correct_answer)
+    - sequence: List of assignment strings (e.g., "V001 = 100", "V002 = V001")
+    - last_var_value: The initial symbol that the last variable resolves to
+    - last_var: The name of the last variable in the sequence
     """
-    # Set seed if provided
     if seed is not None:
         random.seed(seed)
-        
-    # Generate a pool of possible random IDs (ensuring we have enough)
-    max_id = 1000  # Upper limit for variable IDs
-    total_vars = N * M
-    random_ids = random.sample(range(1, max_id + 1), total_vars)
-    
-    # Generate variable names with randomized IDs: V42, V317, etc.
-    variables = [f'V{random_ids[i]}' for i in range(total_vars)]
 
-    # Group variables into levels
-    # Level 0: first M variables, Level 1: next M variables, etc.
-    levels = [variables[k * M:(k + 1) * M] for k in range(N)]
+    # Calculate total direct initializations
+    num_initializations = num_symbols * initializations_per_symbol
+    if num_initializations > num_vars:
+        raise ValueError("Not enough variables to satisfy initializations per symbol")
 
-    # Initialize a dictionary to store assignments
-    assignments = {}
+    assert num_vars <= 1000, "Number of variables must be less than or equal to 1000"
 
-    # Assign random letters to level 0 variables
-    for var in levels[0]:
-        assignments[var] = random.choice(string.ascii_uppercase)
+    # Generate variable names
 
-    # Assign references for variables in higher levels
-    # Each variable in level k references a variable from a range of previous levels
-    for k in range(1, N):
-        for var in levels[k]:
-            # Calculate the lower bound level
-            lower_bound = max(0, k - trackback_depth - 1)
-            
-            # Collect all variables from level lower_bound to level k-1
-            available_vars = []
-            for level_idx in range(lower_bound, k):
-                available_vars.extend(levels[level_idx])
-            
-            # Randomly choose a variable from the available levels
-            ref_var = random.choice(available_vars)
-            assignments[var] = ref_var
+    variables = [f"V{i:03d}" for i in random.sample(range(1, 1000), k=num_vars)]
 
-    # Select a variable from the last level to query
-    query_var = random.choice(levels[-1])
+    # Generate symbols (e.g., '100', '101', ...)
+    symbols = [str(i) for i in random.sample(range(100, 999), k=num_symbols)]
 
-    # Build the challenge text
-    challenge_lines = []
-    
-    # Create all equation lines first
-    equation_lines = []
-    for level in levels:
-        for var in level:
-            if isinstance(assignments[var], str) and len(assignments[var]) == 1 and assignments[var] in string.ascii_uppercase:
-                # Level 0 variables are letters
-                equation_lines.append(f'{var} = {assignments[var]}')
-            else:
-                # Higher-level variables reference other variables
-                equation_lines.append(f'{var} = {assignments[var]}')
-    
-    # Apply the requested order
-    if order == 'normal':
-        # Keep the equations in level order (default behavior)
+    # Create values list with each symbol appearing exactly initializations_per_symbol times
+    values_list = [symbol for symbol in symbols for _ in range(initializations_per_symbol)]
+    random.shuffle(values_list)
+
+    # Split variables into directly initialized and remaining
+    directly_defined = variables[:num_initializations]
+    remaining = variables[num_initializations:]
+
+    # Track variables available for referencing
+    currently_unreferenced_vars = list(directly_defined)
+
+    # Initialize sequence and value tracking
+    sequence = []
+    var_values = {}  # Maps each variable to its resolved symbol
+
+    # Assign direct initializations
+    for var, value in zip(directly_defined, values_list):
+        sequence.append(f"{var} = {value}")
+        var_values[var] = value
+
+    # Define remaining variables
+    for var in remaining:
+        chosen_var_index = random.randint(0, len(currently_unreferenced_vars) - 1)
+        sequence.append(f"{var} = {currently_unreferenced_vars[chosen_var_index]}")
+        var_values[var] = var_values[currently_unreferenced_vars[chosen_var_index]]  # Inherit resolved value
+
+        currently_unreferenced_vars[chosen_var_index] = var
+
+    # Store the last variable's value and name before any reordering
+    last_var = remaining[-1]
+    last_var_value = var_values[last_var]
+
+    if mode == "normal":
         pass
-    elif order == 'randomized':
-        # Shuffle the equations
-        random.shuffle(equation_lines)
-    elif order == 'reversed':
-        # Reverse the order of equations (last level first)
-        equation_lines.reverse()
-    else:
-        raise ValueError("Order must be one of: 'normal', 'randomized', 'reversed'")
-    
-    # Add equation lines to challenge
-    challenge_lines.extend(equation_lines)
+    elif mode == "inverse":
+        sequence.reverse()
+    elif mode == "random":
+        random.shuffle(sequence)
 
-    # Pose the question
-    challenge_lines.append(f'What is the value of {query_var}? Start your answer with the result and then explain it.')
+    return sequence, last_var_value, last_var
+
+
+def generate_question(last_var):
+    """
+    Generate a question asking for the value of the last variable.
     
-    challenge_text = '\n'.join(challenge_lines)
+    Parameters:
+    - last_var: The name of the last variable
     
-    # Compute the correct value
-    def resolve(var):
-        if isinstance(assignments[var], str) and len(assignments[var]) == 1 and assignments[var] in string.ascii_uppercase:
-            return assignments[var]
+    Returns:
+    - question: A string containing the question
+    """
+    return f"What is the value of {last_var}? Output only the result."
+
+
+## Remaining code is for testing, here we resolve the value of a variable based on the
+# sequence of assignments, so we have somewhat robust tracking
+
+def resolve_value(sequence, var):
+    """Helper to resolve a variable's initial value."""
+    assignments = {line.split(" = ")[0]: line.split(" = ")[1] for line in sequence}
+    current = var
+    counter = 0
+    while not assignments[current].isdigit():
+        counter += 1
+        current = assignments[current]
+    print(f"Resolved {var} to {current} in {counter} steps")
+    return assignments[current]
+
+def run_tests():
+    test_cases = [
+        # Basic test cases
+        (5, 1, 3),  # 3 initializations
+        (10, 2, 3), # 6 initializations
+        (25+2*3, 2, 3),  # 12 initializations
+        # Test cases with different modes
+        (50, 2, 3, 42, "normal"),  # With normal mode
+        (50, 2, 3, 43, "inverse"),  # With inverse mode
+        (50, 2, 3, 44, "random"),   # With random mode
+    ]
+    
+    for test_case in test_cases:
+        if len(test_case) == 3:
+            num_vars, initializations_per_symbol, num_symbols = test_case
+            seed = None
+            mode = "normal"
         else:
-            return resolve(assignments[var])
+            num_vars, initializations_per_symbol, num_symbols, seed, mode = test_case
+            
+        print(f"\nTest: {num_vars} vars, {initializations_per_symbol} per symbol, {num_symbols} symbols")
+        print(f"Mode: {mode}, Seed: {seed}")
+        
+        sequence, last_var_value, last_var = generate_challenge(
+            num_vars, 
+            initializations_per_symbol, 
+            num_symbols,
+            seed=seed,
+            mode=mode
+        )
+        
+        for line in sequence:
+            print(f"  {line}")
+        
+        question = generate_question(last_var)
+        print(f"\nQuestion: {question}")
+        print(f"Answer: {last_var_value}")
+            
+        resolved = resolve_value(sequence, last_var)
+        print(f"Resolved {last_var} to {resolved}")
+        assert resolved == last_var_value, "Value mismatch"
 
-    correct_value = resolve(query_var)
-    
-    return challenge_text, correct_value 
+        # Verify symbol counts
+        direct = [line.split(" = ")[1] for line in sequence if line.split(" = ")[1].isdigit()]
+        counts = {s: direct.count(s) for s in direct}
+        for s in set(direct):
+            assert counts[s] == initializations_per_symbol, f"Symbol {s} used {counts[s]} times, expected {initializations_per_symbol}"
+        print("Test passed!")
+
+if __name__ == "__main__":
+    run_tests()

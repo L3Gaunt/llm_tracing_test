@@ -1,51 +1,250 @@
-V556 = W
-V359 = U
-V38 = L
-V355 = B
-V852 = O
-V506 = V852
-V378 = V556
-V103 = V852
-V730 = V359
-V823 = V852
-V254 = V103
-V6 = V823
-V616 = V103
-V667 = V378
-V67 = V506
-V517 = V616
-V833 = V616
-V450 = V6
-V373 = V67
-V635 = V616
-V42 = V833
-V570 = V450
-V483 = V833
-V480 = V373
-V950 = V635
-V193 = V480
-V976 = V42
-V394 = V950
-V508 = V483
-V734 = V483
-V813 = V394
-V283 = V734
-V917 = V193
-V964 = V193
-V4 = V976
-V741 = V283
-V534 = V964
-V275 = V964
-V174 = V964
-V841 = V917
-V175 = V534
-V899 = V534
-V145 = V275
-V915 = V174
-V317 = V741
-V221 = V899
-V213 = V175
-V834 = V175
-V992 = V915
-V207 = V175
-What is the value of V834? Start your answer with the result and then explain it.
+
+Test: 5 vars, 1 per symbol, 3 symbols
+Mode: normal, Seed: None
+  V400 = 710
+  V288 = 792
+  V180 = 138
+  V030 = V180
+  V701 = V030
+
+Question: What is the value of V701? Output only the result.
+Answer: 138
+Resolved V701 to V180 in 2 steps
+Resolved V701 to 138
+Test passed!
+
+Test: 10 vars, 2 per symbol, 3 symbols
+Mode: normal, Seed: None
+  V257 = 371
+  V614 = 869
+  V496 = 944
+  V532 = 944
+  V297 = 371
+  V383 = 869
+  V454 = V532
+  V864 = V257
+  V486 = V297
+  V837 = V496
+
+Question: What is the value of V837? Output only the result.
+Answer: 944
+Resolved V837 to V496 in 1 steps
+Resolved V837 to 944
+Test passed!
+
+Test: 31 vars, 2 per symbol, 3 symbols
+Mode: normal, Seed: None
+  V545 = 299
+  V307 = 230
+  V648 = 379
+  V622 = 299
+  V408 = 379
+  V627 = 230
+  V201 = V648
+  V252 = V408
+  V738 = V545
+  V542 = V307
+  V242 = V622
+  V828 = V201
+  V365 = V738
+  V867 = V542
+  V155 = V365
+  V363 = V155
+  V290 = V363
+  V750 = V627
+  V646 = V242
+  V757 = V290
+  V335 = V757
+  V934 = V646
+  V246 = V335
+  V224 = V934
+  V442 = V246
+  V353 = V442
+  V443 = V252
+  V962 = V353
+  V288 = V750
+  V235 = V224
+  V669 = V867
+
+Question: What is the value of V669? Output only the result.
+Answer: 230
+Resolved V669 to V307 in 3 steps
+Resolved V669 to 230
+Test passed!
+
+Test: 50 vars, 2 per symbol, 3 symbols
+Mode: normal, Seed: 42
+  V655 = 467
+  V115 = 199
+  V026 = 199
+  V760 = 967
+  V282 = 967
+  V251 = 467
+  V229 = V282
+  V143 = V655
+  V755 = V760
+  V105 = V143
+  V693 = V229
+  V759 = V026
+  V914 = V251
+  V559 = V693
+  V090 = V759
+  V605 = V559
+  V433 = V115
+  V033 = V914
+  V031 = V105
+  V096 = V031
+  V224 = V033
+  V239 = V433
+  V518 = V090
+  V617 = V096
+  V028 = V239
+  V575 = V617
+  V204 = V755
+  V734 = V518
+  V666 = V204
+  V719 = V224
+  V430 = V734
+  V226 = V028
+  V460 = V430
+  V604 = V460
+  V285 = V226
+  V829 = V719
+  V891 = V604
+  V007 = V829
+  V778 = V007
+  V826 = V778
+  V164 = V575
+  V715 = V605
+  V349 = V826
+  V160 = V285
+  V221 = V715
+  V981 = V349
+  V782 = V160
+  V345 = V782
+  V095 = V666
+  V390 = V095
+
+Question: What is the value of V390? Output only the result.
+Answer: 967
+Resolved V390 to V760 in 5 steps
+Resolved V390 to 967
+Test passed!
+
+Test: 50 vars, 2 per symbol, 3 symbols
+Mode: inverse, Seed: 43
+  V187 = V612
+  V589 = V519
+  V279 = V397
+  V519 = V132
+  V612 = V974
+  V397 = V128
+  V791 = V855
+  V132 = V165
+  V508 = V525
+  V855 = V872
+  V525 = V110
+  V165 = V385
+  V158 = V404
+  V385 = V774
+  V128 = V840
+  V840 = V060
+  V110 = V561
+  V872 = V181
+  V060 = V970
+  V181 = V527
+  V404 = V445
+  V445 = V293
+  V974 = V591
+  V774 = V908
+  V908 = V640
+  V561 = V443
+  V970 = V873
+  V873 = V379
+  V640 = V382
+  V382 = V624
+  V591 = V781
+  V443 = V465
+  V527 = V020
+  V020 = V099
+  V624 = V511
+  V511 = V614
+  V614 = V983
+  V465 = V812
+  V099 = V688
+  V812 = V716
+  V716 = V148
+  V688 = V040
+  V379 = V474
+  V474 = V713
+  V983 = 150
+  V148 = 485
+  V781 = 485
+  V713 = 150
+  V293 = 165
+  V040 = 165
+
+Question: What is the value of V187? Output only the result.
+Answer: 485
+Resolved V187 to V781 in 4 steps
+Resolved V187 to 485
+Test passed!
+
+Test: 50 vars, 2 per symbol, 3 symbols
+Mode: random, Seed: 44
+  V687 = V708
+  V115 = V290
+  V076 = V785
+  V524 = V161
+  V111 = V323
+  V785 = V606
+  V097 = V524
+  V036 = V993
+  V633 = V388
+  V367 = V334
+  V290 = V862
+  V842 = V641
+  V072 = V633
+  V353 = V842
+  V862 = V415
+  V030 = V181
+  V323 = V163
+  V711 = V311
+  V794 = V103
+  V277 = V603
+  V533 = 588
+  V181 = V120
+  V641 = V111
+  V650 = V555
+  V527 = V794
+  V606 = V010
+  V120 = 198
+  V231 = V419
+  V103 = V583
+  V163 = V687
+  V555 = 495
+  V706 = V527
+  V883 = 495
+  V311 = V706
+  V419 = 198
+  V583 = V030
+  V297 = V231
+  V966 = V115
+  V347 = V076
+  V982 = V097
+  V334 = V389
+  V719 = 588
+  V603 = V367
+  V161 = V297
+  V993 = V072
+  V388 = V650
+  V415 = V711
+  V389 = V533
+  V708 = V883
+  V010 = V719
+
+Question: What is the value of V353? Output only the result.
+Answer: 495
+Resolved V353 to V883 in 8 steps
+Resolved V353 to 495
+Test passed!

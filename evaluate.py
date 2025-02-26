@@ -110,30 +110,38 @@ def evaluate_with_openai(challenge, response_format="json_object"):
     except Exception as e:
         return {"error": str(e)}
 
-def run_single_evaluation(n, m, order, trackback_depth=0, response_format="json_object", verbose=False, question_padding=""):
+def run_single_evaluation(num_symbols, num_vars, initializations_per_symbol, mode, response_format="json_object", verbose=False, question_padding=""):
     """
     Run a single evaluation and return the result
     
     Args:
-        n (int): Number of levels
-        m (int): Number of variables per level
-        order (str): Order of equations
-        trackback_depth (int): How many levels back variables can reference
+        num_symbols (int): Number of distinct 3-digit symbols
+        num_vars (int): Total number of variables in the challenge
+        initializations_per_symbol (int): Number of times each symbol is directly initialized
+        mode (str): Mode for equation ordering (normal, inverse, random)
         response_format (str): Response format
         verbose (bool): Whether to print detailed output
+        question_padding (str): Additional padding to add to the question
         
     Returns:
         dict: Result of the evaluation including parameters and correctness
     """
     # Generate a challenge
-    challenge, correct_answer = generate_challenge(N=n, M=m, trackback_depth=trackback_depth, order=order)
+    sequence, correct_answer, last_var = generate_challenge(
+        num_vars=num_vars,
+        initializations_per_symbol=initializations_per_symbol,
+        num_symbols=num_symbols,
+        mode=mode
+    )
     
-    challenge += question_padding
+    # Convert sequence to string and add the question
+    from challenge_generator import generate_question
+    challenge_text = "\n".join(sequence)
+    question = generate_question(last_var)
+    challenge = challenge_text + "\n\n" + question + question_padding
+    
     if verbose:
-        print(f"\nRunning evaluation with N={n}, M={m}, trackback_depth={trackback_depth}, order={order}")
-        print("Challenge:")
-        print(challenge)
-        print("Correct answer:", correct_answer)
+        print(f"\nRunning evaluation with num_symbols={num_symbols}, num_vars={num_vars}, initializations_per_symbol={initializations_per_symbol}, mode={mode}")
     
     # Evaluate with OpenAI
     result = evaluate_with_openai(challenge, response_format=response_format)
@@ -143,11 +151,14 @@ def run_single_evaluation(n, m, order, trackback_depth=0, response_format="json_
         error_message = result["error"]
         if verbose:
             print(f"API Error: {error_message}")
+            print("Challenge:")
+            print(challenge)
+            print(f"Correct answer: {correct_answer}")
         return {
-            "n": n,
-            "m": m,
-            "trackback_depth": trackback_depth,
-            "order": order,
+            "num_symbols": num_symbols,
+            "num_vars": num_vars,
+            "initializations_per_symbol": initializations_per_symbol,
+            "mode": mode,
             "challenge": challenge,
             "correct_answer": correct_answer,
             "openai_answer": None,
@@ -168,16 +179,18 @@ def run_single_evaluation(n, m, order, trackback_depth=0, response_format="json_
         is_correct = openai_answer_str == correct_answer_str
     
     if verbose:
-        print(f"OpenAI answer: {openai_answer}")
+        print("Challenge:")
+        print(challenge)
         print(f"Correct answer: {correct_answer}")
+        print(f"OpenAI answer: {openai_answer}")
         print(f"Is correct: {is_correct}")
     
     # Return evaluation details
     return {
-        "n": n,
-        "m": m,
-        "trackback_depth": trackback_depth,
-        "order": order,
+        "num_symbols": num_symbols,
+        "num_vars": num_vars,
+        "initializations_per_symbol": initializations_per_symbol,
+        "mode": mode,
         "challenge": challenge,
         "correct_answer": correct_answer,
         "openai_answer": openai_answer,
@@ -186,27 +199,28 @@ def run_single_evaluation(n, m, order, trackback_depth=0, response_format="json_
         "error_message": None
     }
 
-def run_multiple_evaluations(n, m, trackback_depth, question_padding, orders, num_per_order=10, response_format="json_object", verbose=False):
+def run_multiple_evaluations(num_symbols, num_vars, initializations_per_symbol, question_padding, modes, num_per_mode=10, response_format="json_object", verbose=False):
     """
-    Run multiple evaluations in parallel for different order modes
+    Run multiple evaluations in parallel for different modes
     
     Args:
-        n (int): Number of levels
-        m (int): Number of variables per level
-        trackback_depth (int): How many levels back variables can reference
-        orders (list): List of order modes to evaluate
-        num_per_order (int): Number of evaluations per order mode
+        num_symbols (int): Number of distinct 3-digit symbols
+        num_vars (int): Total number of variables in the challenge
+        initializations_per_symbol (int): Number of times each symbol is directly initialized
+        question_padding (str): Additional padding to add to the question
+        modes (list): List of modes to evaluate (normal, inverse, random)
+        num_per_mode (int): Number of evaluations per mode
         response_format (str): Response format
         verbose (bool): Whether to print detailed output
         
     Returns:
-        dict: Results of evaluations grouped by order mode
+        dict: Results of evaluations grouped by mode
     """
     # Prepare tasks
     tasks = []
-    for order in orders:
-        for _ in range(num_per_order):
-            tasks.append((n, m, order, trackback_depth, response_format, verbose, question_padding))
+    for mode in modes:
+        for _ in range(num_per_mode):
+            tasks.append((num_symbols, num_vars, initializations_per_symbol, mode, response_format, verbose, question_padding))
     
     # Run evaluations in parallel
     results = []
@@ -219,7 +233,7 @@ def run_multiple_evaluations(n, m, trackback_depth, question_padding, orders, nu
     timeouts = 0      # Tasks that timed out
     errors = 0        # Tasks that had API errors
     
-    print(f"Running {total} evaluations ({num_per_order} each for {', '.join(orders)})...")
+    print(f"Running {total} evaluations ({num_per_mode} each for {', '.join(modes)})...")
     
     # Track futures as they're submitted and completed
     with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_REQUESTS_PER_SECOND) as executor:
@@ -254,12 +268,12 @@ def run_multiple_evaluations(n, m, trackback_depth, question_padding, orders, nu
             for future in timed_out_futures:
                 if future in futures:
                     # Create a timeout result
-                    n, m, order, trackback_depth, _, verbose, _ = futures[future]
+                    num_symbols, num_vars, initializations_per_symbol, mode, _, verbose, _ = futures[future]
                     result = {
-                        "n": n,
-                        "m": m,
-                        "trackback_depth": trackback_depth,
-                        "order": order,
+                        "num_symbols": num_symbols,
+                        "num_vars": num_vars,
+                        "initializations_per_symbol": initializations_per_symbol,
+                        "mode": mode,
                         "challenge": "",
                         "correct_answer": None,
                         "openai_answer": None,
@@ -315,12 +329,12 @@ def run_multiple_evaluations(n, m, trackback_depth, question_padding, orders, nu
                 except Exception as e:
                     # Handle unexpected exceptions in the task
                     print(f"\nTask failed with unexpected exception: {e}")
-                    n, m, order, trackback_depth, _, verbose, _ = futures[future]
+                    num_symbols, num_vars, initializations_per_symbol, mode, _, verbose, _ = futures[future]
                     result = {
-                        "n": n,
-                        "m": m,
-                        "trackback_depth": trackback_depth,
-                        "order": order,
+                        "num_symbols": num_symbols,
+                        "num_vars": num_vars,
+                        "initializations_per_symbol": initializations_per_symbol,
+                        "mode": mode,
                         "challenge": "",
                         "correct_answer": None,
                         "openai_answer": None,
@@ -413,12 +427,12 @@ def calculate_success_rates(results):
         results (list): List of evaluation results
         
     Returns:
-        dict: Success rates by order mode
+        dict: Success rates by mode
     """
-    # Group results by order and trackback_depth
+    # Group results by mode
     grouped_results = defaultdict(list)
     for result in results:
-        key = f"{result['order']}"
+        key = f"{result['mode']}"
         grouped_results[key].append(result)
     
     # Calculate success rates and error rates
@@ -457,28 +471,33 @@ def calculate_success_rates(results):
 
 def main():
     parser = argparse.ArgumentParser(description="Evaluate variable reference challenges using OpenAI API")
-    parser.add_argument("--n", type=int, default=50, help="Number of levels")
-    parser.add_argument("--m", type=int, default=2, help="Number of variables per level")
-    parser.add_argument("--trackback-depth", type=int, default=0, 
-                        help="How many levels back variables can reference (0=previous level only)")
-    parser.add_argument("--question-padding", type=str, default="", help="Padding for the question")
-    parser.add_argument("--num-per-order", type=int, default=10, help="Number of evaluations per order type")
+    parser.add_argument("--num-symbols", type=int, default=5, 
+                        help="Number of distinct 3-digit symbols (default: 5)")
+    parser.add_argument("--num-vars", type=int, default=50, 
+                        help="Total number of variables in the challenge (default: 50)")
+    parser.add_argument("--initializations-per-symbol", type=int, default=7, 
+                        help="Number of times each symbol is directly initialized (default: 7)")
+    parser.add_argument("--question-padding", type=str, default="", 
+                        help="Padding for the question (default: empty string)")
+    parser.add_argument("--num-per-mode", type=int, default=10, 
+                        help="Number of evaluations per mode (default: 10)")
     parser.add_argument("--format", type=str, default="json_object", choices=["json_object", "text"], 
-                        help="Response format from OpenAI")
-    parser.add_argument("--verbose", action="store_true", help="Print detailed output for each evaluation")
+                        help="Response format from OpenAI (default: json_object)")
+    parser.add_argument("--verbose", action="store_true", 
+                        help="Print detailed output for each evaluation (default: False)")
     args = parser.parse_args()
     
-    # Orders to evaluate
-    orders = ["normal", "reversed", "randomized"]
+    # Modes to evaluate
+    modes = ["normal", "inverse", "random"]
     
     # Run evaluations
     results = run_multiple_evaluations(
-        n=args.n,
-        m=args.m,
-        trackback_depth=args.trackback_depth,
+        num_symbols=args.num_symbols,
+        num_vars=args.num_vars,
+        initializations_per_symbol=args.initializations_per_symbol,
         question_padding=args.question_padding,
-        orders=orders,
-        num_per_order=args.num_per_order,
+        modes=modes,
+        num_per_mode=args.num_per_mode,
         response_format=args.format,
         verbose=args.verbose
     )
@@ -488,7 +507,7 @@ def main():
     
     # Print results
     print("\n===== EVALUATION RESULTS =====")
-    print(f"Parameters: N={args.n}, M={args.m}, trackback_depth={args.trackback_depth}, {args.num_per_order} evaluations per order type")
+    print(f"Parameters: num_symbols={args.num_symbols}, num_vars={args.num_vars}, initializations_per_symbol={args.initializations_per_symbol}, {args.num_per_mode} evaluations per mode")
     print("\nSuccess Rates:")
     
     for key, stats in success_rates.items():
@@ -512,7 +531,9 @@ def main():
         # Show up to 3 examples
         for i, error in enumerate(error_examples[:3]):
             print(f"\nError {i+1}: {error['error_message']}")
-            print(f"Order: {error['order']}, N={error['n']}, M={error['m']}")
+            print(f"Mode: {error['mode']}, num_symbols={error['num_symbols']}, "
+                  f"num_vars={error['num_vars']}, "
+                  f"initializations_per_symbol={error['initializations_per_symbol']}")
 
 if __name__ == "__main__":
     main() 
