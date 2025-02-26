@@ -1,5233 +1,925 @@
-Running 90 evaluations (30 each for normal, inverse, random)...
+python3 evaluate.py --num-symbols 5 --initializations-per-symbol 1 --num-vars 50 --question-padding "" --num-per-mode 5 --verbose > sample_eval
+
+Running 15 evaluations (5 each for normal, inverse, random)...
 
 Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-                                                                               Progress: [          ] 0.0% | Submitted: 1/90 | Running: 1 | Evaluated: 0
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-                                                                               Progress: [          ] 0.0% | Submitted: 2/90 | Running: 2 | Evaluated: 0
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-                                                                               Progress: [          ] 0.0% | Submitted: 3/90 | Running: 3 | Evaluated: 0
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-                                                                               Progress: [          ] 0.0% | Submitted: 4/90 | Running: 4 | Evaluated: 0
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-                                                                               Progress: [          ] 0.0% | Submitted: 5/90 | Running: 5 | Evaluated: 0Challenge:
-V_050 = Waffle
-V_861 = Whisper
-V_354 = Nimbus
-V_405 = Quantum
-V_358 = Lantern
-V_975 = V_354
-V_567 = V_358
-V_656 = V_975
-V_771 = V_405
-V_936 = V_050
-V_756 = V_936
-V_911 = V_771
-V_039 = V_756
-V_641 = V_567
-V_242 = V_641
-V_704 = V_911
-V_964 = V_704
-V_924 = V_039
-V_540 = V_242
-V_816 = V_656
-V_250 = V_816
-V_273 = V_964
-V_949 = V_540
-V_526 = V_924
-V_061 = V_250
-V_750 = V_273
-V_781 = V_750
-V_665 = V_781
-V_644 = V_061
-V_991 = V_861
-V_403 = V_665
-V_513 = V_403
-V_950 = V_526
-V_326 = V_513
-V_049 = V_644
-V_179 = V_326
-V_541 = V_049
-V_191 = V_950
-V_755 = V_991
-V_857 = V_179
-V_002 = V_857
-V_854 = V_755
-V_275 = V_854
-V_507 = V_949
-V_448 = V_541
-V_736 = V_002
-V_486 = V_736
-V_775 = V_448
-V_767 = V_486
-V_896 = V_275
 
-What is the value of V_896? Output only the result.
-Correct answer: Whisper
-OpenAI answer: Whisper
-Is correct: True
-                                                                               Progress: [          ] 1.1% | Submitted: 6/90 | Running: 5 | Evaluated: 1
+                                                                               
+Progress: [          ] 0.0% | Submitted: 1/15 | Running: 1 | Evaluated: 0
 Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-Challenge:
-V_106 = Jigsaw
-V_895 = Lush
-V_620 = Breeze
-V_189 = Chisel
-V_942 = Glacier
-V_740 = V_895
-V_626 = V_740
-V_646 = V_626
-V_262 = V_646
-V_739 = V_942
-V_041 = V_739
-V_754 = V_106
-V_405 = V_620
-V_724 = V_405
-V_444 = V_754
-V_861 = V_444
-V_688 = V_861
-V_485 = V_041
-V_935 = V_485
-V_892 = V_189
-V_266 = V_724
-V_062 = V_892
-V_237 = V_935
-V_325 = V_262
-V_821 = V_237
-V_363 = V_688
-V_874 = V_821
-V_925 = V_325
-V_272 = V_874
-V_535 = V_363
-V_981 = V_535
-V_799 = V_981
-V_471 = V_062
-V_335 = V_471
-V_351 = V_266
-V_712 = V_335
-V_171 = V_272
-V_091 = V_712
-V_883 = V_171
-V_298 = V_351
-V_152 = V_799
-V_814 = V_298
-V_389 = V_925
-V_357 = V_883
-V_354 = V_389
-V_586 = V_357
-V_545 = V_152
-V_172 = V_354
-V_134 = V_586
-V_769 = V_091
 
-What is the value of V_769? Output only the result.
-Correct answer: Chisel
-OpenAI answer: Chisel
-Is correct: True
-                                                                               Progress: [          ] 2.2% | Submitted: 7/90 | Running: 5 | Evaluated: 2
+                                                                               
+Progress: [          ] 0.0% | Submitted: 2/15 | Running: 2 | Evaluated: 0
 Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-Challenge:
-V_927 = Alloy
-V_807 = Marble
-V_331 = Harbor
-V_021 = Latch
-V_863 = Sprocket
-V_342 = V_863
-V_129 = V_807
-V_467 = V_129
-V_525 = V_927
-V_141 = V_342
-V_497 = V_021
-V_162 = V_525
-V_259 = V_141
-V_839 = V_259
-V_793 = V_467
-V_901 = V_497
-V_743 = V_901
-V_456 = V_839
-V_067 = V_793
-V_931 = V_162
-V_354 = V_067
-V_840 = V_931
-V_715 = V_456
-V_986 = V_331
-V_650 = V_354
-V_176 = V_743
-V_536 = V_715
-V_239 = V_840
-V_537 = V_650
-V_571 = V_537
-V_835 = V_986
-V_596 = V_835
-V_910 = V_536
-V_155 = V_910
-V_092 = V_596
-V_687 = V_571
-V_875 = V_687
-V_890 = V_239
-V_781 = V_155
-V_917 = V_176
-V_026 = V_092
-V_069 = V_917
-V_668 = V_875
-V_817 = V_069
-V_895 = V_668
-V_722 = V_890
-V_493 = V_026
-V_813 = V_722
-V_630 = V_813
-V_379 = V_895
 
-What is the value of V_379? Output only the result.
-Correct answer: Marble
-OpenAI answer: Sprocket
-Is correct: False
-                                                                               Progress: [          ] 3.3% | Submitted: 8/90 | Running: 5 | Evaluated: 3
+                                                                               
+Progress: [          ] 0.0% | Submitted: 3/15 | Running: 3 | Evaluated: 0
 Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-Challenge:
-V_938 = Marble
-V_284 = Breeze
-V_540 = Harbor
-V_387 = Latch
-V_044 = Echo
-V_025 = V_387
-V_517 = V_044
-V_852 = V_517
-V_971 = V_284
-V_850 = V_540
-V_857 = V_971
-V_833 = V_025
-V_069 = V_852
-V_186 = V_938
-V_456 = V_857
-V_082 = V_186
-V_171 = V_082
-V_662 = V_456
-V_785 = V_171
-V_566 = V_850
-V_157 = V_662
-V_644 = V_785
-V_254 = V_644
-V_817 = V_254
-V_422 = V_833
-V_925 = V_817
-V_329 = V_422
-V_694 = V_925
-V_959 = V_329
-V_480 = V_157
-V_710 = V_694
-V_105 = V_480
-V_864 = V_959
-V_805 = V_710
-V_225 = V_105
-V_742 = V_566
-V_172 = V_225
-V_378 = V_805
-V_856 = V_742
-V_438 = V_172
-V_811 = V_864
-V_598 = V_378
-V_717 = V_598
-V_018 = V_811
-V_370 = V_856
-V_495 = V_370
-V_765 = V_069
-V_393 = V_717
-V_739 = V_018
-V_803 = V_495
 
-What is the value of V_803? Output only the result.
-Correct answer: Harbor
-OpenAI answer: Harbor
-Is correct: True
-                                                                               Progress: [          ] 4.4% | Submitted: 9/90 | Running: 5 | Evaluated: 4
+                                                                               
+Progress: [          ] 0.0% | Submitted: 4/15 | Running: 4 | Evaluated: 0
 Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-Challenge:
-V_355 = Velvet
-V_482 = Monsoon
-V_544 = Lush
-V_982 = Pylon
-V_945 = Glacier
-V_186 = V_355
-V_479 = V_186
-V_879 = V_982
-V_753 = V_544
-V_905 = V_945
-V_817 = V_482
-V_270 = V_879
-V_843 = V_270
-V_967 = V_905
-V_677 = V_753
-V_432 = V_843
-V_619 = V_479
-V_066 = V_967
-V_267 = V_677
-V_607 = V_066
-V_944 = V_607
-V_438 = V_944
-V_478 = V_438
-V_476 = V_267
-V_095 = V_478
-V_946 = V_817
-V_146 = V_476
-V_419 = V_432
-V_652 = V_095
-V_307 = V_946
-V_082 = V_419
-V_235 = V_652
-V_490 = V_146
-V_473 = V_082
-V_799 = V_307
-V_386 = V_619
-V_697 = V_490
-V_973 = V_473
-V_875 = V_235
-V_314 = V_875
-V_391 = V_386
-V_663 = V_697
-V_854 = V_391
-V_417 = V_854
-V_202 = V_799
-V_534 = V_973
-V_194 = V_663
-V_953 = V_194
-V_371 = V_417
-V_035 = V_202
 
-What is the value of V_035? Output only the result.
-Correct answer: Monsoon
-OpenAI answer: Velvet
-Is correct: False
-                                                                               Progress: [          ] 5.6% | Submitted: 10/90 | Running: 5 | Evaluated: 5
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-Challenge:
-V_937 = Quantum
-V_021 = Zephyr
-V_698 = Nimbus
-V_323 = Velvet
-V_606 = Pylon
-V_279 = V_323
-V_214 = V_606
-V_612 = V_698
-V_964 = V_279
-V_497 = V_612
-V_171 = V_964
-V_798 = V_171
-V_827 = V_798
-V_826 = V_827
-V_877 = V_826
-V_522 = V_937
-V_213 = V_214
-V_275 = V_497
-V_242 = V_522
-V_216 = V_213
-V_543 = V_021
-V_409 = V_275
-V_511 = V_543
-V_091 = V_242
-V_844 = V_216
-V_038 = V_091
-V_284 = V_511
-V_595 = V_877
-V_819 = V_284
-V_803 = V_409
-V_904 = V_844
-V_836 = V_819
-V_088 = V_038
-V_463 = V_595
-V_837 = V_803
-V_473 = V_904
-V_163 = V_463
-V_538 = V_473
-V_020 = V_538
-V_841 = V_020
-V_186 = V_837
-V_942 = V_088
-V_774 = V_841
-V_106 = V_836
-V_074 = V_163
-V_083 = V_774
-V_608 = V_083
-V_853 = V_106
-V_459 = V_608
-V_180 = V_459
+                                                                               
+Progress: [          ] 0.0% | Submitted: 5/15 | Running: 5 | Evaluated: 0Challenge:
+V_948 = Zephyr
+V_469 = Serpent
+V_927 = Latch
+V_325 = Waffle
+V_563 = Vortex
+V_155 = V_927
+V_550 = V_948
+V_719 = V_550
+V_078 = V_325
+V_027 = V_469
+V_645 = V_078
+V_964 = V_027
+V_024 = V_719
+V_704 = V_155
+V_183 = V_704
+V_974 = V_563
+V_136 = V_024
+V_312 = V_183
+V_814 = V_964
+V_769 = V_312
+V_605 = V_814
+V_246 = V_974
+V_582 = V_246
+V_591 = V_582
+V_710 = V_591
+V_795 = V_710
+V_696 = V_795
+V_291 = V_645
+V_807 = V_769
+V_397 = V_807
+V_197 = V_136
+V_534 = V_197
+V_575 = V_696
+V_121 = V_575
+V_157 = V_397
+V_507 = V_605
+V_957 = V_507
+V_029 = V_121
+V_768 = V_957
+V_597 = V_768
+V_171 = V_534
+V_751 = V_029
+V_359 = V_157
+V_479 = V_751
+V_613 = V_359
+V_618 = V_613
+V_804 = V_479
+V_152 = V_291
+V_235 = V_597
+V_345 = V_152
 
-What is the value of V_180? Output only the result.
-Correct answer: Pylon
-OpenAI answer: Zephyr
-Is correct: False
-                                                                               Progress: [          ] 6.7% | Submitted: 11/90 | Running: 5 | Evaluated: 6
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-Challenge:
-V_875 = Latch
-V_142 = Harbor
-V_987 = Monsoon
-V_578 = Fable
-V_998 = Waffle
-V_711 = V_998
-V_103 = V_875
-V_278 = V_142
-V_249 = V_103
-V_488 = V_278
-V_950 = V_578
-V_444 = V_488
-V_431 = V_444
-V_415 = V_249
-V_017 = V_431
-V_746 = V_950
-V_641 = V_711
-V_997 = V_746
-V_059 = V_415
-V_090 = V_997
-V_638 = V_059
-V_296 = V_090
-V_944 = V_017
-V_816 = V_944
-V_503 = V_296
-V_255 = V_641
-V_087 = V_503
-V_653 = V_087
-V_363 = V_653
-V_252 = V_816
-V_980 = V_252
-V_544 = V_980
-V_181 = V_363
-V_205 = V_544
-V_672 = V_987
-V_976 = V_672
-V_422 = V_255
-V_865 = V_422
-V_370 = V_638
-V_727 = V_181
-V_240 = V_727
-V_020 = V_240
-V_632 = V_976
-V_081 = V_205
-V_362 = V_020
-V_610 = V_632
-V_371 = V_370
-V_042 = V_371
-V_200 = V_610
-V_668 = V_865
-
-What is the value of V_668? Output only the result.
+What is the value of V_345? Output only the result.
 Correct answer: Waffle
-OpenAI answer: Waffle
-Is correct: True
-                                                                               Progress: [          ] 7.8% | Submitted: 12/90 | Running: 5 | Evaluated: 7
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-Challenge:
-V_621 = Thistle
-V_134 = Pylon
-V_047 = Lantern
-V_762 = Lush
-V_897 = Echo
-V_306 = V_897
-V_682 = V_621
-V_197 = V_047
-V_054 = V_134
-V_021 = V_306
-V_227 = V_054
-V_905 = V_021
-V_549 = V_197
-V_641 = V_682
-V_540 = V_905
-V_490 = V_641
-V_854 = V_540
-V_790 = V_490
-V_601 = V_790
-V_249 = V_227
-V_699 = V_854
-V_936 = V_699
-V_718 = V_601
-V_150 = V_936
-V_576 = V_762
-V_689 = V_718
-V_568 = V_576
-V_515 = V_689
-V_716 = V_549
-V_988 = V_150
-V_869 = V_249
-V_614 = V_568
-V_697 = V_515
-V_445 = V_869
-V_809 = V_445
-V_974 = V_988
-V_878 = V_716
-V_636 = V_614
-V_626 = V_809
-V_233 = V_878
-V_572 = V_697
-V_548 = V_233
-V_638 = V_974
-V_793 = V_636
-V_152 = V_638
-V_713 = V_626
-V_607 = V_793
-V_001 = V_713
-V_745 = V_607
-V_960 = V_001
+OpenAI answer: Vortex
+Is correct: False
 
-What is the value of V_960? Output only the result.
-Correct answer: Pylon
-OpenAI answer: Pylon
-Is correct: True
-                                                                               Progress: [          ] 8.9% | Submitted: 13/90 | Running: 5 | Evaluated: 8
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
+                                                                               
+Progress: [          ] 6.7% | Submitted: 6/15 | Running: 5 | Evaluated: 1
+Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
 Challenge:
-V_193 = Tundra
-V_903 = Marble
-V_959 = Glacier
-V_410 = Riddle
-V_215 = Zephyr
-V_053 = V_959
-V_846 = V_903
-V_545 = V_193
-V_714 = V_215
-V_237 = V_545
-V_917 = V_714
-V_112 = V_237
-V_956 = V_846
-V_264 = V_053
-V_897 = V_112
-V_838 = V_897
-V_544 = V_917
-V_434 = V_956
-V_378 = V_838
-V_099 = V_544
-V_487 = V_264
-V_377 = V_378
-V_176 = V_434
-V_536 = V_099
-V_796 = V_176
-V_819 = V_377
-V_090 = V_487
-V_767 = V_796
-V_495 = V_536
-V_599 = V_819
-V_826 = V_767
-V_839 = V_599
-V_918 = V_826
-V_182 = V_839
-V_898 = V_918
-V_521 = V_410
-V_400 = V_495
-V_140 = V_521
-V_936 = V_090
-V_602 = V_898
-V_049 = V_400
-V_081 = V_602
-V_853 = V_140
-V_362 = V_182
-V_772 = V_853
-V_214 = V_772
-V_526 = V_936
-V_590 = V_526
-V_616 = V_214
-V_040 = V_362
+V_736 = Ponder
+V_155 = Thistle
+V_716 = Echo
+V_370 = Breeze
+V_944 = Fable
+V_017 = V_944
+V_225 = V_370
+V_431 = V_736
+V_875 = V_716
+V_714 = V_017
+V_595 = V_155
+V_414 = V_431
+V_680 = V_714
+V_701 = V_414
+V_103 = V_225
+V_847 = V_103
+V_323 = V_680
+V_301 = V_323
+V_922 = V_701
+V_450 = V_875
+V_836 = V_922
+V_401 = V_836
+V_720 = V_847
+V_423 = V_301
+V_883 = V_401
+V_349 = V_720
+V_543 = V_883
+V_158 = V_543
+V_563 = V_595
+V_666 = V_349
+V_053 = V_563
+V_372 = V_450
+V_574 = V_666
+V_804 = V_423
+V_498 = V_053
+V_241 = V_804
+V_914 = V_574
+V_759 = V_914
+V_941 = V_498
+V_518 = V_241
+V_669 = V_518
+V_459 = V_941
+V_602 = V_158
+V_090 = V_459
+V_919 = V_090
+V_461 = V_602
+V_114 = V_759
+V_933 = V_669
+V_870 = V_919
+V_478 = V_933
 
-What is the value of V_040? Output only the result.
+What is the value of V_478? Output only the result.
+Correct answer: Fable
+OpenAI answer: Ponder
+Is correct: False
+
+                                                                               
+Progress: [=         ] 13.3% | Submitted: 7/15 | Running: 5 | Evaluated: 2
+Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
+Challenge:
+V_147 = Sprocket
+V_658 = Fable
+V_439 = Waffle
+V_611 = Orbit
+V_724 = Zephyr
+V_255 = V_658
+V_134 = V_147
+V_956 = V_724
+V_326 = V_611
+V_113 = V_956
+V_669 = V_326
+V_090 = V_669
+V_374 = V_134
+V_193 = V_090
+V_516 = V_255
+V_186 = V_374
+V_199 = V_193
+V_153 = V_186
+V_213 = V_439
+V_070 = V_199
+V_572 = V_213
+V_385 = V_113
+V_121 = V_572
+V_758 = V_121
+V_334 = V_153
+V_706 = V_070
+V_088 = V_758
+V_343 = V_385
+V_987 = V_343
+V_515 = V_088
+V_165 = V_334
+V_092 = V_987
+V_506 = V_092
+V_148 = V_506
+V_460 = V_148
+V_112 = V_460
+V_930 = V_706
+V_818 = V_112
+V_359 = V_818
+V_563 = V_165
+V_231 = V_515
+V_637 = V_516
+V_882 = V_231
+V_750 = V_882
+V_836 = V_563
+V_908 = V_637
+V_805 = V_359
+V_373 = V_930
+V_944 = V_750
+V_093 = V_944
+
+What is the value of V_093? Output only the result.
+Correct answer: Waffle
+OpenAI answer: Fable
+Is correct: False
+
+                                                                               
+Progress: [==        ] 20.0% | Submitted: 8/15 | Running: 5 | Evaluated: 3
+Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
+Challenge:
+V_893 = Lush
+V_968 = Vortex
+V_994 = Quantum
+V_930 = Zephyr
+V_394 = Latch
+V_945 = V_394
+V_434 = V_945
+V_888 = V_434
+V_718 = V_888
+V_086 = V_968
+V_107 = V_893
+V_862 = V_994
+V_203 = V_718
+V_207 = V_862
+V_590 = V_086
+V_881 = V_930
+V_056 = V_881
+V_846 = V_207
+V_616 = V_846
+V_939 = V_616
+V_419 = V_939
+V_788 = V_419
+V_748 = V_590
+V_604 = V_107
+V_533 = V_604
+V_420 = V_533
+V_910 = V_748
+V_865 = V_056
+V_172 = V_865
+V_363 = V_203
+V_802 = V_363
+V_324 = V_802
+V_238 = V_172
+V_465 = V_788
+V_074 = V_420
+V_080 = V_074
+V_367 = V_465
+V_389 = V_910
+V_539 = V_080
+V_029 = V_367
+V_564 = V_324
+V_623 = V_564
+V_343 = V_389
+V_355 = V_623
+V_855 = V_539
+V_189 = V_855
+V_316 = V_238
+V_556 = V_343
+V_439 = V_029
+V_130 = V_439
+
+What is the value of V_130? Output only the result.
+Correct answer: Quantum
+OpenAI answer: Lush
+Is correct: False
+
+                                                                               
+Progress: [==        ] 26.7% | Submitted: 9/15 | Running: 5 | Evaluated: 4
+Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
+Challenge:
+V_659 = Alloy
+V_113 = Waffle
+V_130 = Breeze
+V_486 = Quantum
+V_107 = Ponder
+V_240 = V_659
+V_294 = V_130
+V_893 = V_113
+V_391 = V_486
+V_046 = V_391
+V_842 = V_107
+V_657 = V_294
+V_674 = V_893
+V_545 = V_842
+V_296 = V_545
+V_605 = V_240
+V_689 = V_605
+V_225 = V_046
+V_249 = V_657
+V_920 = V_689
+V_279 = V_920
+V_942 = V_674
+V_878 = V_942
+V_632 = V_279
+V_242 = V_632
+V_231 = V_249
+V_448 = V_296
+V_070 = V_878
+V_797 = V_225
+V_160 = V_797
+V_237 = V_448
+V_751 = V_070
+V_405 = V_242
+V_678 = V_160
+V_579 = V_231
+V_964 = V_405
+V_791 = V_237
+V_166 = V_678
+V_367 = V_166
+V_149 = V_964
+V_328 = V_579
+V_414 = V_328
+V_366 = V_414
+V_250 = V_791
+V_146 = V_367
+V_589 = V_250
+V_316 = V_146
+V_008 = V_316
+V_939 = V_589
+V_786 = V_939
+
+What is the value of V_786? Output only the result.
+Correct answer: Ponder
+OpenAI answer: Quantum
+Is correct: False
+
+                                                                               
+Progress: [===       ] 33.3% | Submitted: 10/15 | Running: 5 | Evaluated: 5
+Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
+Challenge:
+V_536 = V_164
+V_746 = V_185
+V_164 = V_488
+V_488 = V_718
+V_433 = V_099
+V_769 = V_569
+V_900 = V_938
+V_099 = V_154
+V_185 = V_870
+V_870 = V_755
+V_569 = V_552
+V_154 = V_626
+V_755 = V_772
+V_626 = V_437
+V_437 = V_151
+V_151 = V_956
+V_938 = V_579
+V_552 = V_502
+V_718 = V_612
+V_579 = V_343
+V_772 = V_330
+V_612 = V_753
+V_330 = V_202
+V_202 = V_258
+V_956 = V_007
+V_258 = V_088
+V_007 = V_809
+V_809 = V_777
+V_343 = V_359
+V_502 = V_852
+V_753 = V_240
+V_852 = V_533
+V_088 = V_955
+V_240 = V_382
+V_533 = V_476
+V_382 = V_977
+V_359 = V_918
+V_476 = V_407
+V_777 = V_122
+V_918 = V_941
+V_941 = V_728
+V_122 = V_666
+V_955 = V_559
+V_407 = V_256
+V_256 = Cactus
+V_728 = Breeze
+V_559 = Ponder
+V_666 = Echo
+V_977 = Tundra
+V_587 = V_769
+
+What is the value of V_587? Output only the result.
+Correct answer: Cactus
+OpenAI answer: Ponder
+Is correct: False
+
+                                                                               
+Progress: [====      ] 40.0% | Submitted: 11/15 | Running: 5 | Evaluated: 6
+Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
+Challenge:
+V_107 = V_447
+V_133 = V_500
+V_518 = V_986
+V_800 = V_213
+V_213 = V_250
+V_986 = V_382
+V_250 = V_038
+V_500 = V_379
+V_589 = V_093
+V_038 = V_625
+V_625 = V_375
+V_375 = V_575
+V_382 = V_804
+V_447 = V_759
+V_575 = V_907
+V_907 = V_668
+V_804 = V_645
+V_379 = V_384
+V_759 = V_243
+V_384 = V_616
+V_243 = V_876
+V_668 = V_831
+V_645 = V_386
+V_093 = V_545
+V_545 = V_536
+V_831 = V_854
+V_616 = V_265
+V_876 = V_424
+V_536 = V_582
+V_854 = V_305
+V_386 = V_289
+V_582 = V_617
+V_305 = V_817
+V_424 = V_388
+V_265 = V_203
+V_617 = V_090
+V_289 = V_917
+V_203 = V_525
+V_817 = V_848
+V_917 = V_220
+V_090 = V_215
+V_525 = V_001
+V_848 = V_508
+V_215 = V_015
+V_001 = Fable
+V_388 = Jigsaw
+V_220 = Breeze
+V_508 = Whisper
+V_015 = Falcon
+V_135 = V_133
+
+What is the value of V_135? Output only the result.Challenge:
+V_910 = V_410
+V_410 = V_737
+V_495 = V_846
+V_430 = V_307
+V_846 = V_750
+V_307 = V_199
+V_174 = V_022
+V_750 = V_394
+V_199 = V_116
+V_006 = V_850
+V_737 = V_809
+V_116 = V_217
+V_394 = V_674
+V_809 = V_165
+V_022 = V_609
+V_217 = V_489
+V_850 = V_960
+V_674 = V_066
+V_960 = V_925
+V_066 = V_902
+V_925 = V_996
+V_996 = V_466
+V_165 = V_083
+V_466 = V_142
+V_142 = V_146
+V_489 = V_206
+V_206 = V_570
+V_083 = V_134
+V_609 = V_774
+V_146 = V_319
+V_134 = V_958
+V_902 = V_939
+V_319 = V_756
+V_958 = V_833
+V_939 = V_284
+V_756 = V_901
+V_901 = V_179
+V_774 = V_983
+V_983 = V_677
+V_677 = V_538
+V_570 = V_311
+V_833 = V_534
+V_534 = V_105
+V_538 = V_981
+V_981 = Jigsaw
+V_311 = Tundra
+V_284 = Orbit
+V_105 = Monsoon
+V_179 = Vortex
+V_953 = V_430
+
+What is the value of V_953? Output only the result.
 Correct answer: Tundra
 OpenAI answer: Tundra
 Is correct: True
-                                                                               Progress: [=         ] 10.0% | Submitted: 14/90 | Running: 5 | Evaluated: 9
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-Challenge:
-V_053 = Fable
-V_540 = Harbor
-V_131 = Echo
-V_020 = Vortex
-V_835 = Alloy
-V_952 = V_020
-V_547 = V_540
-V_073 = V_547
-V_303 = V_131
-V_477 = V_952
-V_275 = V_303
-V_395 = V_275
-V_374 = V_477
-V_576 = V_395
-V_526 = V_576
-V_802 = V_053
-V_981 = V_835
-V_642 = V_981
-V_556 = V_642
-V_497 = V_374
-V_420 = V_497
-V_099 = V_420
-V_675 = V_099
-V_611 = V_073
-V_310 = V_675
-V_178 = V_310
-V_351 = V_178
-V_348 = V_351
-V_612 = V_611
-V_180 = V_802
-V_018 = V_556
-V_491 = V_612
-V_770 = V_018
-V_922 = V_526
-V_506 = V_770
-V_602 = V_506
-V_424 = V_348
-V_235 = V_922
-V_813 = V_180
-V_328 = V_813
-V_157 = V_235
-V_622 = V_424
-V_258 = V_622
-V_713 = V_258
-V_028 = V_713
-V_759 = V_328
-V_436 = V_491
-V_272 = V_028
-V_877 = V_272
-V_750 = V_157
 
-What is the value of V_750? Output only the result.
-Correct answer: Echo
-OpenAI answer: Echo
-Is correct: True
-                                                                               Progress: [=         ] 11.1% | Submitted: 15/90 | Running: 5 | Evaluated: 10
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-Challenge:
-V_814 = Sprocket
-V_418 = Fable
-V_247 = Latch
-V_162 = Thistle
-V_840 = Waffle
-V_982 = V_840
-V_506 = V_982
-V_525 = V_247
-V_914 = V_506
-V_063 = V_418
-V_880 = V_063
-V_252 = V_814
-V_625 = V_914
-V_085 = V_880
-V_644 = V_252
-V_346 = V_162
-V_991 = V_346
-V_201 = V_085
-V_848 = V_625
-V_224 = V_991
-V_976 = V_848
-V_988 = V_976
-V_897 = V_201
-V_693 = V_988
-V_438 = V_897
-V_699 = V_644
-V_513 = V_224
-V_481 = V_699
-V_577 = V_438
-V_584 = V_481
-V_598 = V_693
-V_426 = V_577
-V_894 = V_584
-V_834 = V_513
-V_770 = V_598
-V_258 = V_426
-V_494 = V_525
-V_733 = V_834
-V_417 = V_733
-V_959 = V_894
-V_169 = V_959
-V_045 = V_770
-V_610 = V_169
-V_735 = V_494
-V_015 = V_045
-V_548 = V_610
-V_421 = V_548
-V_593 = V_417
-V_538 = V_593
-V_144 = V_421
+                                                                               
+Progress: [====      ] 46.7% | Submitted: 12/15 | Running: 5 | Evaluated: 7
+Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
 
-What is the value of V_144? Output only the result.
-Correct answer: Sprocket
-OpenAI answer: Thistle
-Is correct: False
-                                                                               Progress: [=         ] 12.2% | Submitted: 16/90 | Running: 5 | Evaluated: 11
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-Challenge:
-V_577 = Ponder
-V_503 = Sprocket
-V_285 = Whisper
-V_154 = Jigsaw
-V_242 = Lantern
-V_188 = V_285
-V_117 = V_154
-V_555 = V_503
-V_921 = V_577
-V_979 = V_242
-V_654 = V_555
-V_787 = V_654
-V_792 = V_787
-V_758 = V_188
-V_900 = V_921
-V_821 = V_792
-V_064 = V_900
-V_413 = V_821
-V_648 = V_758
-V_836 = V_648
-V_417 = V_064
-V_439 = V_417
-V_703 = V_117
-V_790 = V_836
-V_421 = V_703
-V_957 = V_421
-V_244 = V_413
-V_201 = V_244
-V_434 = V_957
-V_735 = V_201
-V_814 = V_979
-V_795 = V_434
-V_564 = V_790
-V_275 = V_439
-V_578 = V_814
-V_991 = V_564
-V_241 = V_578
-V_155 = V_991
-V_196 = V_155
-V_793 = V_196
-V_361 = V_275
-V_997 = V_241
-V_338 = V_735
-V_408 = V_338
-V_601 = V_361
-V_805 = V_408
-V_355 = V_805
-V_552 = V_601
-V_068 = V_355
-V_208 = V_795
-
-What is the value of V_208? Output only the result.
-Correct answer: Jigsaw
-OpenAI answer: Sprocket
-Is correct: False
-                                                                               Progress: [=         ] 13.3% | Submitted: 17/90 | Running: 5 | Evaluated: 12
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-Challenge:
-V_005 = Lush
-V_895 = Cactus
-V_442 = Fable
-V_140 = Vortex
-V_278 = Marble
-V_587 = V_140
-V_998 = V_278
-V_567 = V_587
-V_049 = V_567
-V_909 = V_005
-V_414 = V_049
-V_741 = V_442
-V_485 = V_414
-V_258 = V_909
-V_461 = V_485
-V_810 = V_895
-V_797 = V_810
-V_178 = V_461
-V_607 = V_178
-V_553 = V_741
-V_170 = V_607
-V_867 = V_797
-V_863 = V_998
-V_391 = V_170
-V_333 = V_867
-V_596 = V_863
-V_123 = V_258
-V_012 = V_123
-V_562 = V_553
-V_452 = V_012
-V_693 = V_452
-V_833 = V_333
-V_760 = V_833
-V_124 = V_596
-V_179 = V_693
-V_114 = V_562
-V_133 = V_124
-V_546 = V_391
-V_647 = V_760
-V_083 = V_647
-V_399 = V_114
-V_584 = V_399
-V_027 = V_584
-V_929 = V_546
-V_651 = V_929
-V_237 = V_651
-V_057 = V_237
-V_813 = V_083
-V_204 = V_057
-V_534 = V_027
-
-What is the value of V_534? Output only the result.
 Correct answer: Fable
-OpenAI answer: Fable
-Is correct: True
-                                                                               Progress: [=         ] 14.4% | Submitted: 18/90 | Running: 5 | Evaluated: 13
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-Challenge:
-V_625 = Serpent
-V_084 = Marble
-V_557 = Thistle
-V_284 = Pylon
-V_329 = Jigsaw
-V_091 = V_557
-V_680 = V_091
-V_828 = V_625
-V_778 = V_329
-V_011 = V_284
-V_079 = V_778
-V_027 = V_011
-V_044 = V_079
-V_133 = V_828
-V_017 = V_044
-V_737 = V_680
-V_748 = V_027
-V_351 = V_737
-V_709 = V_084
-V_691 = V_017
-V_194 = V_691
-V_167 = V_194
-V_321 = V_748
-V_870 = V_321
-V_708 = V_870
-V_674 = V_351
-V_812 = V_708
-V_757 = V_133
-V_533 = V_674
-V_942 = V_709
-V_460 = V_533
-V_647 = V_942
-V_041 = V_460
-V_716 = V_647
-V_482 = V_757
-V_108 = V_716
-V_615 = V_812
-V_076 = V_167
-V_837 = V_076
-V_997 = V_482
-V_301 = V_041
-V_296 = V_615
-V_665 = V_296
-V_974 = V_665
-V_241 = V_837
-V_954 = V_241
-V_621 = V_108
-V_256 = V_301
-V_727 = V_256
-V_704 = V_997
-
-What is the value of V_704? Output only the result.
-Correct answer: Serpent
-OpenAI answer: Jigsaw
-Is correct: False
-                                                                               Progress: [=         ] 15.6% | Submitted: 19/90 | Running: 5 | Evaluated: 14
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-Challenge:
-V_875 = Latch
-V_596 = Lush
-V_524 = Waffle
-V_377 = Breeze
-V_591 = Falcon
-V_642 = V_591
-V_045 = V_642
-V_698 = V_377
-V_244 = V_045
-V_801 = V_596
-V_030 = V_801
-V_839 = V_030
-V_031 = V_698
-V_092 = V_244
-V_589 = V_031
-V_389 = V_589
-V_473 = V_839
-V_899 = V_092
-V_336 = V_473
-V_584 = V_524
-V_923 = V_584
-V_166 = V_923
-V_813 = V_389
-V_064 = V_899
-V_799 = V_166
-V_716 = V_813
-V_150 = V_716
-V_579 = V_799
-V_314 = V_579
-V_773 = V_150
-V_758 = V_875
-V_541 = V_314
-V_634 = V_064
-V_618 = V_773
-V_576 = V_758
-V_945 = V_541
-V_462 = V_576
-V_474 = V_336
-V_337 = V_945
-V_600 = V_618
-V_450 = V_634
-V_195 = V_600
-V_849 = V_450
-V_291 = V_195
-V_866 = V_337
-V_507 = V_291
-V_126 = V_462
-V_699 = V_126
-V_735 = V_866
-V_711 = V_699
-
-What is the value of V_711? Output only the result.
-Correct answer: Latch
-OpenAI answer: Latch
-Is correct: True
-                                                                               Progress: [=         ] 16.7% | Submitted: 20/90 | Running: 5 | Evaluated: 15
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-Challenge:
-V_140 = Riddle
-V_175 = Vortex
-V_006 = Thistle
-V_209 = Tundra
-V_977 = Sprocket
-V_752 = V_006
-V_149 = V_977
-V_389 = V_140
-V_416 = V_752
-V_832 = V_209
-V_644 = V_149
-V_421 = V_832
-V_269 = V_421
-V_069 = V_175
-V_971 = V_269
-V_440 = V_069
-V_783 = V_389
-V_492 = V_440
-V_811 = V_971
-V_857 = V_783
-V_960 = V_857
-V_056 = V_416
-V_294 = V_492
-V_455 = V_644
-V_645 = V_811
-V_322 = V_294
-V_507 = V_455
-V_400 = V_960
-V_540 = V_645
-V_482 = V_056
-V_089 = V_400
-V_577 = V_507
-V_705 = V_540
-V_966 = V_322
-V_994 = V_705
-V_671 = V_577
-V_200 = V_089
-V_533 = V_994
-V_884 = V_533
-V_084 = V_884
-V_158 = V_671
-V_885 = V_200
-V_356 = V_084
-V_238 = V_482
-V_902 = V_356
-V_214 = V_158
-V_858 = V_238
-V_501 = V_858
-V_638 = V_902
-V_137 = V_501
-
-What is the value of V_137? Output only the result.
-Correct answer: Thistle
-OpenAI answer: Thistle
-Is correct: True
-                                                                               Progress: [=         ] 17.8% | Submitted: 21/90 | Running: 5 | Evaluated: 16
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-Challenge:
-V_064 = Alloy
-V_634 = Glacier
-V_025 = Jigsaw
-V_859 = Waffle
-V_181 = Nimbus
-V_981 = V_859
-V_457 = V_064
-V_551 = V_981
-V_331 = V_634
-V_297 = V_181
-V_709 = V_297
-V_004 = V_709
-V_987 = V_004
-V_991 = V_457
-V_101 = V_987
-V_624 = V_025
-V_374 = V_331
-V_778 = V_551
-V_100 = V_624
-V_952 = V_991
-V_298 = V_101
-V_530 = V_374
-V_191 = V_778
-V_360 = V_191
-V_539 = V_952
-V_150 = V_298
-V_204 = V_360
-V_935 = V_530
-V_418 = V_935
-V_292 = V_539
-V_480 = V_292
-V_126 = V_418
-V_905 = V_100
-V_248 = V_150
-V_577 = V_204
-V_703 = V_126
-V_770 = V_248
-V_645 = V_905
-V_796 = V_645
-V_593 = V_480
-V_819 = V_593
-V_978 = V_703
-V_586 = V_819
-V_242 = V_586
-V_202 = V_242
-V_767 = V_796
-V_463 = V_767
-V_966 = V_463
-V_423 = V_966
-V_216 = V_978
-
-What is the value of V_216? Output only the result.
-Correct answer: Glacier
-OpenAI answer: Nimbus
-Is correct: False
-                                                                               Progress: [=         ] 18.9% | Submitted: 22/90 | Running: 5 | Evaluated: 17
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-Challenge:
-V_453 = Lantern
-V_008 = Fable
-V_432 = Vortex
-V_890 = Alloy
-V_959 = Glacier
-V_546 = V_890
-V_545 = V_546
-V_738 = V_008
-V_840 = V_453
-V_275 = V_738
-V_612 = V_432
-V_256 = V_545
-V_131 = V_612
-V_874 = V_275
-V_262 = V_874
-V_232 = V_256
-V_303 = V_840
-V_771 = V_303
-V_848 = V_771
-V_235 = V_232
-V_841 = V_848
-V_193 = V_959
-V_090 = V_131
-V_112 = V_841
-V_751 = V_235
-V_072 = V_751
-V_317 = V_072
-V_214 = V_090
-V_438 = V_112
-V_291 = V_438
-V_704 = V_214
-V_539 = V_317
-V_402 = V_291
-V_045 = V_402
-V_902 = V_045
-V_691 = V_704
-V_071 = V_902
-V_828 = V_193
-V_531 = V_539
-V_009 = V_262
-V_604 = V_691
-V_197 = V_828
-V_851 = V_009
-V_358 = V_071
-V_932 = V_604
-V_330 = V_358
-V_417 = V_932
-V_678 = V_330
-V_983 = V_417
-V_561 = V_197
-
-What is the value of V_561? Output only the result.
-Correct answer: Glacier
-OpenAI answer: Glacier
-Is correct: True
-                                                                               Progress: [==        ] 20.0% | Submitted: 23/90 | Running: 5 | Evaluated: 18
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-Challenge:
-V_581 = Waffle
-V_708 = Monsoon
-V_087 = Serpent
-V_674 = Lush
-V_587 = Fable
-V_234 = V_581
-V_518 = V_087
-V_229 = V_587
-V_955 = V_229
-V_367 = V_708
-V_618 = V_518
-V_765 = V_234
-V_572 = V_367
-V_378 = V_618
-V_819 = V_572
-V_615 = V_955
-V_099 = V_378
-V_524 = V_674
-V_549 = V_819
-V_915 = V_549
-V_504 = V_915
-V_331 = V_504
-V_556 = V_765
-V_084 = V_524
-V_639 = V_331
-V_607 = V_639
-V_169 = V_099
-V_578 = V_169
-V_054 = V_556
-V_314 = V_578
-V_539 = V_615
-V_943 = V_054
-V_676 = V_084
-V_907 = V_943
-V_310 = V_676
-V_004 = V_907
-V_051 = V_004
-V_543 = V_314
-V_663 = V_310
-V_411 = V_539
-V_460 = V_607
-V_354 = V_663
-V_886 = V_051
-V_751 = V_354
-V_432 = V_460
-V_421 = V_751
-V_852 = V_411
-V_036 = V_852
-V_985 = V_543
-V_681 = V_036
-
-What is the value of V_681? Output only the result.
-Correct answer: Fable
-OpenAI answer: Fable
-Is correct: True
-                                                                               Progress: [==        ] 21.1% | Submitted: 24/90 | Running: 5 | Evaluated: 19
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-Challenge:
-V_570 = Lush
-V_801 = Fable
-V_429 = Orbit
-V_439 = Vortex
-V_167 = Lantern
-V_417 = V_801
-V_395 = V_439
-V_428 = V_395
-V_583 = V_167
-V_677 = V_417
-V_673 = V_570
-V_565 = V_673
-V_413 = V_583
-V_255 = V_565
-V_057 = V_677
-V_527 = V_428
-V_392 = V_255
-V_986 = V_429
-V_056 = V_527
-V_137 = V_056
-V_318 = V_392
-V_008 = V_986
-V_077 = V_008
-V_364 = V_137
-V_233 = V_077
-V_467 = V_057
-V_967 = V_233
-V_349 = V_413
-V_902 = V_349
-V_140 = V_467
-V_440 = V_318
-V_663 = V_364
-V_603 = V_663
-V_985 = V_140
-V_150 = V_967
-V_978 = V_985
-V_072 = V_150
-V_976 = V_978
-V_561 = V_072
-V_536 = V_603
-V_190 = V_440
-V_184 = V_536
-V_362 = V_184
-V_114 = V_190
-V_594 = V_902
-V_611 = V_561
-V_731 = V_362
-V_690 = V_731
-V_749 = V_611
-V_028 = V_594
-
-What is the value of V_028? Output only the result.
-Correct answer: Lantern
-OpenAI answer: Lantern
-Is correct: True
-                                                                               Progress: [==        ] 22.2% | Submitted: 25/90 | Running: 5 | Evaluated: 20
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-Challenge:
-V_949 = Nimbus
-V_107 = Lantern
-V_250 = Monsoon
-V_861 = Pylon
-V_197 = Harbor
-V_550 = V_107
-V_906 = V_949
-V_125 = V_861
-V_352 = V_125
-V_827 = V_250
-V_457 = V_827
-V_795 = V_197
-V_329 = V_352
-V_516 = V_550
-V_230 = V_906
-V_820 = V_329
-V_602 = V_820
-V_169 = V_795
-V_257 = V_169
-V_854 = V_602
-V_162 = V_457
-V_032 = V_516
-V_063 = V_230
-V_085 = V_162
-V_568 = V_063
-V_023 = V_568
-V_743 = V_023
-V_742 = V_257
-V_979 = V_854
-V_512 = V_742
-V_555 = V_512
-V_195 = V_743
-V_737 = V_085
-V_079 = V_195
-V_290 = V_079
-V_101 = V_979
-V_660 = V_737
-V_226 = V_101
-V_294 = V_290
-V_211 = V_660
-V_768 = V_226
-V_810 = V_211
-V_916 = V_768
-V_068 = V_294
-V_428 = V_916
-V_180 = V_032
-V_661 = V_810
-V_965 = V_068
-V_174 = V_555
-V_029 = V_174
-
-What is the value of V_029? Output only the result.
-Correct answer: Harbor
-OpenAI answer: Harbor
-Is correct: True
-                                                                               Progress: [==        ] 23.3% | Submitted: 26/90 | Running: 5 | Evaluated: 21
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-Challenge:
-V_554 = Pylon
-V_321 = Ponder
-V_282 = Lush
-V_141 = Vortex
-V_205 = Thistle
-V_964 = V_321
-V_752 = V_964
-V_892 = V_141
-V_280 = V_892
-V_633 = V_282
-V_740 = V_633
-V_027 = V_740
-V_571 = V_554
-V_569 = V_752
-V_776 = V_571
-V_070 = V_569
-V_990 = V_027
-V_307 = V_776
-V_578 = V_990
-V_836 = V_578
-V_631 = V_280
-V_911 = V_836
-V_440 = V_070
-V_247 = V_631
-V_530 = V_911
-V_509 = V_530
-V_085 = V_247
-V_270 = V_205
-V_435 = V_307
-V_213 = V_435
-V_759 = V_509
-V_276 = V_440
-V_967 = V_276
-V_918 = V_085
-V_111 = V_759
-V_566 = V_213
-V_854 = V_270
-V_264 = V_918
-V_312 = V_566
-V_601 = V_967
-V_095 = V_111
-V_220 = V_854
-V_402 = V_264
-V_711 = V_601
-V_510 = V_095
-V_413 = V_510
-V_024 = V_413
-V_730 = V_312
-V_907 = V_711
-V_223 = V_730
-
-What is the value of V_223? Output only the result.
-Correct answer: Pylon
-OpenAI answer: Vortex
-Is correct: False
-                                                                               Progress: [==        ] 24.4% | Submitted: 27/90 | Running: 5 | Evaluated: 22
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-Challenge:
-V_027 = Marble
-V_549 = Latch
-V_768 = Quantum
-V_349 = Nimbus
-V_508 = Orbit
-V_971 = V_349
-V_170 = V_549
-V_058 = V_508
-V_301 = V_971
-V_084 = V_058
-V_106 = V_301
-V_960 = V_027
-V_765 = V_960
-V_750 = V_106
-V_083 = V_765
-V_107 = V_768
-V_902 = V_170
-V_489 = V_902
-V_276 = V_084
-V_220 = V_276
-V_226 = V_083
-V_273 = V_107
-V_870 = V_489
-V_423 = V_273
-V_540 = V_220
-V_588 = V_750
-V_924 = V_423
-V_296 = V_870
-V_168 = V_226
-V_916 = V_588
-V_339 = V_540
-V_932 = V_296
-V_859 = V_924
-V_101 = V_168
-V_365 = V_101
-V_813 = V_339
-V_652 = V_916
-V_548 = V_859
-V_389 = V_932
-V_282 = V_548
-V_771 = V_652
-V_140 = V_282
-V_395 = V_365
-V_427 = V_389
-V_556 = V_427
-V_293 = V_813
-V_742 = V_395
-V_554 = V_771
-V_689 = V_140
-V_480 = V_556
-
-What is the value of V_480? Output only the result.
-Correct answer: Latch
-OpenAI answer: Nimbus
-Is correct: False
-                                                                               Progress: [==        ] 25.6% | Submitted: 28/90 | Running: 5 | Evaluated: 23
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-Challenge:
-V_112 = Echo
-V_815 = Lush
-V_717 = Alloy
-V_938 = Nimbus
-V_060 = Serpent
-V_638 = V_060
-V_972 = V_815
-V_395 = V_938
-V_431 = V_972
-V_565 = V_112
-V_768 = V_717
-V_022 = V_431
-V_286 = V_022
-V_564 = V_638
-V_416 = V_768
-V_141 = V_565
-V_914 = V_286
-V_164 = V_564
-V_611 = V_395
-V_217 = V_141
-V_891 = V_416
-V_859 = V_611
-V_822 = V_891
-V_692 = V_164
-V_277 = V_692
-V_807 = V_822
-V_887 = V_807
-V_103 = V_859
-V_778 = V_217
-V_198 = V_887
-V_297 = V_103
-V_979 = V_277
-V_292 = V_297
-V_469 = V_198
-V_725 = V_914
-V_696 = V_778
-V_658 = V_979
-V_956 = V_725
-V_724 = V_696
-V_448 = V_469
-V_889 = V_724
-V_776 = V_658
-V_920 = V_776
-V_648 = V_292
-V_752 = V_648
-V_982 = V_889
-V_458 = V_448
-V_762 = V_458
-V_617 = V_982
-V_516 = V_617
-
-What is the value of V_516? Output only the result.
-Correct answer: Echo
-OpenAI answer: Lush
-Is correct: False
-                                                                               Progress: [==        ] 26.7% | Submitted: 29/90 | Running: 5 | Evaluated: 24
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-Challenge:
-V_064 = Pylon
-V_245 = Vortex
-V_555 = Chisel
-V_470 = Jigsaw
-V_144 = Cactus
-V_077 = V_555
-V_717 = V_144
-V_282 = V_245
-V_276 = V_470
-V_723 = V_717
-V_979 = V_282
-V_847 = V_064
-V_828 = V_979
-V_477 = V_723
-V_072 = V_077
-V_570 = V_828
-V_343 = V_570
-V_584 = V_847
-V_543 = V_477
-V_446 = V_584
-V_714 = V_276
-V_482 = V_072
-V_616 = V_446
-V_269 = V_616
-V_317 = V_543
-V_190 = V_714
-V_572 = V_482
-V_754 = V_343
-V_362 = V_754
-V_290 = V_362
-V_416 = V_269
-V_507 = V_317
-V_394 = V_416
-V_247 = V_507
-V_558 = V_290
-V_802 = V_572
-V_819 = V_247
-V_968 = V_802
-V_941 = V_558
-V_605 = V_968
-V_433 = V_819
-V_552 = V_433
-V_063 = V_605
-V_933 = V_063
-V_441 = V_941
-V_783 = V_552
-V_838 = V_394
-V_004 = V_190
-V_489 = V_933
-V_962 = V_489
-
-What is the value of V_962? Output only the result.
-Correct answer: Chisel
-OpenAI answer: Vortex
-Is correct: False
-                                                                               Progress: [==        ] 27.8% | Submitted: 30/90 | Running: 5 | Evaluated: 25
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=normal
-Challenge:
-V_478 = Zephyr
-V_190 = Thistle
-V_066 = Vortex
-V_147 = Waffle
-V_150 = Tundra
-V_553 = V_066
-V_255 = V_190
-V_384 = V_553
-V_422 = V_147
-V_588 = V_255
-V_936 = V_150
-V_944 = V_588
-V_469 = V_944
-V_155 = V_422
-V_055 = V_155
-V_931 = V_469
-V_943 = V_931
-V_457 = V_055
-V_159 = V_457
-V_169 = V_384
-V_404 = V_159
-V_874 = V_478
-V_061 = V_936
-V_646 = V_943
-V_342 = V_061
-V_089 = V_874
-V_302 = V_404
-V_697 = V_342
-V_585 = V_302
-V_865 = V_585
-V_971 = V_169
-V_389 = V_865
-V_510 = V_697
-V_995 = V_510
-V_182 = V_389
-V_997 = V_995
-V_643 = V_182
-V_817 = V_971
-V_992 = V_646
-V_634 = V_643
-V_080 = V_089
-V_613 = V_997
-V_435 = V_817
-V_025 = V_435
-V_464 = V_025
-V_297 = V_634
-V_327 = V_297
-V_229 = V_464
-V_328 = V_327
-V_988 = V_613
-
-What is the value of V_988? Output only the result.
-Correct answer: Tundra
-OpenAI answer: Thistle
-Is correct: False
-                                                                               Progress: [==        ] 28.9% | Submitted: 31/90 | Running: 5 | Evaluated: 26
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_466 = Chisel
-V_863 = Harbor
-V_394 = Ponder
-V_710 = Lantern
-V_438 = Falcon
-V_618 = V_438
-V_402 = V_618
-V_074 = V_402
-V_393 = V_710
-V_836 = V_863
-V_404 = V_074
-V_160 = V_393
-V_098 = V_160
-V_467 = V_404
-V_803 = V_467
-V_751 = V_466
-V_276 = V_098
-V_165 = V_836
-V_238 = V_394
-V_259 = V_803
-V_740 = V_751
-V_506 = V_165
-V_192 = V_506
-V_432 = V_276
-V_398 = V_740
-V_627 = V_238
-V_838 = V_192
-V_759 = V_259
-V_054 = V_627
-V_331 = V_759
-V_878 = V_054
-V_730 = V_331
-V_545 = V_838
-V_128 = V_432
-V_834 = V_730
-V_888 = V_545
-V_707 = V_878
-V_175 = V_888
-V_447 = V_398
-V_947 = V_175
-V_704 = V_707
-V_279 = V_447
-V_463 = V_834
-V_387 = V_279
-V_049 = V_387
-V_239 = V_704
-V_240 = V_049
-V_304 = V_947
-V_382 = V_463
-V_635 = V_239
-
-What is the value of V_635? Output only the result.
-Correct answer: Ponder
-OpenAI answer: Lantern
-Is correct: False
-                                                                               Progress: [===       ] 30.0% | Submitted: 32/90 | Running: 5 | Evaluated: 27
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_086 = Pylon
-V_922 = Falcon
-V_961 = Vortex
-V_263 = Riddle
-V_075 = Nimbus
-V_479 = V_075
-V_865 = V_086
-V_420 = V_479
-V_035 = V_263
-V_019 = V_865
-V_488 = V_019
-V_480 = V_961
-V_434 = V_035
-V_569 = V_922
-V_247 = V_420
-V_725 = V_488
-V_397 = V_247
-V_967 = V_725
-V_660 = V_480
-V_437 = V_397
-V_340 = V_434
-V_268 = V_437
-V_418 = V_660
-V_651 = V_569
-V_122 = V_418
-V_185 = V_268
-V_599 = V_340
-V_009 = V_967
-V_601 = V_651
-V_344 = V_601
-V_993 = V_344
-V_427 = V_009
-V_933 = V_185
-V_585 = V_933
-V_674 = V_122
-V_116 = V_427
-V_712 = V_585
-V_648 = V_116
-V_691 = V_599
-V_616 = V_993
-V_299 = V_691
-V_431 = V_648
-V_560 = V_674
-V_130 = V_712
-V_259 = V_299
-V_519 = V_259
-V_597 = V_130
-V_818 = V_616
-V_794 = V_818
-V_800 = V_794
-
-What is the value of V_800? Output only the result.
-Correct answer: Falcon
-OpenAI answer: Pylon
-Is correct: False
-                                                                               Progress: [===       ] 31.1% | Submitted: 33/90 | Running: 5 | Evaluated: 28
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_836 = Thistle
-V_094 = Fable
-V_568 = Breeze
-V_806 = Lush
-V_023 = Lantern
-V_176 = V_806
-V_913 = V_836
-V_430 = V_023
-V_350 = V_568
-V_647 = V_430
-V_218 = V_913
-V_936 = V_094
-V_675 = V_647
-V_051 = V_675
-V_109 = V_218
-V_601 = V_176
-V_871 = V_936
-V_387 = V_350
-V_919 = V_871
-V_546 = V_051
-V_082 = V_546
-V_990 = V_601
-V_967 = V_109
-V_353 = V_990
-V_224 = V_919
-V_599 = V_353
-V_111 = V_224
-V_660 = V_082
-V_172 = V_599
-V_689 = V_111
-V_323 = V_660
-V_749 = V_689
-V_071 = V_967
-V_674 = V_172
-V_114 = V_323
-V_143 = V_071
-V_460 = V_674
-V_592 = V_143
-V_012 = V_749
-V_035 = V_460
-V_333 = V_114
-V_299 = V_387
-V_740 = V_012
-V_137 = V_299
-V_466 = V_740
-V_378 = V_466
-V_266 = V_035
-V_386 = V_592
-V_879 = V_386
-V_441 = V_266
-
-What is the value of V_441? Output only the result.
-Correct answer: Lush
-OpenAI answer: Lantern
-Is correct: False
-                                                                               Progress: [===       ] 32.2% | Submitted: 34/90 | Running: 5 | Evaluated: 29
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_619 = Falcon
-V_672 = Quantum
-V_266 = Serpent
-V_872 = Waffle
-V_794 = Sprocket
-V_258 = V_266
-V_924 = V_619
-V_357 = V_672
-V_667 = V_794
-V_688 = V_872
-V_954 = V_258
-V_087 = V_688
-V_942 = V_954
-V_995 = V_924
-V_487 = V_942
-V_062 = V_487
-V_562 = V_062
-V_356 = V_562
-V_963 = V_356
-V_929 = V_995
-V_146 = V_357
-V_176 = V_667
-V_022 = V_146
-V_453 = V_022
-V_903 = V_963
-V_268 = V_929
-V_791 = V_176
-V_938 = V_453
-V_763 = V_791
-V_441 = V_763
-V_636 = V_087
-V_730 = V_903
-V_747 = V_441
-V_186 = V_636
-V_577 = V_268
-V_718 = V_186
-V_628 = V_718
-V_341 = V_938
-V_215 = V_747
-V_778 = V_215
-V_583 = V_341
-V_205 = V_577
-V_006 = V_730
-V_379 = V_583
-V_378 = V_628
-V_212 = V_379
-V_772 = V_212
-V_817 = V_205
-V_722 = V_006
-V_048 = V_778
-
-What is the value of V_048? Output only the result.
-Correct answer: Sprocket
-OpenAI answer: Quantum
-Is correct: False
-                                                                               Progress: [===       ] 33.3% | Submitted: 35/90 | Running: 5 | Evaluated: 30
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_791 = Lush
-V_725 = Alloy
-V_052 = Waffle
-V_572 = Zephyr
-V_608 = Vortex
-V_604 = V_361
-V_361 = V_253
-V_543 = V_652
-V_809 = V_078
-V_170 = V_097
-V_879 = V_958
-V_078 = V_213
-V_213 = V_372
-V_652 = V_990
-V_990 = V_188
-V_253 = V_931
-V_931 = V_193
-V_193 = V_300
-V_097 = V_893
-V_958 = V_771
-V_893 = V_524
-V_372 = V_333
-V_300 = V_867
-V_188 = V_952
-V_333 = V_759
-V_524 = V_950
-V_950 = V_107
-V_107 = V_197
-V_771 = V_696
-V_952 = V_301
-V_301 = V_032
-V_032 = V_684
-V_867 = V_155
-V_684 = V_403
-V_403 = V_618
-V_618 = V_338
-V_155 = V_087
-V_696 = V_955
-V_087 = V_790
-V_197 = V_711
-V_338 = V_409
-V_759 = V_927
-V_711 = V_725
-V_409 = V_572
-V_927 = V_655
-V_655 = V_608
-V_790 = V_791
-V_955 = V_457
-V_457 = V_052
-V_369 = V_809
-
-What is the value of V_369? Output only the result.
-Correct answer: Vortex
-OpenAI answer: Waffle
-Is correct: False
-                                                                               Progress: [===       ] 34.4% | Submitted: 36/90 | Running: 5 | Evaluated: 31
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_199 = Nimbus
-V_633 = Fable
-V_888 = Waffle
-V_099 = Vortex
-V_347 = Quantum
-V_335 = V_351
-V_351 = V_645
-V_645 = V_064
-V_064 = V_186
-V_186 = V_825
-V_860 = V_550
-V_550 = V_227
-V_414 = V_309
-V_227 = V_262
-V_262 = V_084
-V_084 = V_468
-V_894 = V_362
-V_825 = V_553
-V_820 = V_881
-V_468 = V_368
-V_368 = V_907
-V_362 = V_529
-V_309 = V_467
-V_881 = V_624
-V_907 = V_573
-V_624 = V_874
-V_553 = V_525
-V_525 = V_247
-V_529 = V_386
-V_573 = V_447
-V_874 = V_765
-V_386 = V_310
-V_247 = V_654
-V_310 = V_107
-V_107 = V_395
-V_447 = V_761
-V_761 = V_168
-V_467 = V_762
-V_765 = V_962
-V_762 = V_737
-V_737 = V_249
-V_654 = V_419
-V_962 = V_099
-V_249 = V_259
-V_419 = V_448
-V_259 = V_633
-V_448 = V_888
-V_168 = V_199
-V_395 = V_347
-V_729 = V_820
-
-What is the value of V_729? Output only the result.
-Correct answer: Vortex
-OpenAI answer: Fable
-Is correct: False
-                                                                               Progress: [===       ] 35.6% | Submitted: 37/90 | Running: 5 | Evaluated: 32
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_632 = Harbor
-V_241 = Marble
-V_660 = Zephyr
-V_910 = Cactus
-V_132 = Quantum
-V_362 = V_943
-V_545 = V_304
-V_943 = V_178
-V_304 = V_173
-V_178 = V_692
-V_173 = V_682
-V_692 = V_970
-V_149 = V_459
-V_462 = V_339
-V_970 = V_013
-V_459 = V_410
-V_013 = V_266
-V_410 = V_669
-V_784 = V_859
-V_859 = V_046
-V_266 = V_175
-V_046 = V_415
-V_175 = V_636
-V_415 = V_112
-V_339 = V_861
-V_669 = V_644
-V_636 = V_956
-V_112 = V_474
-V_956 = V_791
-V_791 = V_219
-V_219 = V_436
-V_682 = V_526
-V_474 = V_015
-V_526 = V_337
-V_015 = V_761
-V_337 = V_335
-V_761 = V_860
-V_436 = V_138
-V_861 = V_171
-V_335 = V_908
-V_171 = V_948
-V_908 = V_754
-V_754 = V_132
-V_138 = V_660
-V_644 = V_300
-V_860 = V_241
-V_300 = V_632
-V_948 = V_061
-V_061 = V_910
-V_334 = V_362
-
-What is the value of V_334? Output only the result.
-Correct answer: Zephyr
-OpenAI answer: Quantum
-Is correct: False
-                                                                               Progress: [===       ] 36.7% | Submitted: 38/90 | Running: 5 | Evaluated: 33
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_571 = Quantum
-V_779 = Echo
-V_818 = Latch
-V_401 = Whisper
-V_441 = Thistle
-V_291 = V_098
-V_848 = V_919
-V_098 = V_663
-V_663 = V_394
-V_357 = V_123
-V_919 = V_647
-V_202 = V_577
-V_394 = V_536
-V_123 = V_470
-V_536 = V_704
-V_470 = V_504
-V_745 = V_235
-V_577 = V_234
-V_647 = V_452
-V_234 = V_317
-V_235 = V_152
-V_452 = V_730
-V_504 = V_489
-V_152 = V_545
-V_704 = V_436
-V_730 = V_147
-V_545 = V_284
-V_436 = V_005
-V_147 = V_300
-V_489 = V_757
-V_284 = V_365
-V_300 = V_342
-V_005 = V_590
-V_757 = V_818
-V_317 = V_794
-V_342 = V_172
-V_794 = V_065
-V_065 = V_184
-V_184 = V_527
-V_527 = V_916
-V_365 = V_571
-V_172 = V_055
-V_916 = V_412
-V_412 = V_054
-V_054 = V_921
-V_590 = V_401
-V_055 = V_458
-V_458 = V_441
-V_921 = V_779
-V_488 = V_745
-
-What is the value of V_488? Output only the result.
-Correct answer: Quantum
-OpenAI answer: Thistle
-Is correct: False
-                                                                               Progress: [===       ] 37.8% | Submitted: 39/90 | Running: 5 | Evaluated: 34
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_227 = Echo
-V_161 = Cactus
-V_304 = Fable
-V_431 = Monsoon
-V_129 = Harbor
-V_370 = V_620
-V_971 = V_436
-V_436 = V_199
-V_063 = V_638
-V_620 = V_910
-V_160 = V_049
-V_910 = V_720
-V_049 = V_741
-V_720 = V_940
-V_741 = V_443
-V_940 = V_388
-V_647 = V_635
-V_388 = V_052
-V_052 = V_846
-V_199 = V_642
-V_635 = V_609
-V_846 = V_307
-V_638 = V_437
-V_443 = V_050
-V_642 = V_432
-V_307 = V_418
-V_432 = V_556
-V_418 = V_466
-V_556 = V_496
-V_609 = V_459
-V_437 = V_566
-V_566 = V_509
-V_050 = V_788
-V_459 = V_094
-V_509 = V_125
-V_094 = V_297
-V_125 = V_973
-V_496 = V_724
-V_466 = V_250
-V_250 = V_537
-V_788 = V_756
-V_973 = V_161
-V_756 = V_087
-V_087 = V_304
-V_297 = V_512
-V_724 = V_702
-V_512 = V_129
-V_702 = V_227
-V_537 = V_431
-V_423 = V_971
-
-What is the value of V_423? Output only the result.
-Correct answer: Echo
-OpenAI answer: Monsoon
-Is correct: False
-                                                                               Progress: [===       ] 38.9% | Submitted: 40/90 | Running: 5 | Evaluated: 35
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_119 = Riddle
-V_568 = Waffle
-V_345 = Tundra
-V_176 = Quantum
-V_367 = Whisper
-V_915 = V_204
-V_204 = V_883
-V_137 = V_619
-V_619 = V_616
-V_014 = V_840
-V_883 = V_868
-V_840 = V_519
-V_868 = V_422
-V_258 = V_617
-V_616 = V_135
-V_422 = V_043
-V_043 = V_311
-V_992 = V_301
-V_301 = V_450
-V_519 = V_136
-V_135 = V_998
-V_311 = V_930
-V_930 = V_431
-V_136 = V_299
-V_450 = V_648
-V_998 = V_192
-V_431 = V_374
-V_299 = V_558
-V_558 = V_260
-V_648 = V_221
-V_617 = V_591
-V_192 = V_021
-V_221 = V_074
-V_074 = V_969
-V_021 = V_395
-V_591 = V_036
-V_260 = V_583
-V_583 = V_548
-V_036 = V_539
-V_969 = V_294
-V_548 = V_996
-V_996 = V_176
-V_539 = V_931
-V_374 = V_119
-V_294 = V_551
-V_395 = V_345
-V_931 = V_116
-V_116 = V_568
-V_551 = V_367
-V_443 = V_915
-
-What is the value of V_443? Output only the result.
-Correct answer: Riddle
-OpenAI answer: Whisper
-Is correct: False
-                                                                               Progress: [====      ] 40.0% | Submitted: 41/90 | Running: 5 | Evaluated: 36
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_822 = Lantern
-V_479 = Jigsaw
-V_131 = Tundra
-V_964 = Riddle
-V_256 = Chisel
-V_969 = V_966
-V_003 = V_098
-V_966 = V_513
-V_543 = V_665
-V_749 = V_666
-V_098 = V_448
-V_513 = V_264
-V_736 = V_811
-V_666 = V_482
-V_811 = V_089
-V_089 = V_908
-V_908 = V_510
-V_482 = V_207
-V_510 = V_806
-V_806 = V_473
-V_207 = V_308
-V_264 = V_520
-V_520 = V_518
-V_308 = V_571
-V_665 = V_695
-V_571 = V_470
-V_473 = V_530
-V_470 = V_067
-V_067 = V_381
-V_448 = V_343
-V_381 = V_377
-V_530 = V_594
-V_594 = V_256
-V_377 = V_491
-V_491 = V_305
-V_518 = V_297
-V_343 = V_238
-V_305 = V_913
-V_297 = V_125
-V_125 = V_754
-V_238 = V_101
-V_754 = V_035
-V_101 = V_822
-V_035 = V_968
-V_968 = V_077
-V_695 = V_935
-V_077 = V_131
-V_935 = V_479
-V_913 = V_964
-V_767 = V_749
-
-What is the value of V_767? Output only the result.
-Correct answer: Riddle
-OpenAI answer: Jigsaw
-Is correct: False
-                                                                               Progress: [====      ] 41.1% | Submitted: 42/90 | Running: 5 | Evaluated: 37
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_320 = Falcon
-V_551 = Orbit
-V_356 = Serpent
-V_895 = Alloy
-V_469 = Tundra
-V_221 = V_614
-V_364 = V_217
-V_073 = V_052
-V_801 = V_897
-V_052 = V_701
-V_897 = V_669
-V_669 = V_953
-V_701 = V_794
-V_075 = V_887
-V_887 = V_501
-V_614 = V_097
-V_953 = V_844
-V_794 = V_326
-V_097 = V_591
-V_844 = V_997
-V_591 = V_015
-V_997 = V_058
-V_058 = V_452
-V_501 = V_479
-V_452 = V_540
-V_217 = V_033
-V_015 = V_451
-V_451 = V_042
-V_326 = V_320
-V_042 = V_397
-V_397 = V_443
-V_033 = V_370
-V_479 = V_481
-V_443 = V_002
-V_002 = V_423
-V_540 = V_465
-V_370 = V_308
-V_308 = V_098
-V_465 = V_218
-V_481 = V_261
-V_423 = V_674
-V_261 = V_027
-V_218 = V_563
-V_027 = V_469
-V_674 = V_356
-V_563 = V_895
-V_098 = V_298
-V_298 = V_255
-V_255 = V_551
-V_487 = V_801
-
-What is the value of V_487? Output only the result.
-Correct answer: Alloy
-OpenAI answer: Orbit
-Is correct: False
-                                                                               Progress: [====      ] 42.2% | Submitted: 43/90 | Running: 5 | Evaluated: 38
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_787 = Cactus
-V_593 = Pylon
-V_173 = Alloy
-V_876 = Chisel
-V_001 = Thistle
-V_997 = V_629
-V_167 = V_839
-V_839 = V_752
-V_752 = V_234
-V_012 = V_790
-V_629 = V_798
-V_798 = V_223
-V_223 = V_922
-V_383 = V_639
-V_234 = V_615
-V_615 = V_099
-V_639 = V_894
-V_894 = V_144
-V_922 = V_853
-V_934 = V_283
-V_853 = V_156
-V_283 = V_849
-V_156 = V_050
-V_790 = V_438
-V_099 = V_211
-V_849 = V_571
-V_144 = V_074
-V_211 = V_766
-V_074 = V_173
-V_050 = V_358
-V_766 = V_123
-V_571 = V_807
-V_807 = V_532
-V_123 = V_071
-V_071 = V_163
-V_163 = V_931
-V_358 = V_650
-V_438 = V_912
-V_912 = V_876
-V_931 = V_242
-V_650 = V_624
-V_532 = V_910
-V_910 = V_093
-V_093 = V_562
-V_562 = V_787
-V_242 = V_031
-V_031 = V_782
-V_624 = V_593
-V_782 = V_001
-V_945 = V_012
-
-What is the value of V_945? Output only the result.
-Correct answer: Chisel
-OpenAI answer: Thistle
-Is correct: False
-                                                                               Progress: [====      ] 43.3% | Submitted: 44/90 | Running: 5 | Evaluated: 39
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_928 = Lantern
-V_189 = Whisper
-V_175 = Chisel
-V_634 = Breeze
-V_194 = Harbor
-V_059 = V_903
-V_706 = V_056
-V_903 = V_645
-V_906 = V_463
-V_463 = V_876
-V_056 = V_578
-V_876 = V_562
-V_979 = V_917
-V_917 = V_300
-V_300 = V_351
-V_751 = V_629
-V_562 = V_518
-V_578 = V_693
-V_629 = V_086
-V_518 = V_688
-V_688 = V_412
-V_086 = V_337
-V_645 = V_137
-V_337 = V_881
-V_137 = V_889
-V_693 = V_301
-V_889 = V_678
-V_412 = V_640
-V_351 = V_807
-V_807 = V_686
-V_686 = V_031
-V_881 = V_642
-V_640 = V_382
-V_031 = V_273
-V_301 = V_025
-V_678 = V_672
-V_672 = V_189
-V_382 = V_516
-V_273 = V_188
-V_516 = V_162
-V_188 = V_928
-V_162 = V_075
-V_075 = V_165
-V_165 = V_995
-V_642 = V_328
-V_328 = V_194
-V_025 = V_861
-V_861 = V_634
-V_995 = V_175
-V_393 = V_751
-
-What is the value of V_393? Output only the result.
-Correct answer: Harbor
 OpenAI answer: Breeze
 Is correct: False
-                                                                               Progress: [====      ] 44.4% | Submitted: 45/90 | Running: 5 | Evaluated: 40
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_205 = Breeze
-V_769 = Fable
-V_618 = Nimbus
-V_291 = Thistle
-V_499 = Lantern
-V_817 = V_645
-V_857 = V_361
-V_645 = V_911
-V_911 = V_380
-V_361 = V_495
-V_495 = V_012
-V_380 = V_074
-V_437 = V_408
-V_012 = V_715
-V_606 = V_553
-V_715 = V_092
-V_553 = V_148
-V_200 = V_941
-V_092 = V_784
-V_074 = V_422
-V_408 = V_375
-V_784 = V_223
-V_422 = V_761
-V_375 = V_407
-V_761 = V_439
-V_941 = V_252
-V_148 = V_317
-V_252 = V_237
-V_317 = V_918
-V_407 = V_098
-V_439 = V_511
-V_223 = V_013
-V_918 = V_913
-V_237 = V_064
-V_013 = V_988
-V_988 = V_095
-V_064 = V_767
-V_511 = V_498
-V_095 = V_234
-V_098 = V_769
-V_913 = V_015
-V_015 = V_291
-V_498 = V_236
-V_234 = V_192
-V_192 = V_205
-V_767 = V_081
-V_081 = V_076
-V_236 = V_618
-V_076 = V_499
-V_228 = V_606
 
-What is the value of V_228? Output only the result.
-Correct answer: Thistle
-OpenAI answer: Nimbus
-Is correct: False
-                                                                               Progress: [====      ] 45.6% | Submitted: 46/90 | Running: 5 | Evaluated: 41
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
+                                                                               
+Progress: [=====     ] 53.3% | Submitted: 13/15 | Running: 5 | Evaluated: 8
+Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
 Challenge:
-V_903 = Lush
-V_960 = Fable
-V_221 = Quantum
-V_905 = Vortex
-V_492 = Harbor
-V_782 = V_780
-V_365 = V_875
-V_764 = V_563
-V_311 = V_471
-V_471 = V_750
-V_750 = V_091
-V_091 = V_112
-V_780 = V_206
-V_206 = V_359
-V_563 = V_534
-V_534 = V_031
-V_359 = V_947
-V_112 = V_767
-V_875 = V_024
-V_767 = V_655
-V_655 = V_660
-V_947 = V_855
-V_520 = V_997
-V_031 = V_308
-V_855 = V_467
-V_308 = V_446
-V_446 = V_583
-V_467 = V_171
-V_997 = V_733
-V_024 = V_036
-V_036 = V_778
-V_733 = V_297
-V_778 = V_705
-V_297 = V_664
-V_171 = V_303
-V_660 = V_802
-V_664 = V_008
-V_008 = V_793
-V_802 = V_416
-V_705 = V_647
-V_303 = V_905
-V_416 = V_492
-V_793 = V_277
-V_583 = V_228
-V_228 = V_960
-V_647 = V_903
-V_277 = V_015
-V_015 = V_182
-V_182 = V_221
-V_669 = V_520
+V_902 = V_275
+V_141 = V_226
+V_226 = V_338
+V_338 = V_874
+V_698 = V_022
+V_022 = V_605
+V_605 = V_931
+V_580 = V_179
+V_874 = V_529
+V_931 = V_994
+V_275 = V_819
+V_994 = V_940
+V_110 = V_055
+V_529 = V_572
+V_179 = V_234
+V_234 = V_718
+V_572 = V_476
+V_819 = V_922
+V_940 = V_792
+V_718 = V_524
+V_524 = V_677
+V_792 = V_036
+V_036 = V_725
+V_677 = V_607
+V_607 = V_192
+V_192 = V_091
+V_922 = V_825
+V_725 = V_196
+V_196 = V_937
+V_476 = V_315
+V_825 = V_235
+V_235 = V_699
+V_699 = V_739
+V_937 = V_268
+V_739 = V_285
+V_315 = V_146
+V_146 = V_591
+V_268 = V_280
+V_091 = V_447
+V_280 = V_960
+V_447 = V_260
+V_285 = V_035
+V_960 = V_047
+V_591 = V_454
+V_055 = Breeze
+V_454 = Chisel
+V_035 = Cactus
+V_260 = Orbit
+V_047 = Marble
+V_671 = V_580
 
-What is the value of V_669? Output only the result.
-Correct answer: Quantum
-OpenAI answer: Harbor
-Is correct: False
-                                                                               Progress: [====      ] 46.7% | Submitted: 47/90 | Running: 5 | Evaluated: 42
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_623 = Thistle
-V_968 = Orbit
-V_291 = Vortex
-V_190 = Quantum
-V_802 = Riddle
-V_394 = V_885
-V_377 = V_089
-V_885 = V_256
-V_187 = V_005
-V_005 = V_305
-V_256 = V_073
-V_089 = V_660
-V_170 = V_333
-V_305 = V_042
-V_073 = V_398
-V_660 = V_953
-V_663 = V_754
-V_398 = V_206
-V_953 = V_549
-V_549 = V_138
-V_754 = V_635
-V_333 = V_871
-V_871 = V_425
-V_635 = V_742
-V_138 = V_920
-V_742 = V_868
-V_920 = V_315
-V_315 = V_355
-V_042 = V_190
-V_355 = V_859
-V_859 = V_843
-V_425 = V_496
-V_206 = V_723
-V_868 = V_975
-V_975 = V_448
-V_723 = V_364
-V_364 = V_083
-V_083 = V_003
-V_843 = V_736
-V_448 = V_041
-V_736 = V_049
-V_003 = V_268
-V_268 = V_291
-V_496 = V_230
-V_230 = V_881
-V_881 = V_035
-V_041 = V_968
-V_035 = V_623
-V_049 = V_802
-V_738 = V_663
-
-What is the value of V_738? Output only the result.
+What is the value of V_671? Output only the result.
 Correct answer: Orbit
-OpenAI answer: Riddle
-Is correct: False
-                                                                               Progress: [====      ] 47.8% | Submitted: 48/90 | Running: 5 | Evaluated: 43
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_701 = Chisel
-V_157 = Ponder
-V_453 = Zephyr
-V_988 = Orbit
-V_363 = Monsoon
-V_697 = V_444
-V_444 = V_793
-V_955 = V_702
-V_793 = V_460
-V_702 = V_003
-V_460 = V_527
-V_527 = V_133
-V_133 = V_005
-V_941 = V_472
-V_472 = V_093
-V_071 = V_435
-V_003 = V_387
-V_285 = V_503
-V_387 = V_098
-V_005 = V_289
-V_098 = V_559
-V_559 = V_515
-V_093 = V_360
-V_503 = V_072
-V_360 = V_632
-V_515 = V_922
-V_289 = V_812
-V_435 = V_943
-V_943 = V_262
-V_812 = V_283
-V_922 = V_429
-V_632 = V_577
-V_072 = V_226
-V_577 = V_636
-V_429 = V_554
-V_636 = V_405
-V_226 = V_584
-V_262 = V_276
-V_276 = V_272
-V_405 = V_761
-V_584 = V_519
-V_283 = V_984
-V_761 = V_988
-V_272 = V_701
-V_519 = V_330
-V_984 = V_227
-V_554 = V_363
-V_330 = V_157
-V_227 = V_453
-V_522 = V_955
-
-What is the value of V_522? Output only the result.
-Correct answer: Monsoon
-OpenAI answer: Monsoon
-Is correct: True
-                                                                               Progress: [====      ] 48.9% | Submitted: 49/90 | Running: 5 | Evaluated: 44Challenge:
-V_827 = Zephyr
-V_266 = Monsoon
-V_025 = Serpent
-V_354 = Orbit
-V_946 = Harbor
-V_161 = V_037
-V_539 = V_022
-V_219 = V_994
-V_037 = V_318
-V_022 = V_567
-V_262 = V_434
-V_963 = V_055
-V_055 = V_960
-V_994 = V_052
-V_318 = V_691
-V_567 = V_940
-V_691 = V_066
-V_052 = V_445
-V_434 = V_088
-V_960 = V_373
-V_088 = V_154
-V_066 = V_398
-V_398 = V_040
-V_373 = V_893
-V_940 = V_313
-V_154 = V_341
-V_445 = V_680
-V_040 = V_315
-V_680 = V_949
-V_313 = V_442
-V_949 = V_192
-V_192 = V_660
-V_341 = V_500
-V_500 = V_969
-V_969 = V_732
-V_660 = V_548
-V_893 = V_009
-V_732 = V_413
-V_413 = V_971
-V_548 = V_105
-V_315 = V_482
-V_971 = V_135
-V_105 = V_354
-V_442 = V_266
-V_135 = V_622
-V_622 = V_827
-V_009 = V_593
-V_593 = V_946
-V_482 = V_025
-V_030 = V_161
-
-What is the value of V_030? Output only the result.
-Correct answer: Serpent
-OpenAI answer: Harbor
+OpenAI answer: 179
 Is correct: False
 
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-                                                                               Progress: [=====     ] 50.0% | Submitted: 50/90 | Running: 5 | Evaluated: 45
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
+                                                                               
+Progress: [======    ] 60.0% | Submitted: 14/15 | Running: 5 | Evaluated: 9
+Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
 Challenge:
-V_525 = Tundra
-V_211 = Harbor
-V_712 = Waffle
-V_405 = Sprocket
-V_175 = Falcon
-V_718 = V_843
-V_522 = V_960
-V_419 = V_577
-V_843 = V_512
-V_859 = V_422
-V_577 = V_076
-V_076 = V_621
-V_960 = V_511
-V_621 = V_529
-V_512 = V_540
-V_511 = V_515
-V_515 = V_773
-V_540 = V_593
-V_422 = V_775
-V_751 = V_139
-V_529 = V_739
-V_593 = V_435
-V_435 = V_759
-V_739 = V_544
-V_759 = V_295
-V_775 = V_533
-V_139 = V_903
-V_295 = V_963
-V_773 = V_134
-V_963 = V_827
-V_903 = V_883
-V_544 = V_212
-V_212 = V_252
-V_827 = V_180
-V_252 = V_824
-V_883 = V_232
-V_180 = V_118
-V_134 = V_230
-V_232 = V_454
-V_454 = V_692
-V_230 = V_642
-V_824 = V_145
-V_118 = V_712
-V_145 = V_211
-V_692 = V_644
-V_533 = V_140
-V_642 = V_175
-V_140 = V_525
-V_644 = V_405
-V_877 = V_522
+V_394 = V_242
+V_150 = V_402
+V_807 = V_629
+V_629 = V_839
+V_242 = V_464
+V_464 = V_589
+V_402 = V_181
+V_589 = V_495
+V_495 = V_422
+V_422 = V_517
+V_839 = V_217
+V_217 = V_841
+V_517 = V_445
+V_445 = V_169
+V_569 = V_562
+V_206 = V_467
+V_467 = V_404
+V_169 = V_600
+V_181 = V_524
+V_524 = V_788
+V_841 = V_328
+V_788 = V_568
+V_600 = V_087
+V_404 = V_653
+V_328 = V_681
+V_562 = V_617
+V_681 = V_336
+V_568 = V_840
+V_840 = V_490
+V_617 = V_405
+V_653 = V_827
+V_827 = V_325
+V_087 = V_526
+V_336 = V_174
+V_490 = V_677
+V_405 = V_221
+V_325 = V_103
+V_174 = V_845
+V_845 = V_109
+V_677 = V_409
+V_109 = V_984
+V_221 = V_063
+V_984 = V_769
+V_063 = V_529
+V_103 = Orbit
+V_769 = Nimbus
+V_526 = Serpent
+V_529 = Breeze
+V_409 = Riddle
+V_830 = V_206
 
-What is the value of V_877? Output only the result.
-Correct answer: Falcon
-OpenAI answer: Sprocket
+What is the value of V_830? Output only the result.
+Correct answer: Orbit
+OpenAI answer: 467
 Is correct: False
-                                                                               Progress: [=====     ] 51.1% | Submitted: 51/90 | Running: 5 | Evaluated: 46
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_149 = Thistle
-V_486 = Breeze
-V_986 = Monsoon
-V_204 = Lantern
-V_515 = Lush
-V_379 = V_324
-V_846 = V_611
-V_324 = V_271
-V_611 = V_024
-V_024 = V_513
-V_895 = V_350
-V_596 = V_159
-V_350 = V_619
-V_619 = V_875
-V_271 = V_169
-V_875 = V_680
-V_859 = V_273
-V_273 = V_848
-V_159 = V_280
-V_680 = V_718
-V_848 = V_594
-V_169 = V_663
-V_663 = V_051
-V_513 = V_396
-V_051 = V_639
-V_639 = V_355
-V_280 = V_003
-V_594 = V_570
-V_396 = V_618
-V_355 = V_752
-V_618 = V_890
-V_570 = V_152
-V_890 = V_779
-V_752 = V_402
-V_152 = V_433
-V_402 = V_609
-V_718 = V_298
-V_433 = V_361
-V_361 = V_229
-V_298 = V_204
-V_229 = V_132
-V_609 = V_456
-V_003 = V_684
-V_456 = V_986
-V_779 = V_557
-V_684 = V_515
-V_557 = V_277
-V_277 = V_149
-V_132 = V_486
-V_620 = V_379
 
-What is the value of V_620? Output only the result.
-Correct answer: Monsoon
-OpenAI answer: Breeze
+                                                                               
+Progress: [======    ] 66.7% | Submitted: 15/15 | Running: 5 | Evaluated: 10
+Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
+Challenge:
+V_286 = V_635
+V_587 = V_158
+V_211 = V_799
+V_667 = V_793
+V_158 = Riddle
+V_868 = V_889
+V_808 = V_883
+V_358 = V_175
+V_398 = V_839
+V_953 = V_037
+V_584 = V_992
+V_831 = V_089
+V_990 = Vortex
+V_372 = V_352
+V_210 = V_853
+V_622 = V_953
+V_635 = V_398
+V_793 = V_560
+V_853 = V_801
+V_175 = Alloy
+V_883 = V_990
+V_701 = V_113
+V_886 = V_657
+V_696 = Echo
+V_366 = V_155
+V_030 = V_444
+V_259 = V_366
+V_957 = Tundra
+V_493 = V_211
+V_352 = V_575
+V_801 = V_584
+V_575 = V_808
+V_657 = V_611
+V_611 = V_868
+V_988 = V_024
+V_560 = V_358
+V_839 = V_831
+V_561 = V_957
+V_155 = V_886
+V_992 = V_915
+V_799 = V_587
+V_915 = V_667
+V_444 = V_622
+V_889 = V_561
+V_037 = V_286
+V_089 = V_696
+V_022 = V_988
+V_113 = V_372
+V_024 = V_493
+V_773 = V_030
+
+What is the value of V_773? Output only the result.
+Correct answer: Echo
+OpenAI answer: Vortex
 Is correct: False
-                                                                               Progress: [=====     ] 52.2% | Submitted: 52/90 | Running: 5 | Evaluated: 47
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_769 = Ponder
-V_617 = Breeze
-V_628 = Whisper
-V_082 = Monsoon
-V_570 = Fable
-V_476 = V_034
-V_716 = V_294
-V_294 = V_134
-V_622 = V_920
-V_134 = V_320
-V_962 = V_563
-V_541 = V_396
-V_396 = V_921
-V_921 = V_658
-V_320 = V_342
-V_563 = V_024
-V_034 = V_414
-V_414 = V_327
-V_024 = V_435
-V_342 = V_593
-V_327 = V_136
-V_920 = V_819
-V_658 = V_945
-V_819 = V_831
-V_831 = V_295
-V_295 = V_355
-V_355 = V_860
-V_136 = V_424
-V_435 = V_514
-V_860 = V_866
-V_945 = V_281
-V_514 = V_689
-V_593 = V_382
-V_382 = V_139
-V_139 = V_512
-V_424 = V_302
-V_866 = V_336
-V_689 = V_433
-V_336 = V_570
-V_512 = V_506
-V_433 = V_211
-V_211 = V_482
-V_482 = V_082
-V_281 = V_152
-V_152 = V_628
-V_302 = V_567
-V_506 = V_504
-V_504 = V_617
-V_567 = V_769
-V_635 = V_622
 
-What is the value of V_635? Output only the result.
-Correct answer: Fable
-OpenAI answer: Whisper
-Is correct: False
-                                                                               Progress: [=====     ] 53.3% | Submitted: 53/90 | Running: 5 | Evaluated: 48
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_449 = Zephyr
-V_029 = Ponder
-V_617 = Nimbus
-V_849 = Harbor
-V_592 = Riddle
-V_838 = V_401
-V_251 = V_387
-V_789 = V_452
-V_452 = V_600
-V_600 = V_659
-V_401 = V_629
-V_909 = V_123
-V_387 = V_110
-V_659 = V_036
-V_110 = V_028
-V_028 = V_065
-V_065 = V_428
-V_629 = V_253
-V_036 = V_942
-V_353 = V_531
-V_123 = V_661
-V_661 = V_948
-V_428 = V_442
-V_531 = V_864
-V_253 = V_930
-V_864 = V_211
-V_211 = V_342
-V_342 = V_653
-V_930 = V_363
-V_442 = V_618
-V_948 = V_386
-V_618 = V_031
-V_386 = V_121
-V_942 = V_144
-V_144 = V_229
-V_121 = V_809
-V_031 = V_821
-V_229 = V_873
-V_363 = V_945
-V_653 = V_604
-V_809 = V_554
-V_554 = V_592
-V_604 = V_143
-V_821 = V_029
-V_945 = V_514
-V_873 = V_849
-V_514 = V_766
-V_766 = V_449
-V_143 = V_617
-V_432 = V_251
+                                                                               
+Progress: [=======   ] 73.3% | Submitted: 15/15 | Running: 4 | Evaluated: 11Challenge:
+V_269 = V_579
+V_877 = V_767
+V_367 = V_031
+V_408 = V_230
+V_599 = V_408
+V_780 = V_670
+V_217 = V_830
+V_326 = V_527
+V_426 = V_925
+V_847 = V_566
+V_846 = Thistle
+V_830 = V_424
+V_424 = V_727
+V_975 = V_599
+V_670 = V_539
+V_892 = V_217
+V_986 = V_517
+V_057 = V_596
+V_784 = V_923
+V_923 = Ponder
+V_517 = V_202
+V_150 = V_877
+V_604 = V_314
+V_932 = V_719
+V_719 = V_222
+V_579 = V_384
+V_527 = V_932
+V_412 = V_894
+V_202 = Lantern
+V_767 = V_380
+V_314 = V_943
+V_380 = V_057
+V_230 = V_111
+V_894 = V_929
+V_222 = V_426
+V_111 = V_780
+V_163 = Velvet
+V_943 = V_163
+V_727 = V_604
+V_925 = V_656
+V_929 = V_986
+V_031 = V_412
+V_350 = V_367
+V_656 = V_269
+V_539 = V_784
+V_384 = Alloy
+V_542 = V_846
+V_566 = V_150
+V_596 = V_542
+V_492 = V_350
 
-What is the value of V_432? Output only the result.
-Correct answer: Ponder
-OpenAI answer: Riddle
-Is correct: False
-                                                                               Progress: [=====     ] 54.4% | Submitted: 54/90 | Running: 5 | Evaluated: 49
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_840 = Orbit
-V_959 = Quantum
-V_480 = Nimbus
-V_713 = Marble
-V_213 = Sprocket
-V_972 = V_116
-V_032 = V_591
-V_116 = V_610
-V_240 = V_922
-V_922 = V_305
-V_467 = V_509
-V_305 = V_111
-V_591 = V_171
-V_085 = V_968
-V_968 = V_073
-V_111 = V_325
-V_171 = V_132
-V_509 = V_902
-V_132 = V_536
-V_073 = V_595
-V_610 = V_139
-V_325 = V_691
-V_139 = V_690
-V_690 = V_265
-V_595 = V_231
-V_902 = V_230
-V_265 = V_114
-V_114 = V_177
-V_230 = V_763
-V_763 = V_602
-V_602 = V_215
-V_177 = V_311
-V_215 = V_966
-V_311 = V_117
-V_691 = V_406
-V_966 = V_418
-V_418 = V_020
-V_020 = V_882
-V_117 = V_164
-V_231 = V_601
-V_882 = V_182
-V_601 = V_511
-V_182 = V_959
-V_536 = V_213
-V_164 = V_480
-V_511 = V_036
-V_406 = V_560
-V_560 = V_713
-V_036 = V_840
-V_921 = V_467
-
-What is the value of V_921? Output only the result.
-Correct answer: Quantum
-OpenAI answer: Marble
-Is correct: False
-                                                                               Progress: [=====     ] 55.6% | Submitted: 55/90 | Running: 5 | Evaluated: 50
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_709 = Marble
-V_702 = Harbor
-V_543 = Lush
-V_893 = Quantum
-V_807 = Glacier
-V_750 = V_363
-V_363 = V_986
-V_139 = V_831
-V_687 = V_580
-V_831 = V_740
-V_083 = V_239
-V_239 = V_883
-V_986 = V_035
-V_740 = V_754
-V_883 = V_734
-V_035 = V_513
-V_580 = V_698
-V_754 = V_304
-V_698 = V_092
-V_092 = V_923
-V_513 = V_690
-V_923 = V_124
-V_304 = V_801
-V_734 = V_244
-V_051 = V_774
-V_690 = V_329
-V_244 = V_209
-V_124 = V_720
-V_720 = V_887
-V_887 = V_446
-V_801 = V_242
-V_446 = V_078
-V_078 = V_543
-V_329 = V_605
-V_242 = V_782
-V_774 = V_988
-V_605 = V_360
-V_209 = V_947
-V_988 = V_317
-V_317 = V_768
-V_782 = V_259
-V_259 = V_217
-V_217 = V_157
-V_360 = V_702
-V_157 = V_168
-V_768 = V_893
-V_168 = V_063
-V_947 = V_709
-V_063 = V_807
-V_161 = V_139
-
-What is the value of V_161? Output only the result.
-Correct answer: Glacier
-OpenAI answer: Glacier
-Is correct: True
-                                                                               Progress: [=====     ] 56.7% | Submitted: 56/90 | Running: 5 | Evaluated: 51
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_108 = Lush
-V_788 = Fable
-V_353 = Nimbus
-V_041 = Pylon
-V_323 = Breeze
-V_722 = V_496
-V_496 = V_264
-V_804 = V_465
-V_264 = V_832
-V_070 = V_713
-V_832 = V_273
-V_928 = V_271
-V_271 = V_169
-V_273 = V_430
-V_713 = V_344
-V_344 = V_621
-V_621 = V_573
-V_169 = V_215
-V_210 = V_974
-V_573 = V_767
-V_215 = V_726
-V_767 = V_346
-V_465 = V_307
-V_346 = V_327
-V_327 = V_882
-V_307 = V_516
-V_516 = V_460
-V_460 = V_401
-V_882 = V_894
-V_974 = V_771
-V_771 = V_524
-V_524 = V_371
-V_401 = V_489
-V_894 = V_429
-V_430 = V_108
-V_429 = V_470
-V_371 = V_448
-V_726 = V_159
-V_470 = V_006
-V_448 = V_321
-V_321 = V_825
-V_006 = V_676
-V_489 = V_592
-V_676 = V_638
-V_638 = V_788
-V_592 = V_163
-V_159 = V_041
-V_163 = V_323
-V_825 = V_353
-V_689 = V_210
-
-What is the value of V_689? Output only the result.
-Correct answer: Nimbus
-OpenAI answer: Nimbus
-Is correct: True
-                                                                               Progress: [=====     ] 57.8% | Submitted: 57/90 | Running: 5 | Evaluated: 52
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_618 = Chisel
-V_329 = Ponder
-V_837 = Serpent
-V_810 = Marble
-V_096 = Jigsaw
-V_148 = V_850
-V_213 = V_681
-V_980 = V_763
-V_850 = V_978
-V_978 = V_619
-V_763 = V_889
-V_843 = V_970
-V_619 = V_667
-V_667 = V_975
-V_975 = V_592
-V_681 = V_966
-V_966 = V_332
-V_460 = V_924
-V_970 = V_366
-V_889 = V_910
-V_332 = V_886
-V_886 = V_567
-V_366 = V_725
-V_567 = V_226
-V_725 = V_105
-V_105 = V_271
-V_910 = V_883
-V_271 = V_684
-V_883 = V_349
-V_924 = V_844
-V_684 = V_222
-V_226 = V_914
-V_222 = V_989
-V_844 = V_698
-V_349 = V_575
-V_575 = V_270
-V_270 = V_156
-V_592 = V_853
-V_989 = V_136
-V_698 = V_221
-V_156 = V_503
-V_136 = V_365
-V_853 = V_096
-V_503 = V_456
-V_365 = V_208
-V_208 = V_618
-V_914 = V_837
-V_456 = V_329
-V_221 = V_810
-V_237 = V_843
-
-What is the value of V_237? Output only the result.
-Correct answer: Chisel
-OpenAI answer: Marble
-Is correct: False
-                                                                               Progress: [=====     ] 58.9% | Submitted: 58/90 | Running: 5 | Evaluated: 53
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_906 = Breeze
-V_400 = Lantern
-V_930 = Echo
-V_405 = Pylon
-V_452 = Alloy
-V_283 = V_876
-V_588 = V_912
-V_681 = V_706
-V_912 = V_554
-V_876 = V_514
-V_514 = V_572
-V_572 = V_450
-V_422 = V_921
-V_372 = V_929
-V_450 = V_868
-V_929 = V_729
-V_921 = V_490
-V_490 = V_426
-V_729 = V_222
-V_426 = V_949
-V_706 = V_001
-V_868 = V_749
-V_949 = V_266
-V_749 = V_479
-V_222 = V_325
-V_001 = V_699
-V_266 = V_161
-V_479 = V_476
-V_161 = V_394
-V_554 = V_199
-V_699 = V_298
-V_325 = V_154
-V_154 = V_685
-V_476 = V_458
-V_685 = V_515
-V_298 = V_211
-V_394 = V_549
-V_199 = V_431
-V_211 = V_652
-V_431 = V_792
-V_515 = V_446
-V_652 = V_930
-V_458 = V_055
-V_055 = V_906
-V_446 = V_960
-V_792 = V_400
-V_960 = V_919
-V_549 = V_405
-V_919 = V_452
-V_160 = V_588
-
-What is the value of V_160? Output only the result.
+What is the value of V_492? Output only the result.
 Correct answer: Lantern
 OpenAI answer: Alloy
 Is correct: False
-                                                                               Progress: [======    ] 60.0% | Submitted: 59/90 | Running: 5 | Evaluated: 54
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_718 = Waffle
-V_968 = Velvet
-V_166 = Monsoon
-V_648 = Alloy
-V_322 = Falcon
-V_789 = V_550
-V_778 = V_612
-V_550 = V_635
-V_612 = V_603
-V_241 = V_080
-V_050 = V_948
-V_080 = V_278
-V_097 = V_555
-V_278 = V_741
-V_555 = V_837
-V_635 = V_374
-V_741 = V_173
-V_837 = V_304
-V_603 = V_787
-V_374 = V_574
-V_574 = V_017
-V_948 = V_833
-V_787 = V_300
-V_173 = V_683
-V_304 = V_844
-V_683 = V_311
-V_300 = V_944
-V_311 = V_980
-V_844 = V_096
-V_017 = V_406
-V_980 = V_488
-V_944 = V_983
-V_488 = V_725
-V_725 = V_152
-V_406 = V_755
-V_755 = V_468
-V_152 = V_828
-V_833 = V_593
-V_593 = V_142
-V_468 = V_614
-V_096 = V_034
-V_828 = V_968
-V_034 = V_429
-V_429 = V_416
-V_142 = V_309
-V_309 = V_166
-V_983 = V_648
-V_416 = V_322
-V_614 = V_718
-V_204 = V_789
 
-What is the value of V_204? Output only the result.
-Correct answer: Waffle
-OpenAI answer: Falcon
-Is correct: False
-                                                                               Progress: [======    ] 61.1% | Submitted: 60/90 | Running: 5 | Evaluated: 55
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=inverse
-Challenge:
-V_351 = Alloy
-V_238 = Waffle
-V_916 = Lush
-V_353 = Latch
-V_745 = Velvet
-V_922 = V_930
-V_610 = V_478
-V_068 = V_620
-V_478 = V_910
-V_984 = V_230
-V_764 = V_018
-V_620 = V_725
-V_725 = V_307
-V_230 = V_427
-V_307 = V_060
-V_018 = V_048
-V_427 = V_546
-V_048 = V_825
-V_825 = V_577
-V_060 = V_011
-V_577 = V_205
-V_011 = V_596
-V_596 = V_401
-V_910 = V_300
-V_205 = V_679
-V_546 = V_796
-V_679 = V_007
-V_796 = V_857
-V_401 = V_604
-V_930 = V_886
-V_300 = V_342
-V_007 = V_579
-V_342 = V_372
-V_886 = V_602
-V_602 = V_146
-V_372 = V_072
-V_604 = V_144
-V_146 = V_389
-V_857 = V_260
-V_579 = V_868
-V_144 = V_385
-V_260 = V_888
-V_868 = V_570
-V_570 = V_238
-V_072 = V_969
-V_969 = V_351
-V_888 = V_745
-V_389 = V_353
-V_385 = V_916
-V_354 = V_068
+                                                                               
+Progress: [========  ] 80.0% | Submitted: 15/15 | Running: 3 | Evaluated: 12Challenge:
+V_785 = V_065
+V_424 = V_775
+V_888 = V_381
+V_745 = V_888
+V_360 = V_169
+V_115 = V_680
+V_035 = V_520
+V_151 = V_221
+V_334 = V_151
+V_961 = V_101
+V_221 = V_458
+V_030 = Serpent
+V_775 = Chisel
+V_812 = V_560
+V_829 = V_137
+V_560 = V_991
+V_381 = V_424
+V_039 = V_484
+V_484 = V_745
+V_662 = V_266
+V_132 = V_240
+V_628 = V_954
+V_680 = V_966
+V_883 = Monsoon
+V_060 = V_762
+V_987 = V_989
+V_169 = V_060
+V_065 = V_030
+V_393 = V_482
+V_870 = V_285
+V_886 = Nimbus
+V_137 = V_039
+V_954 = V_883
+V_400 = V_754
+V_458 = V_400
+V_811 = Thistle
+V_266 = V_785
+V_991 = V_035
+V_966 = V_987
+V_101 = V_357
+V_755 = V_812
+V_762 = V_886
+V_240 = V_115
+V_754 = V_628
+V_520 = V_360
+V_482 = V_662
+V_357 = V_393
+V_989 = V_811
+V_285 = V_132
+V_843 = V_755
 
-What is the value of V_354? Output only the result.
-Correct answer: Lush
-OpenAI answer: Latch
-Is correct: False
-                                                                               Progress: [======    ] 62.2% | Submitted: 61/90 | Running: 5 | Evaluated: 56
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_545 = Glacier
-V_741 = Monsoon
-V_142 = Latch
-V_374 = Lush
-V_292 = Nimbus
-V_849 = V_855
-V_642 = V_220
-V_220 = V_928
-V_685 = V_558
-V_980 = V_028
-V_141 = V_372
-V_928 = V_099
-V_372 = V_670
-V_099 = V_433
-V_855 = V_781
-V_781 = V_382
-V_433 = V_306
-V_670 = V_143
-V_558 = V_677
-V_677 = V_949
-V_028 = V_104
-V_306 = V_749
-V_143 = V_016
-V_949 = V_048
-V_749 = V_700
-V_016 = V_024
-V_104 = V_281
-V_700 = V_988
-V_988 = V_410
-V_382 = V_112
-V_048 = V_793
-V_024 = V_293
-V_293 = V_702
-V_112 = V_559
-V_559 = V_451
-V_410 = V_061
-V_061 = V_605
-V_702 = V_741
-V_281 = V_550
-V_550 = V_877
-V_451 = V_697
-V_793 = V_265
-V_605 = V_401
-V_265 = V_636
-V_636 = V_882
-V_877 = V_292
-V_882 = V_545
-V_401 = V_374
-V_697 = V_142
-V_753 = V_849
-
-What is the value of V_753? Output only the result.
-Correct answer: Latch
-OpenAI answer: Lush
-Is correct: False
-                                                                               Progress: [======    ] 63.3% | Submitted: 62/90 | Running: 5 | Evaluated: 57
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_356 = Whisper
-V_140 = Marble
-V_600 = Breeze
-V_083 = Fable
-V_121 = Sprocket
-V_114 = V_221
-V_927 = V_684
-V_684 = V_043
-V_344 = V_207
-V_207 = V_108
-V_477 = V_858
-V_201 = V_714
-V_043 = V_748
-V_108 = V_452
-V_714 = V_658
-V_221 = V_565
-V_565 = V_167
-V_452 = V_713
-V_748 = V_641
-V_167 = V_518
-V_658 = V_776
-V_713 = V_544
-V_641 = V_591
-V_858 = V_489
-V_544 = V_507
-V_591 = V_765
-V_507 = V_944
-V_489 = V_805
-V_776 = V_317
-V_944 = V_180
-V_805 = V_435
-V_765 = V_712
-V_712 = V_338
-V_317 = V_094
-V_518 = V_814
-V_338 = V_282
-V_814 = V_083
-V_180 = V_933
-V_435 = V_249
-V_282 = V_625
-V_094 = V_642
-V_249 = V_356
-V_642 = V_921
-V_625 = V_887
-V_921 = V_922
-V_933 = V_121
-V_887 = V_506
-V_506 = V_140
-V_922 = V_600
-V_069 = V_477
-
-What is the value of V_069? Output only the result.
-Correct answer: Whisper
-OpenAI answer: Breeze
-Is correct: False
-                                                                               Progress: [======    ] 64.4% | Submitted: 63/90 | Running: 5 | Evaluated: 58
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_505 = Chisel
-V_455 = Riddle
-V_642 = Zephyr
-V_237 = Fable
-V_668 = Tundra
-V_707 = V_211
-V_142 = V_347
-V_316 = V_604
-V_604 = V_170
-V_347 = V_481
-V_934 = V_435
-V_170 = V_486
-V_435 = V_592
-V_211 = V_850
-V_994 = V_131
-V_592 = V_077
-V_486 = V_065
-V_850 = V_291
-V_077 = V_111
-V_065 = V_411
-V_131 = V_121
-V_291 = V_107
-V_111 = V_785
-V_411 = V_055
-V_055 = V_420
-V_420 = V_456
-V_107 = V_883
-V_883 = V_353
-V_785 = V_964
-V_481 = V_342
-V_456 = V_036
-V_036 = V_522
-V_353 = V_810
-V_342 = V_712
-V_712 = V_670
-V_121 = V_062
-V_062 = V_240
-V_670 = V_389
-V_240 = V_622
-V_522 = V_451
-V_964 = V_237
-V_810 = V_164
-V_622 = V_505
-V_451 = V_945
-V_164 = V_186
-V_945 = V_939
-V_389 = V_455
-V_939 = V_668
-V_186 = V_642
-V_250 = V_316
-
-What is the value of V_250? Output only the result.
-Correct answer: Tundra
-OpenAI answer: Zephyr
-Is correct: False
-                                                                               Progress: [======    ] 65.6% | Submitted: 64/90 | Running: 5 | Evaluated: 59
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_959 = Pylon
-V_411 = Falcon
-V_505 = Latch
-V_117 = Zephyr
-V_493 = Whisper
-V_750 = V_408
-V_623 = V_705
-V_218 = V_117
-V_116 = V_952
-V_686 = V_704
-V_091 = V_748
-V_313 = V_942
-V_446 = V_486
-V_092 = V_905
-V_727 = V_248
-V_942 = V_438
-V_041 = V_623
-V_248 = V_216
-V_170 = V_002
-V_216 = V_089
-V_501 = V_795
-V_795 = V_778
-V_438 = V_170
-V_679 = V_258
-V_917 = V_411
-V_442 = V_917
-V_492 = V_618
-V_733 = V_442
-V_258 = V_492
-V_541 = V_679
-V_944 = V_092
-V_952 = V_313
-V_166 = V_426
-V_205 = V_446
-V_618 = V_041
-V_561 = V_166
-V_089 = V_733
-V_729 = V_727
-V_705 = V_493
-V_408 = V_541
-V_426 = V_729
-V_748 = V_505
-V_905 = V_686
-V_704 = V_501
-V_486 = V_091
-V_778 = V_959
-V_002 = V_218
-V_186 = V_205
-V_244 = V_561
-V_192 = V_750
-
-What is the value of V_192? Output only the result.
-Correct answer: Whisper
-OpenAI answer: Whisper
-Is correct: True
-                                                                               Progress: [======    ] 66.7% | Submitted: 65/90 | Running: 5 | Evaluated: 60
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_720 = Zephyr
-V_249 = Quantum
-V_639 = Nimbus
-V_726 = Glacier
-V_263 = Whisper
-V_646 = V_726
-V_003 = V_814
-V_205 = V_020
-V_647 = V_970
-V_527 = V_824
-V_148 = V_436
-V_333 = V_249
-V_033 = V_264
-V_320 = V_646
-V_858 = V_036
-V_065 = V_061
-V_393 = V_320
-V_946 = V_205
-V_773 = V_452
-V_824 = V_866
-V_868 = V_946
-V_814 = V_720
-V_362 = V_771
-V_866 = V_544
-V_751 = V_527
-V_575 = V_010
-V_970 = V_003
-V_987 = V_689
-V_498 = V_858
-V_544 = V_639
-V_689 = V_792
-V_570 = V_773
-V_475 = V_362
-V_264 = V_450
-V_907 = V_498
-V_061 = V_647
-V_792 = V_170
-V_482 = V_065
-V_020 = V_033
-V_769 = V_987
-V_436 = V_907
-V_036 = V_375
-V_562 = V_482
-V_450 = V_751
-V_452 = V_333
-V_375 = V_263
-V_170 = V_393
-V_771 = V_575
-V_010 = V_769
-V_917 = V_562
-
-What is the value of V_917? Output only the result.
-Correct answer: Zephyr
-OpenAI answer: Whisper
-Is correct: False
-                                                                               Progress: [======    ] 67.8% | Submitted: 66/90 | Running: 5 | Evaluated: 61
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_510 = Falcon
-V_300 = Fable
-V_466 = Tundra
-V_335 = Quantum
-V_376 = Vortex
-V_419 = V_005
-V_578 = V_336
-V_005 = V_404
-V_433 = V_770
-V_336 = V_110
-V_110 = V_895
-V_770 = V_113
-V_895 = V_747
-V_747 = V_635
-V_007 = V_987
-V_987 = V_668
-V_009 = V_264
-V_264 = V_386
-V_635 = V_081
-V_668 = V_623
-V_386 = V_427
-V_081 = V_942
-V_427 = V_325
-V_325 = V_948
-V_113 = V_868
-V_868 = V_036
-V_036 = V_395
-V_404 = V_464
-V_942 = V_511
-V_395 = V_863
-V_511 = V_381
-V_623 = V_466
-V_948 = V_227
-V_381 = V_871
-V_464 = V_566
-V_863 = V_016
-V_227 = V_843
-V_566 = V_952
-V_016 = V_234
-V_843 = V_374
-V_234 = V_510
-V_871 = V_039
-V_374 = V_493
-V_952 = V_286
-V_493 = V_810
-V_039 = V_797
-V_810 = V_376
-V_797 = V_335
-V_286 = V_300
-V_355 = V_433
-
-What is the value of V_355? Output only the result.
-Correct answer: Falcon
-OpenAI answer: Fable
-Is correct: False
-                                                                               Progress: [======    ] 68.9% | Submitted: 67/90 | Running: 5 | Evaluated: 62
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_499 = Alloy
-V_431 = Jigsaw
-V_796 = Latch
-V_355 = Vortex
-V_736 = Thistle
-V_092 = V_541
-V_146 = V_481
-V_417 = V_890
-V_365 = V_516
-V_907 = V_790
-V_097 = V_874
-V_890 = V_424
-V_777 = V_097
-V_861 = V_231
-V_679 = V_374
-V_878 = V_338
-V_808 = V_985
-V_985 = V_260
-V_939 = V_027
-V_260 = V_878
-V_384 = V_796
-V_481 = V_252
-V_009 = V_092
-V_368 = V_787
-V_686 = V_907
-V_874 = V_417
-V_025 = V_577
-V_706 = V_025
-V_231 = V_384
-V_658 = V_159
-V_818 = V_677
-V_751 = V_939
-V_541 = V_701
-V_027 = V_499
-V_004 = V_679
-V_701 = V_658
-V_790 = V_365
-V_252 = V_751
-V_338 = V_736
-V_516 = V_368
-V_191 = V_861
-V_577 = V_808
-V_159 = V_777
-V_787 = V_355
-V_374 = V_146
-V_677 = V_191
-V_528 = V_818
-V_424 = V_431
-V_472 = V_528
-V_527 = V_686
-
-What is the value of V_527? Output only the result.
-Correct answer: Vortex
-OpenAI answer: Jigsaw
-Is correct: False
-                                                                               Progress: [=======   ] 70.0% | Submitted: 68/90 | Running: 5 | Evaluated: 63
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_490 = Lantern
-V_274 = Riddle
-V_724 = Pylon
-V_298 = Thistle
-V_821 = Jigsaw
-V_304 = V_270
-V_440 = V_031
-V_776 = V_148
-V_355 = V_724
-V_245 = V_799
-V_914 = V_245
-V_324 = V_250
-V_080 = V_086
-V_893 = V_821
-V_525 = V_964
-V_497 = V_240
-V_906 = V_670
-V_321 = V_616
-V_250 = V_626
-V_270 = V_497
-V_799 = V_893
-V_401 = V_761
-V_371 = V_525
-V_896 = V_914
-V_248 = V_785
-V_392 = V_274
-V_086 = V_355
-V_785 = V_325
-V_148 = V_392
-V_517 = V_401
-V_850 = V_440
-V_932 = V_776
-V_761 = V_696
-V_241 = V_418
-V_590 = V_248
-V_031 = V_371
-V_280 = V_850
-V_626 = V_280
-V_963 = V_906
-V_696 = V_304
-V_418 = V_298
-V_325 = V_932
-V_616 = V_241
-V_964 = V_999
-V_663 = V_080
-V_060 = V_321
-V_670 = V_590
-V_240 = V_896
-V_999 = V_490
-V_567 = V_963
-
-What is the value of V_567? Output only the result.
-Correct answer: Riddle
-OpenAI answer: Lantern
-Is correct: False
-                                                                               Progress: [=======   ] 71.1% | Submitted: 69/90 | Running: 5 | Evaluated: 64
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_557 = Falcon
-V_213 = Alloy
-V_649 = Orbit
-V_353 = Ponder
-V_661 = Velvet
-V_707 = V_531
-V_572 = V_882
-V_755 = V_163
-V_180 = V_460
-V_838 = V_551
-V_231 = V_419
-V_571 = V_251
-V_070 = V_637
-V_419 = V_768
-V_108 = V_581
-V_251 = V_522
-V_460 = V_873
-V_738 = V_557
-V_551 = V_108
-V_917 = V_824
-V_106 = V_649
-V_090 = V_231
-V_923 = V_180
-V_568 = V_325
-V_274 = V_213
-V_325 = V_755
-V_637 = V_106
-V_720 = V_568
-V_522 = V_887
-V_421 = V_624
-V_097 = V_353
-V_873 = V_102
-V_163 = V_097
-V_391 = V_923
-V_966 = V_571
-V_474 = V_738
-V_824 = V_336
-V_407 = V_917
-V_768 = V_622
-V_622 = V_661
-V_318 = V_070
-V_336 = V_318
-V_102 = V_274
-V_734 = V_474
-V_882 = V_707
-V_887 = V_407
-V_624 = V_734
-V_531 = V_421
-V_581 = V_391
-V_933 = V_966
-
-What is the value of V_933? Output only the result.
-Correct answer: Orbit
-OpenAI answer: Velvet
-Is correct: False
-                                                                               Progress: [=======   ] 72.2% | Submitted: 70/90 | Running: 5 | Evaluated: 65
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_647 = Thistle
-V_031 = Orbit
-V_421 = Falcon
-V_091 = Harbor
-V_155 = Alloy
-V_304 = V_486
-V_173 = V_432
-V_587 = V_618
-V_389 = V_454
-V_775 = V_091
-V_432 = V_665
-V_302 = V_282
-V_654 = V_775
-V_569 = V_194
-V_046 = V_421
-V_923 = V_631
-V_651 = V_587
-V_777 = V_764
-V_234 = V_821
-V_861 = V_535
-V_486 = V_389
-V_618 = V_647
-V_764 = V_803
-V_836 = V_176
-V_468 = V_823
-V_176 = V_234
-V_823 = V_302
-V_312 = V_155
-V_693 = V_569
-V_235 = V_923
-V_387 = V_861
-V_631 = V_654
-V_845 = V_031
-V_665 = V_304
-V_327 = V_693
-V_273 = V_836
-V_454 = V_760
-V_938 = V_845
-V_915 = V_938
-V_535 = V_651
-V_114 = V_257
-V_760 = V_235
-V_821 = V_046
-V_282 = V_413
-V_369 = V_173
-V_257 = V_312
-V_413 = V_114
-V_803 = V_915
-V_194 = V_387
-V_816 = V_273
-
-What is the value of V_816? Output only the result.
-Correct answer: Falcon
-OpenAI answer: Harbor
-Is correct: False
-                                                                               Progress: [=======   ] 73.3% | Submitted: 71/90 | Running: 5 | Evaluated: 66
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_029 = Falcon
-V_918 = Nimbus
-V_419 = Waffle
-V_073 = Sprocket
-V_170 = Jigsaw
-V_152 = V_340
-V_801 = V_071
-V_757 = V_805
-V_790 = V_890
-V_890 = V_505
-V_848 = V_391
-V_071 = V_817
-V_391 = V_443
-V_817 = V_407
-V_929 = V_029
-V_488 = V_790
-V_864 = V_357
-V_132 = V_613
-V_092 = V_945
-V_407 = V_676
-V_506 = V_918
-V_340 = V_418
-V_135 = V_929
-V_330 = V_525
-V_605 = V_603
-V_793 = V_285
-V_172 = V_605
-V_313 = V_223
-V_805 = V_152
-V_613 = V_885
-V_357 = V_132
-V_603 = V_506
-V_885 = V_569
-V_564 = V_330
-V_945 = V_419
-V_011 = V_801
-V_696 = V_092
-V_877 = V_376
-V_376 = V_135
-V_569 = V_313
-V_525 = V_172
-V_418 = V_696
-V_676 = V_475
-V_066 = V_564
-V_285 = V_011
-V_443 = V_170
-V_505 = V_877
-V_475 = V_073
-V_223 = V_848
-V_530 = V_864
-
-What is the value of V_530? Output only the result.
-Correct answer: Jigsaw
-OpenAI answer: Waffle
-Is correct: False
-                                                                               Progress: [=======   ] 74.4% | Submitted: 72/90 | Running: 5 | Evaluated: 67
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_166 = Thistle
-V_160 = Glacier
-V_679 = Falcon
-V_873 = Alloy
-V_288 = Sprocket
-V_975 = V_603
-V_313 = V_680
-V_246 = V_421
-V_468 = V_072
-V_180 = V_247
-V_140 = V_613
-V_603 = V_692
-V_718 = V_738
-V_072 = V_222
-V_152 = V_838
-V_605 = V_024
-V_801 = V_605
-V_024 = V_313
-V_222 = V_513
-V_719 = V_468
-V_613 = V_288
-V_983 = V_593
-V_838 = V_996
-V_593 = V_872
-V_551 = V_246
-V_047 = V_146
-V_135 = V_166
-V_737 = V_367
-V_421 = V_135
-V_935 = V_152
-V_981 = V_801
-V_996 = V_679
-V_051 = V_401
-V_680 = V_140
-V_355 = V_913
-V_247 = V_935
-V_474 = V_051
-V_738 = V_160
-V_692 = V_737
-V_872 = V_527
-V_858 = V_983
-V_367 = V_551
-V_849 = V_180
-V_513 = V_459
-V_913 = V_474
-V_401 = V_849
-V_146 = V_719
-V_527 = V_718
-V_459 = V_873
-V_559 = V_355
-
-What is the value of V_559? Output only the result.
-Correct answer: Falcon
-OpenAI answer: Glacier
-Is correct: False
-                                                                               Progress: [=======   ] 75.6% | Submitted: 73/90 | Running: 5 | Evaluated: 68
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_457 = Vortex
-V_749 = Echo
-V_365 = Sprocket
-V_972 = Waffle
-V_551 = Thistle
-V_220 = V_034
-V_362 = V_993
-V_958 = V_496
-V_034 = V_905
-V_952 = V_384
-V_507 = V_040
-V_170 = V_581
-V_163 = V_416
-V_941 = V_645
-V_496 = V_873
-V_696 = V_972
-V_873 = V_919
-V_416 = V_657
-V_367 = V_362
-V_776 = V_804
-V_905 = V_841
-V_655 = V_365
-V_384 = V_327
-V_993 = V_619
-V_841 = V_624
-V_624 = V_257
-V_281 = V_749
-V_145 = V_958
-V_619 = V_776
-V_645 = V_091
-V_473 = V_170
-V_257 = V_457
-V_951 = V_633
-V_532 = V_473
-V_756 = V_117
-V_327 = V_941
-V_581 = V_655
-V_265 = V_951
-V_919 = V_551
-V_040 = V_145
-V_058 = V_532
-V_117 = V_220
-V_804 = V_498
-V_498 = V_696
-V_091 = V_058
-V_047 = V_367
-V_657 = V_281
-V_664 = V_265
-V_633 = V_163
-V_342 = V_664
-
-What is the value of V_342? Output only the result.
-Correct answer: Echo
-OpenAI answer: Vortex
-Is correct: False
-                                                                               Progress: [=======   ] 76.7% | Submitted: 74/90 | Running: 5 | Evaluated: 69
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_558 = Glacier
-V_675 = Waffle
-V_581 = Cactus
-V_646 = Marble
-V_589 = Chisel
-V_731 = V_434
-V_874 = V_755
-V_563 = V_589
-V_152 = V_731
-V_722 = V_413
-V_471 = V_542
-V_834 = V_697
-V_920 = V_471
-V_856 = V_646
-V_658 = V_558
-V_487 = V_145
-V_384 = V_563
-V_757 = V_384
-V_851 = V_470
-V_542 = V_648
-V_291 = V_277
-V_300 = V_370
-V_524 = V_581
-V_648 = V_524
-V_513 = V_291
-V_060 = V_155
-V_163 = V_851
-V_277 = V_125
-V_173 = V_924
-V_525 = V_761
-V_501 = V_487
-V_470 = V_060
-V_952 = V_757
-V_640 = V_856
-V_155 = V_675
-V_567 = V_640
-V_761 = V_952
-V_125 = V_525
-V_132 = V_152
-V_990 = V_920
-V_755 = V_132
-V_184 = V_173
-V_924 = V_658
-V_434 = V_501
-V_145 = V_184
-V_697 = V_128
-V_370 = V_722
-V_413 = V_990
-V_128 = V_567
-V_350 = V_300
-
-What is the value of V_350? Output only the result.
-Correct answer: Cactus
-OpenAI answer: Cactus
-Is correct: True
-                                                                               Progress: [=======   ] 77.8% | Submitted: 75/90 | Running: 5 | Evaluated: 70
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_266 = Velvet
-V_252 = Nimbus
-V_219 = Thistle
-V_015 = Quantum
-V_105 = Falcon
-V_123 = V_687
-V_817 = V_883
-V_210 = V_830
-V_580 = V_396
-V_092 = V_497
-V_885 = V_136
-V_205 = V_695
-V_281 = V_880
-V_667 = V_413
-V_790 = V_667
-V_815 = V_205
-V_467 = V_024
-V_683 = V_236
-V_602 = V_042
-V_042 = V_594
-V_965 = V_105
-V_422 = V_815
-V_156 = V_015
-V_414 = V_992
-V_330 = V_066
-V_413 = V_266
-V_906 = V_902
-V_830 = V_156
-V_883 = V_219
-V_902 = V_210
-V_497 = V_322
-V_687 = V_920
-V_024 = V_602
-V_066 = V_817
-V_860 = V_330
-V_695 = V_092
-V_236 = V_790
-V_992 = V_095
-V_161 = V_593
-V_880 = V_683
-V_841 = V_252
-V_095 = V_841
-V_593 = V_860
-V_322 = V_281
-V_396 = V_467
-V_594 = V_414
-V_323 = V_965
-V_920 = V_906
-V_136 = V_323
-V_632 = V_123
-
-What is the value of V_632? Output only the result.
-Correct answer: Quantum
-OpenAI answer: Falcon
-Is correct: False
-                                                                               Progress: [=======   ] 78.9% | Submitted: 76/90 | Running: 5 | Evaluated: 71
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_702 = Harbor
-V_249 = Sprocket
-V_824 = Chisel
-V_780 = Jigsaw
-V_110 = Latch
-V_998 = V_683
-V_317 = V_121
-V_517 = V_207
-V_254 = V_110
-V_378 = V_317
-V_137 = V_254
-V_914 = V_369
-V_670 = V_817
-V_479 = V_435
-V_271 = V_583
-V_983 = V_645
-V_369 = V_762
-V_861 = V_137
-V_929 = V_596
-V_645 = V_517
-V_389 = V_702
-V_881 = V_914
-V_683 = V_983
-V_189 = V_174
-V_121 = V_824
-V_817 = V_209
-V_069 = V_495
-V_174 = V_329
-V_207 = V_067
-V_596 = V_372
-V_032 = V_594
-V_594 = V_676
-V_545 = V_378
-V_495 = V_545
-V_372 = V_099
-V_054 = V_449
-V_707 = V_479
-V_329 = V_271
-V_209 = V_780
-V_387 = V_107
-V_099 = V_054
-V_449 = V_389
-V_676 = V_387
-V_067 = V_069
-V_762 = V_189
-V_583 = V_249
-V_782 = V_929
-V_435 = V_861
-V_107 = V_670
-V_395 = V_707
-
-What is the value of V_395? Output only the result.
-Correct answer: Latch
-OpenAI answer: Harbor
-Is correct: False
-                                                                               Progress: [========  ] 80.0% | Submitted: 77/90 | Running: 5 | Evaluated: 72
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_737 = Lantern
-V_201 = Monsoon
-V_903 = Waffle
-V_440 = Chisel
-V_287 = Riddle
-V_741 = V_440
-V_216 = V_340
-V_409 = V_794
-V_076 = V_698
-V_513 = V_736
-V_839 = V_376
-V_124 = V_490
-V_698 = V_839
-V_612 = V_282
-V_717 = V_731
-V_736 = V_124
-V_771 = V_482
-V_482 = V_226
-V_490 = V_409
-V_766 = V_771
-V_390 = V_197
-V_226 = V_717
-V_794 = V_903
-V_197 = V_216
-V_245 = V_227
-V_910 = V_390
-V_381 = V_741
-V_613 = V_115
-V_376 = V_906
-V_905 = V_076
-V_650 = V_289
-V_282 = V_381
-V_115 = V_513
-V_289 = V_407
-V_451 = V_735
-V_952 = V_287
-V_639 = V_650
-V_924 = V_720
-V_407 = V_905
-V_735 = V_759
-V_731 = V_880
-V_015 = V_201
-V_340 = V_451
-V_880 = V_612
-V_759 = V_015
-V_230 = V_639
-V_720 = V_952
-V_906 = V_924
-V_227 = V_737
-V_820 = V_245
-
-What is the value of V_820? Output only the result.
-Correct answer: Lantern
-OpenAI answer: Lantern
-Is correct: True
-                                                                               Progress: [========  ] 81.1% | Submitted: 78/90 | Running: 5 | Evaluated: 73
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_179 = Velvet
-V_380 = Breeze
-V_888 = Sprocket
-V_977 = Quantum
-V_518 = Falcon
-V_031 = V_115
-V_534 = V_380
-V_418 = V_179
-V_501 = V_634
-V_746 = V_031
-V_526 = V_294
-V_983 = V_951
-V_115 = V_977
-V_967 = V_137
-V_989 = V_526
-V_861 = V_229
-V_216 = V_967
-V_866 = V_443
-V_204 = V_695
-V_634 = V_881
-V_695 = V_251
-V_237 = V_041
-V_069 = V_418
-V_294 = V_253
-V_881 = V_216
-V_366 = V_026
-V_253 = V_518
-V_845 = V_204
-V_229 = V_534
-V_533 = V_861
-V_807 = V_888
-V_939 = V_331
-V_168 = V_845
-V_165 = V_866
-V_951 = V_168
-V_673 = V_669
-V_344 = V_807
-V_041 = V_673
-V_251 = V_344
-V_026 = V_939
-V_752 = V_246
-V_443 = V_768
-V_246 = V_027
-V_640 = V_069
-V_137 = V_237
-V_027 = V_366
-V_669 = V_165
-V_331 = V_746
-V_768 = V_640
-V_856 = V_983
-
-What is the value of V_856? Output only the result.
-Correct answer: Sprocket
-OpenAI answer: Quantum
-Is correct: False
-                                                                               Progress: [========  ] 82.2% | Submitted: 79/90 | Running: 5 | Evaluated: 74
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_772 = Falcon
-V_803 = Zephyr
-V_082 = Lantern
-V_486 = Sprocket
-V_825 = Glacier
-V_813 = V_902
-V_008 = V_486
-V_484 = V_803
-V_063 = V_285
-V_054 = V_559
-V_305 = V_280
-V_547 = V_007
-V_656 = V_484
-V_896 = V_048
-V_126 = V_831
-V_824 = V_344
-V_991 = V_089
-V_316 = V_054
-V_828 = V_008
-V_273 = V_576
-V_280 = V_824
-V_289 = V_420
-V_723 = V_968
-V_788 = V_253
-V_753 = V_063
-V_559 = V_828
-V_361 = V_316
-V_079 = V_753
-V_229 = V_225
-V_404 = V_788
-V_253 = V_825
-V_283 = V_662
-V_344 = V_079
-V_902 = V_283
-V_512 = V_305
-V_234 = V_772
-V_225 = V_234
-V_007 = V_656
-V_968 = V_896
-V_089 = V_126
-V_662 = V_613
-V_048 = V_237
-V_754 = V_273
-V_420 = V_361
-V_285 = V_723
-V_237 = V_082
-V_576 = V_547
-V_831 = V_813
-V_613 = V_404
-V_924 = V_991
-
-What is the value of V_924? Output only the result.
-Correct answer: Glacier
-OpenAI answer: Lantern
-Is correct: False
-                                                                               Progress: [========  ] 83.3% | Submitted: 80/90 | Running: 5 | Evaluated: 75
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_223 = Waffle
-V_605 = Alloy
-V_173 = Sprocket
-V_344 = Zephyr
-V_694 = Tundra
-V_582 = V_371
-V_791 = V_628
-V_476 = V_369
-V_371 = V_323
-V_018 = V_334
-V_665 = V_889
-V_395 = V_582
-V_889 = V_704
-V_686 = V_395
-V_890 = V_451
-V_328 = V_294
-V_174 = V_968
-V_245 = V_665
-V_615 = V_605
-V_622 = V_352
-V_668 = V_476
-V_704 = V_223
-V_380 = V_686
-V_539 = V_563
-V_078 = V_328
-V_451 = V_245
-V_334 = V_533
-V_294 = V_861
-V_352 = V_271
-V_533 = V_344
-V_738 = V_174
-V_770 = V_890
-V_636 = V_615
-V_031 = V_694
-V_323 = V_539
-V_865 = V_738
-V_244 = V_770
-V_968 = V_930
-V_271 = V_783
-V_783 = V_668
-V_332 = V_636
-V_369 = V_031
-V_769 = V_018
-V_884 = V_173
-V_861 = V_769
-V_628 = V_622
-V_930 = V_175
-V_563 = V_884
-V_175 = V_332
-V_246 = V_380
-
-What is the value of V_246? Output only the result.
-Correct answer: Sprocket
-OpenAI answer: Sprocket
-Is correct: True
-                                                                               Progress: [========  ] 84.4% | Submitted: 81/90 | Running: 5 | Evaluated: 76
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_695 = Zephyr
-V_462 = Fable
-V_615 = Ponder
-V_395 = Echo
-V_248 = Tundra
-V_924 = V_460
-V_376 = V_341
-V_089 = V_500
-V_271 = V_781
-V_328 = V_671
-V_341 = V_905
-V_318 = V_234
-V_203 = V_817
-V_079 = V_397
-V_460 = V_279
-V_397 = V_615
-V_279 = V_248
-V_513 = V_376
-V_614 = V_462
-V_671 = V_123
-V_500 = V_432
-V_268 = V_665
-V_123 = V_178
-V_323 = V_520
-V_652 = V_970
-V_817 = V_542
-V_305 = V_772
-V_794 = V_074
-V_681 = V_827
-V_827 = V_849
-V_665 = V_073
-V_849 = V_203
-V_073 = V_489
-V_970 = V_924
-V_489 = V_318
-V_432 = V_695
-V_449 = V_089
-V_234 = V_354
-V_542 = V_079
-V_525 = V_796
-V_520 = V_513
-V_772 = V_525
-V_781 = V_681
-V_796 = V_395
-V_178 = V_794
-V_490 = V_305
-V_354 = V_614
-V_074 = V_449
-V_905 = V_652
-V_467 = V_490
-
-What is the value of V_467? Output only the result.
-Correct answer: Echo
-OpenAI answer: Echo
-Is correct: True
-                                                                               Progress: [========  ] 85.6% | Submitted: 82/90 | Running: 5 | Evaluated: 77
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_559 = Harbor
-V_033 = Vortex
-V_756 = Fable
-V_667 = Pylon
-V_704 = Glacier
-V_081 = V_601
-V_135 = V_803
-V_891 = V_521
-V_106 = V_588
-V_907 = V_738
-V_895 = V_849
-V_989 = V_840
-V_034 = V_713
-V_840 = V_798
-V_670 = V_620
-V_849 = V_365
-V_588 = V_901
-V_680 = V_106
-V_011 = V_042
-V_344 = V_112
-V_042 = V_523
-V_038 = V_766
-V_627 = V_636
-V_798 = V_627
-V_112 = V_090
-V_671 = V_680
-V_032 = V_332
-V_229 = V_891
-V_636 = V_756
-V_273 = V_344
-V_942 = V_158
-V_605 = V_367
-V_788 = V_011
-V_713 = V_033
-V_620 = V_667
-V_367 = V_670
-V_766 = V_034
-V_332 = V_907
-V_919 = V_081
-V_158 = V_605
-V_677 = V_704
-V_738 = V_895
-V_090 = V_919
-V_521 = V_038
-V_601 = V_677
-V_803 = V_942
-V_901 = V_032
-V_365 = V_559
-V_523 = V_989
-V_376 = V_229
-
-What is the value of V_376? Output only the result.
-Correct answer: Vortex
-OpenAI answer: Harbor
-Is correct: False
-                                                                               Progress: [========  ] 86.7% | Submitted: 83/90 | Running: 5 | Evaluated: 78
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_074 = Marble
-V_543 = Riddle
-V_534 = Cactus
-V_606 = Breeze
-V_581 = Nimbus
-V_624 = V_534
-V_239 = V_795
-V_033 = V_271
-V_501 = V_747
-V_271 = V_497
-V_971 = V_429
-V_944 = V_561
-V_195 = V_503
-V_848 = V_971
-V_722 = V_906
-V_265 = V_944
-V_493 = V_011
-V_648 = V_074
-V_469 = V_242
-V_416 = V_212
-V_011 = V_398
-V_795 = V_195
-V_129 = V_543
-V_398 = V_469
-V_122 = V_464
-V_242 = V_624
-V_152 = V_701
-V_429 = V_057
-V_212 = V_317
-V_057 = V_044
-V_701 = V_606
-V_747 = V_122
-V_464 = V_239
-V_830 = V_751
-V_233 = V_493
-V_677 = V_648
-V_906 = V_677
-V_044 = V_581
-V_100 = V_233
-V_503 = V_077
-V_708 = V_100
-V_497 = V_416
-V_561 = V_931
-V_751 = V_129
-V_401 = V_722
-V_317 = V_152
-V_077 = V_959
-V_959 = V_830
-V_931 = V_848
-V_244 = V_265
-
-What is the value of V_244? Output only the result.
+What is the value of V_843? Output only the result.
 Correct answer: Nimbus
-OpenAI answer: Nimbus
-Is correct: True
-                                                                               Progress: [========  ] 87.8% | Submitted: 84/90 | Running: 5 | Evaluated: 79
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_771 = Cactus
-V_485 = Lush
-V_950 = Tundra
-V_473 = Velvet
-V_637 = Serpent
-V_060 = V_890
-V_207 = V_180
-V_446 = V_909
-V_517 = V_190
-V_063 = V_393
-V_393 = V_680
-V_177 = V_495
-V_269 = V_118
-V_390 = V_771
-V_141 = V_279
-V_680 = V_060
-V_934 = V_177
-V_944 = V_701
-V_505 = V_502
-V_440 = V_473
-V_190 = V_440
-V_180 = V_517
-V_770 = V_207
-V_042 = V_714
-V_872 = V_496
-V_354 = V_042
-V_843 = V_485
-V_530 = V_540
-V_890 = V_944
-V_909 = V_637
-V_674 = V_824
-V_118 = V_770
-V_851 = V_390
-V_924 = V_934
-V_824 = V_950
-V_201 = V_063
-V_739 = V_269
-V_540 = V_843
-V_701 = V_674
-V_496 = V_234
-V_559 = V_141
-V_234 = V_559
-V_714 = V_924
-V_279 = V_851
-V_502 = V_446
-V_218 = V_505
-V_495 = V_530
-V_899 = V_739
-V_364 = V_354
-V_613 = V_872
-
-What is the value of V_613? Output only the result.
-Correct answer: Cactus
-OpenAI answer: Lush
-Is correct: False
-                                                                               Progress: [========  ] 88.9% | Submitted: 85/90 | Running: 5 | Evaluated: 80
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_304 = Lush
-V_827 = Zephyr
-V_530 = Jigsaw
-V_311 = Fable
-V_252 = Marble
-V_732 = V_963
-V_855 = V_482
-V_471 = V_215
-V_832 = V_017
-V_963 = V_760
-V_041 = V_666
-V_046 = V_862
-V_871 = V_519
-V_139 = V_225
-V_225 = V_471
-V_760 = V_139
-V_446 = V_716
-V_771 = V_166
-V_885 = V_637
-V_481 = V_272
-V_826 = V_827
-V_064 = V_446
-V_666 = V_732
-V_764 = V_871
-V_267 = V_481
-V_151 = V_826
-V_074 = V_855
-V_979 = V_975
-V_037 = V_994
-V_017 = V_660
-V_215 = V_304
-V_100 = V_046
-V_519 = V_560
-V_560 = V_100
-V_637 = V_151
-V_660 = V_311
-V_036 = V_885
-V_166 = V_925
-V_005 = V_979
-V_482 = V_530
-V_925 = V_064
-V_272 = V_008
-V_008 = V_074
-V_022 = V_037
-V_860 = V_022
-V_716 = V_267
-V_994 = V_036
-V_862 = V_252
-V_975 = V_860
-V_227 = V_832
-
-What is the value of V_227? Output only the result.
-Correct answer: Fable
-OpenAI answer: Fable
-Is correct: True
-                                                                               Progress: [========= ] 90.0% | Submitted: 86/90 | Running: 5 | Evaluated: 81
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_099 = Falcon
-V_194 = Glacier
-V_675 = Cactus
-V_083 = Riddle
-V_876 = Thistle
-V_957 = V_675
-V_303 = V_269
-V_745 = V_050
-V_660 = V_607
-V_299 = V_441
-V_662 = V_070
-V_103 = V_451
-V_543 = V_876
-V_635 = V_299
-V_727 = V_944
-V_379 = V_491
-V_491 = V_758
-V_463 = V_194
-V_027 = V_015
-V_441 = V_910
-V_133 = V_957
-V_758 = V_099
-V_904 = V_740
-V_050 = V_463
-V_269 = V_247
-V_609 = V_999
-V_107 = V_738
-V_607 = V_203
-V_203 = V_310
-V_451 = V_952
-V_015 = V_479
-V_657 = V_083
-V_111 = V_635
-V_820 = V_662
-V_910 = V_303
-V_740 = V_543
-V_585 = V_107
-V_479 = V_660
-V_999 = V_380
-V_070 = V_027
-V_738 = V_745
-V_349 = V_111
-V_380 = V_379
-V_952 = V_804
-V_310 = V_133
-V_169 = V_820
-V_944 = V_609
-V_247 = V_657
-V_804 = V_904
-V_284 = V_169
-
-What is the value of V_284? Output only the result.
-Correct answer: Cactus
-OpenAI answer: Riddle
-Is correct: False
-                                                                               Progress: [========= ] 91.1% | Submitted: 87/90 | Running: 5 | Evaluated: 82
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_417 = Tundra
-V_580 = Alloy
-V_777 = Cactus
-V_589 = Lantern
-V_648 = Vortex
-V_957 = V_753
-V_747 = V_602
-V_835 = V_618
-V_887 = V_835
-V_547 = V_345
-V_208 = V_358
-V_057 = V_274
-V_432 = V_648
-V_104 = V_874
-V_556 = V_438
-V_874 = V_432
-V_564 = V_070
-V_860 = V_877
-V_257 = V_968
-V_877 = V_257
-V_230 = V_208
-V_753 = V_417
-V_953 = V_887
-V_070 = V_807
-V_690 = V_840
-V_618 = V_575
-V_274 = V_957
-V_684 = V_268
-V_968 = V_104
-V_183 = V_230
-V_358 = V_299
-V_345 = V_953
-V_807 = V_362
-V_293 = V_150
-V_633 = V_580
-V_110 = V_129
-V_299 = V_556
-V_018 = V_854
-V_438 = V_684
-V_362 = V_110
-V_854 = V_564
-V_396 = V_547
-V_268 = V_589
-V_150 = V_860
-V_129 = V_633
-V_575 = V_747
-V_840 = V_057
-V_602 = V_777
-V_627 = V_018
-V_649 = V_396
-
-What is the value of V_649? Output only the result.
-Correct answer: Cactus
-OpenAI answer: Cactus
-Is correct: True
-                                                                               Progress: [========= ] 92.2% | Submitted: 88/90 | Running: 5 | Evaluated: 83
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_765 = Latch
-V_354 = Cactus
-V_712 = Jigsaw
-V_966 = Lush
-V_366 = Lantern
-V_514 = V_875
-V_419 = V_546
-V_734 = V_302
-V_518 = V_619
-V_142 = V_221
-V_573 = V_542
-V_072 = V_775
-V_191 = V_371
-V_182 = V_734
-V_127 = V_182
-V_221 = V_307
-V_466 = V_978
-V_785 = V_712
-V_978 = V_518
-V_307 = V_072
-V_667 = V_191
-V_775 = V_582
-V_212 = V_428
-V_302 = V_691
-V_116 = V_285
-V_546 = V_667
-V_619 = V_440
-V_776 = V_785
-V_428 = V_823
-V_464 = V_366
-V_440 = V_608
-V_285 = V_106
-V_608 = V_573
-V_633 = V_465
-V_384 = V_212
-V_940 = V_501
-V_921 = V_966
-V_875 = V_142
-V_840 = V_514
-V_542 = V_921
-V_465 = V_116
-V_501 = V_103
-V_106 = V_776
-V_157 = V_940
-V_691 = V_765
-V_823 = V_354
-V_582 = V_464
-V_103 = V_127
-V_371 = V_840
-V_853 = V_419
-
-What is the value of V_853? Output only the result.
-Correct answer: Lantern
-OpenAI answer: Cactus
-Is correct: False
-                                                                               Progress: [========= ] 93.3% | Submitted: 89/90 | Running: 5 | Evaluated: 84
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_651 = Chisel
-V_262 = Vortex
-V_323 = Breeze
-V_066 = Echo
-V_497 = Latch
-V_949 = V_431
-V_758 = V_833
-V_319 = V_022
-V_961 = V_380
-V_261 = V_422
-V_422 = V_331
-V_971 = V_995
-V_567 = V_250
-V_390 = V_522
-V_277 = V_949
-V_084 = V_732
-V_632 = V_155
-V_741 = V_066
-V_680 = V_307
-V_431 = V_971
-V_995 = V_319
-V_384 = V_341
-V_307 = V_632
-V_523 = V_384
-V_732 = V_723
-V_015 = V_221
-V_306 = V_840
-V_380 = V_393
-V_155 = V_651
-V_871 = V_523
-V_250 = V_112
-V_704 = V_237
-V_221 = V_758
-V_341 = V_961
-V_522 = V_567
-V_331 = V_210
-V_526 = V_741
-V_676 = V_277
-V_022 = V_306
-V_075 = V_680
-V_874 = V_390
-V_237 = V_084
-V_840 = V_262
-V_723 = V_323
-V_210 = V_497
-V_054 = V_075
-V_393 = V_261
-V_833 = V_054
-V_112 = V_526
-V_543 = V_874
-
-What is the value of V_543? Output only the result.
-Correct answer: Echo
-OpenAI answer: Latch
-Is correct: False
-                                                                               Progress: [========= ] 94.4% | Submitted: 90/90 | Running: 5 | Evaluated: 85
-Running evaluation with num_symbols=5, num_vars=50, initializations_per_symbol=1, mode=random
-Challenge:
-V_265 = Pylon
-V_985 = Lush
-V_898 = Vortex
-V_569 = Monsoon
-V_997 = Thistle
-V_136 = V_400
-V_190 = V_381
-V_598 = V_489
-V_503 = V_265
-V_448 = V_411
-V_870 = V_492
-V_572 = V_714
-V_303 = V_942
-V_413 = V_507
-V_944 = V_136
-V_533 = V_572
-V_536 = V_410
-V_687 = V_503
-V_016 = V_816
-V_192 = V_320
-V_995 = V_102
-V_690 = V_536
-V_837 = V_448
-V_816 = V_076
-V_376 = V_569
-V_165 = V_920
-V_193 = V_690
-V_974 = V_898
-V_097 = V_837
-V_886 = V_009
-V_009 = V_192
-V_213 = V_598
-V_819 = V_974
-V_522 = V_213
-V_489 = V_886
-V_967 = V_190
-V_076 = V_097
-V_102 = V_687
-V_034 = V_944
-V_381 = V_303
-V_400 = V_165
-V_714 = V_985
-V_507 = V_967
-V_942 = V_995
-V_492 = V_819
-V_320 = V_376
-V_411 = V_193
-V_410 = V_533
-V_920 = V_997
-V_432 = V_016
-
-What is the value of V_432? Output only the result.
-Correct answer: Lush
 OpenAI answer: Thistle
 Is correct: False
-                                                                               Progress: [========= ] 95.6% | Submitted: 90/90 | Running: 4 | Evaluated: 86Challenge:
-V_771 = Fable
-V_950 = Lantern
-V_932 = Whisper
-V_954 = Ponder
-V_087 = Jigsaw
-V_739 = V_381
-V_825 = V_086
-V_865 = V_997
-V_235 = V_405
-V_698 = V_768
-V_817 = V_788
-V_346 = V_784
-V_403 = V_156
-V_366 = V_393
-V_948 = V_200
-V_680 = V_366
-V_788 = V_851
-V_997 = V_825
-V_203 = V_254
-V_931 = V_777
-V_405 = V_403
-V_798 = V_213
-V_127 = V_470
-V_018 = V_194
-V_521 = V_252
-V_777 = V_948
-V_470 = V_002
-V_285 = V_127
-V_194 = V_070
-V_381 = V_643
-V_459 = V_235
-V_156 = V_739
-V_782 = V_459
-V_784 = V_087
-V_432 = V_817
-V_254 = V_879
-V_086 = V_346
-V_851 = V_018
-V_213 = V_521
-V_200 = V_932
-V_768 = V_865
-V_684 = V_950
-V_879 = V_798
-V_070 = V_684
-V_002 = V_297
-V_643 = V_954
-V_393 = V_432
-V_252 = V_771
-V_297 = V_931
-V_296 = V_782
 
-What is the value of V_296? Output only the result.
-Correct answer: Ponder
-OpenAI answer: Fable
-Is correct: False
-                                                                               Progress: [========= ] 96.7% | Submitted: 90/90 | Running: 3 | Evaluated: 87Challenge:
-V_858 = Cactus
-V_285 = Falcon
-V_670 = Harbor
-V_985 = Jigsaw
-V_233 = Fable
-V_022 = V_727
-V_505 = V_287
-V_273 = V_672
-V_225 = V_832
-V_815 = V_506
-V_244 = V_604
-V_915 = V_985
-V_417 = V_632
-V_042 = V_608
-V_506 = V_060
-V_335 = V_193
-V_632 = V_285
-V_582 = V_688
-V_860 = V_815
-V_193 = V_582
-V_320 = V_273
-V_556 = V_125
-V_953 = V_915
-V_889 = V_953
-V_234 = V_225
-V_608 = V_320
-V_832 = V_889
-V_916 = V_955
-V_955 = V_084
-V_604 = V_556
-V_280 = V_022
-V_398 = V_487
-V_961 = V_860
-V_084 = V_670
-V_107 = V_505
-V_818 = V_233
-V_287 = V_818
-V_487 = V_417
-V_957 = V_244
-V_727 = V_748
-V_655 = V_961
-V_524 = V_165
-V_060 = V_466
-V_688 = V_280
-V_466 = V_234
-V_165 = V_916
-V_125 = V_107
-V_672 = V_398
-V_748 = V_858
-V_673 = V_957
+                                                                               
+Progress: [========  ] 86.7% | Submitted: 15/15 | Running: 2 | Evaluated: 13Challenge:
+V_279 = V_248
+V_731 = V_314
+V_975 = V_557
+V_759 = V_844
+V_477 = V_977
+V_648 = Lantern
+V_810 = V_015
+V_844 = Serpent
+V_399 = V_241
+V_291 = V_975
+V_524 = V_759
+V_924 = V_269
+V_692 = V_282
+V_007 = V_291
+V_150 = V_315
+V_152 = V_409
+V_269 = V_648
+V_886 = V_077
+V_888 = V_418
+V_176 = V_810
+V_557 = Whisper
+V_512 = V_888
+V_315 = V_477
+V_799 = V_461
+V_248 = V_512
+V_317 = V_150
+V_891 = V_007
+V_195 = V_876
+V_239 = V_044
+V_597 = V_266
+V_418 = V_126
+V_192 = V_317
+V_977 = V_399
+V_314 = V_279
+V_461 = V_192
+V_630 = V_692
+V_409 = V_176
+V_549 = V_597
+V_241 = Echo
+V_547 = V_891
+V_363 = V_549
+V_282 = V_547
+V_266 = V_239
+V_077 = V_731
+V_876 = V_799
+V_612 = V_524
+V_044 = V_924
+V_126 = Falcon
+V_015 = V_612
+V_878 = V_886
 
-What is the value of V_673? Output only the result.
-Correct answer: Fable
-OpenAI answer: Cactus
-Is correct: False
-                                                                               Progress: [========= ] 97.8% | Submitted: 90/90 | Running: 2 | Evaluated: 88Challenge:
-V_624 = Harbor
-V_894 = Zephyr
-V_738 = Breeze
-V_826 = Falcon
-V_427 = Vortex
-V_626 = V_955
-V_879 = V_849
-V_849 = V_243
-V_089 = V_009
-V_435 = V_811
-V_896 = V_783
-V_258 = V_325
-V_447 = V_921
-V_579 = V_308
-V_238 = V_784
-V_295 = V_624
-V_681 = V_505
-V_498 = V_344
-V_009 = V_738
-V_783 = V_230
-V_658 = V_993
-V_655 = V_658
-V_505 = V_295
-V_308 = V_894
-V_749 = V_435
-V_160 = V_879
-V_006 = V_816
-V_474 = V_655
-V_631 = V_238
-V_197 = V_258
-V_418 = V_447
-V_654 = V_184
-V_373 = V_986
-V_184 = V_006
-V_921 = V_255
-V_986 = V_427
-V_065 = V_418
-V_325 = V_089
-V_230 = V_626
-V_344 = V_474
-V_801 = V_498
-V_993 = V_681
-V_056 = V_749
-V_243 = V_579
-V_784 = V_373
-V_955 = V_826
-V_255 = V_631
-V_811 = V_896
-V_816 = V_197
-V_017 = V_065
-
-What is the value of V_017? Output only the result.
-Correct answer: Vortex
-OpenAI answer: Vortex
+What is the value of V_878? Output only the result.
+Correct answer: Falcon
+OpenAI answer: Falcon
 Is correct: True
-                                                                               Progress: [========= ] 98.9% | Submitted: 90/90 | Running: 1 | Evaluated: 89Challenge:
-V_405 = Glacier
-V_509 = Lantern
-V_169 = Zephyr
-V_500 = Monsoon
-V_484 = Orbit
-V_977 = V_218
-V_658 = V_790
-V_305 = V_509
-V_125 = V_169
-V_311 = V_711
-V_841 = V_500
-V_380 = V_305
-V_665 = V_970
-V_053 = V_665
-V_075 = V_989
-V_574 = V_808
-V_411 = V_872
-V_989 = V_227
-V_945 = V_474
-V_227 = V_405
-V_334 = V_709
-V_383 = V_574
-V_700 = V_125
-V_515 = V_918
-V_711 = V_411
-V_276 = V_841
-V_130 = V_954
-V_790 = V_910
-V_335 = V_700
-V_522 = V_130
-V_910 = V_977
-V_734 = V_276
-V_872 = V_697
-V_218 = V_335
-V_970 = V_522
-V_728 = V_658
-V_954 = V_592
-V_010 = V_861
-V_364 = V_681
-V_474 = V_734
-V_861 = V_311
-V_709 = V_945
-V_592 = V_075
-V_234 = V_053
-V_918 = V_364
-V_697 = V_484
-V_808 = V_334
-V_631 = V_010
-V_681 = V_380
-V_526 = V_631
+Challenge:
+V_443 = V_105
+V_281 = V_100
+V_616 = V_378
+V_794 = Marble
+V_704 = V_482
+V_105 = V_775
+V_662 = V_760
+V_048 = V_889
+V_301 = V_757
+V_775 = V_616
+V_814 = V_301
+V_482 = V_788
+V_919 = V_761
+V_459 = V_195
+V_277 = V_281
+V_019 = V_605
+V_060 = V_211
+V_821 = V_001
+V_763 = V_424
+V_868 = V_907
+V_761 = V_417
+V_813 = V_763
+V_892 = Fable
+V_195 = V_345
+V_788 = V_892
+V_757 = V_617
+V_056 = V_794
+V_617 = V_060
+V_555 = V_704
+V_605 = V_277
+V_421 = V_059
+V_889 = V_112
+V_840 = V_555
+V_926 = Nimbus
+V_100 = Monsoon
+V_607 = V_840
+V_345 = V_662
+V_378 = V_019
+V_085 = V_607
+V_059 = V_056
+V_760 = V_259
+V_211 = V_868
+V_708 = V_821
+V_907 = Harbor
+V_001 = V_048
+V_112 = V_085
+V_417 = V_926
+V_259 = V_919
+V_424 = V_421
+V_295 = V_813
 
-What is the value of V_526? Output only the result.
-Correct answer: Orbit
-OpenAI answer: Lantern
+What is the value of V_295? Output only the result.
+Correct answer: Marble
+OpenAI answer: Harbor
 Is correct: False
-                                                                               Progress: [==========] 100.0% | Submitted: 90/90 | Running: 0 | Evaluated: 90
+
+                                                                               
+Progress: [========= ] 93.3% | Submitted: 15/15 | Running: 1 | Evaluated: 14
+                                                                               
+Progress: [==========] 100.0% | Submitted: 15/15 | Running: 0 | Evaluated: 15
 All evaluations completed!
 
 ===== EVALUATION RESULTS =====
-Parameters: num_symbols=5, num_vars=50, initializations_per_symbol=1, 30 evaluations per mode
+Parameters: num_symbols=5, num_vars=50, initializations_per_symbol=1, 5 evaluations per mode
 
 Success Rates:
-  normal: 14/30 (46.7%) | Errors: 0 (0.0%) | Incorrect: 16 (53.3%)
-  inverse: 3/30 (10.0%) | Errors: 0 (0.0%) | Incorrect: 27 (90.0%)
-  random: 9/30 (30.0%) | Errors: 0 (0.0%) | Incorrect: 21 (70.0%)
+  normal: 0/5 (0.0%) | Errors: 0 (0.0%) | Incorrect: 5 (100.0%)
+  inverse: 1/5 (20.0%) | Errors: 0 (0.0%) | Incorrect: 4 (80.0%)
+  random: 1/5 (20.0%) | Errors: 0 (0.0%) | Incorrect: 4 (80.0%)
 
-Overall: 26/90 (28.9%) | Errors: 0 (0.0%) | Incorrect: 64 (71.1%)
+Overall: 2/15 (13.3%) | Errors: 0 (0.0%) | Incorrect: 13 (86.7%)

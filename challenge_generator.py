@@ -73,26 +73,19 @@ def generate_challenge(num_vars, initializations_per_symbol, num_symbols, seed=N
 
         currently_unreferenced_vars[chosen_var_index] = var
 
+    sequence = starter_sequence + sequence_afterwards[:-1]
+    if mode == "inverse":
+        sequence.reverse()
+    if mode == "random":
+        random.shuffle(sequence)
+    
+    sequence.append(sequence_afterwards[-1])
+
     # Store the last variable's value and name before any reordering
     last_var = remaining[-1]
     last_var_value = var_values[last_var]  
 
-    if mode == "normal":
-        pass
-    elif mode == "inverse":
-        # Reverse all but the last entry
-        if len(sequence_afterwards) > 1:
-            last_entry = sequence_afterwards.pop()
-            sequence_afterwards.reverse()
-            sequence_afterwards.append(last_entry)
-    elif mode == "random":
-        # Shuffle all but the last entry
-        if len(sequence_afterwards) > 1:
-            last_entry = sequence_afterwards.pop()
-            random.shuffle(sequence_afterwards)
-            sequence_afterwards.append(last_entry)
-
-    return starter_sequence + sequence_afterwards, last_var_value, last_var
+    return sequence, last_var_value, last_var
 
 
 def generate_question(last_var):
