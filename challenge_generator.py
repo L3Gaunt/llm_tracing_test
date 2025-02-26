@@ -1,13 +1,15 @@
 import random
 import string
 
-def generate_challenge(N=5, M=5, seed=None, order='normal'):
+def generate_challenge(N=5, M=5, trackback_depth=0, seed=None, order='normal'):
     """
     Generates a variable reference challenge with N levels and M variables per level.
     
     Args:
         N (int): Number of levels (0 to N-1)
         M (int): Number of variables per level
+        trackback_depth (int): How many levels back a variable can reference. 
+                               0 means only previous level, 1 means up to 2 levels back, etc.
         seed (int, optional): Random seed for reproducibility
         order (str): Order of equations in output: 'normal', 'randomized', or 'reversed'
         
@@ -38,11 +40,19 @@ def generate_challenge(N=5, M=5, seed=None, order='normal'):
         assignments[var] = random.choice(string.ascii_uppercase)
 
     # Assign references for variables in higher levels
-    # Each variable in level k references a variable from level k-1
+    # Each variable in level k references a variable from a range of previous levels
     for k in range(1, N):
         for var in levels[k]:
-            # Randomly choose a variable from the previous level
-            ref_var = random.choice(levels[k - 1])
+            # Calculate the lower bound level
+            lower_bound = max(0, k - trackback_depth - 1)
+            
+            # Collect all variables from level lower_bound to level k-1
+            available_vars = []
+            for level_idx in range(lower_bound, k):
+                available_vars.extend(levels[level_idx])
+            
+            # Randomly choose a variable from the available levels
+            ref_var = random.choice(available_vars)
             assignments[var] = ref_var
 
     # Select a variable from the last level to query

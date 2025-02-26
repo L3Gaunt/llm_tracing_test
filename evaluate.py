@@ -4,6 +4,9 @@ import time
 import argparse
 import concurrent.futures
 from collections import defaultdict
+import sys
+import shutil
+import threading
 from openai import OpenAI
 from dotenv import load_dotenv
 from challenge_generator import generate_challenge
@@ -12,8 +15,25 @@ from challenge_generator import generate_challenge
 load_dotenv()
 
 # Rate limiting variables
-MAX_REQUESTS_PER_SECOND = 10
+MAX_REQUESTS_PER_SECOND = 5
 REQUEST_TIMESTAMPS = []
+
+# Terminal colors (if supported)
+try:
+    TERM_COLORS_SUPPORTED = sys.stdout.isatty() and os.name != 'nt'
+except:
+    TERM_COLORS_SUPPORTED = False
+
+# Color codes
+GREEN = '\033[92m' if TERM_COLORS_SUPPORTED else ''
+YELLOW = '\033[93m' if TERM_COLORS_SUPPORTED else ''
+BLUE = '\033[94m' if TERM_COLORS_SUPPORTED else ''
+RED = '\033[91m' if TERM_COLORS_SUPPORTED else ''
+RESET = '\033[0m' if TERM_COLORS_SUPPORTED else ''
+
+# Constants
+API_TIMEOUT = 5.0  # Timeout for API calls in seconds
+TASK_TIMEOUT = 10.0  # Overall timeout for tasks (should be > API_TIMEOUT)
 
 def rate_limit():
     """
@@ -54,7 +74,7 @@ def evaluate_with_openai(challenge, response_format="json_object"):
         raise ValueError("OPENAI_API_KEY not found in .env file")
     
     # Initialize OpenAI client
-    client = OpenAI(api_key=api_key)
+    client = OpenAI(api_key=api_key, timeout=5.0)  # 5 second timeout
     
     # Define the system message and user prompt
     system_message = {
@@ -85,10 +105,12 @@ def evaluate_with_openai(challenge, response_format="json_object"):
         else:
             return {"raw_response": response.choices[0].message.content}
     
+    except TimeoutError:
+        return {"error": "API request timed out (exceeded 5 seconds)"}
     except Exception as e:
         return {"error": str(e)}
 
-def run_single_evaluation(n, m, order, response_format="json_object", verbose=False, whitespace_padding=12000):
+def run_single_evaluation(n, m, order, trackback_depth=0, response_format="json_object", verbose=False, question_padding=""):
     """
     Run a single evaluation and return the result
     
@@ -96,6 +118,7 @@ def run_single_evaluation(n, m, order, response_format="json_object", verbose=Fa
         n (int): Number of levels
         m (int): Number of variables per level
         order (str): Order of equations
+        trackback_depth (int): How many levels back variables can reference
         response_format (str): Response format
         verbose (bool): Whether to print detailed output
         
@@ -103,11 +126,11 @@ def run_single_evaluation(n, m, order, response_format="json_object", verbose=Fa
         dict: Result of the evaluation including parameters and correctness
     """
     # Generate a challenge
-    challenge, correct_answer = generate_challenge(N=n, M=m, order=order)
+    challenge, correct_answer = generate_challenge(N=n, M=m, trackback_depth=trackback_depth, order=order)
     
-    challenge += " "*whitespace_padding
+    challenge += question_padding
     if verbose:
-        print(f"\nRunning evaluation with N={n}, M={m}, order={order}")
+        print(f"\nRunning evaluation with N={n}, M={m}, trackback_depth={trackback_depth}, order={order}")
         print("Challenge:")
         print(challenge)
         print("Correct answer:", correct_answer)
@@ -123,6 +146,7 @@ def run_single_evaluation(n, m, order, response_format="json_object", verbose=Fa
         return {
             "n": n,
             "m": m,
+            "trackback_depth": trackback_depth,
             "order": order,
             "challenge": challenge,
             "correct_answer": correct_answer,
@@ -152,6 +176,7 @@ def run_single_evaluation(n, m, order, response_format="json_object", verbose=Fa
     return {
         "n": n,
         "m": m,
+        "trackback_depth": trackback_depth,
         "order": order,
         "challenge": challenge,
         "correct_answer": correct_answer,
@@ -161,13 +186,14 @@ def run_single_evaluation(n, m, order, response_format="json_object", verbose=Fa
         "error_message": None
     }
 
-def run_multiple_evaluations(n, m, orders, num_per_order=10, response_format="json_object", verbose=False):
+def run_multiple_evaluations(n, m, trackback_depth, question_padding, orders, num_per_order=10, response_format="json_object", verbose=False):
     """
     Run multiple evaluations in parallel for different order modes
     
     Args:
         n (int): Number of levels
         m (int): Number of variables per level
+        trackback_depth (int): How many levels back variables can reference
         orders (list): List of order modes to evaluate
         num_per_order (int): Number of evaluations per order mode
         response_format (str): Response format
@@ -180,29 +206,204 @@ def run_multiple_evaluations(n, m, orders, num_per_order=10, response_format="js
     tasks = []
     for order in orders:
         for _ in range(num_per_order):
-            tasks.append((n, m, order, response_format, verbose))
+            tasks.append((n, m, order, trackback_depth, response_format, verbose, question_padding))
     
     # Run evaluations in parallel
     results = []
+    total = len(tasks)
+    
+    # Progress tracking counters
+    submitted = 0     # Tasks submitted to the executor
+    completed = 0     # Tasks with answers returned and evaluated
+    in_progress = 0   # Tasks currently running
+    timeouts = 0      # Tasks that timed out
+    errors = 0        # Tasks that had API errors
+    
+    print(f"Running {total} evaluations ({num_per_order} each for {', '.join(orders)})...")
+    
+    # Track futures as they're submitted and completed
     with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_REQUESTS_PER_SECOND) as executor:
-        future_to_task = {executor.submit(run_single_evaluation, *task): task for task in tasks}
-        completed = 0
-        total = len(tasks)
+        # Create a dict to store futures and their start times
+        futures = {}
+        future_start_times = {}
         
-        print(f"Running {total} evaluations ({num_per_order} each for {', '.join(orders)})...")
+        # Submit initial batch of tasks
+        batch_size = min(MAX_REQUESTS_PER_SECOND, total)
+        for i in range(batch_size):
+            future = executor.submit(run_single_evaluation, *tasks[i])
+            futures[future] = tasks[i]
+            future_start_times[future] = time.time()
+            submitted += 1
+            in_progress += 1
+            
+            # Update progress display
+            _update_progress_display(submitted, in_progress, completed, total, timeouts, errors)
         
-        for future in concurrent.futures.as_completed(future_to_task):
-            completed += 1
-            print(f"Progress: {completed}/{total} evaluations completed", end="\r")
-            try:
-                result = future.result()
-                results.append(result)
-            except Exception as e:
-                print(f"Evaluation failed: {e}")
-        
-        print("\nAll evaluations completed!")
+        # Process results as they complete and submit new tasks
+        while futures:
+            # Check for timeouts
+            current_time = time.time()
+            timed_out_futures = []
+            for future, start_time in future_start_times.items():
+                if not future.done() and current_time - start_time > TASK_TIMEOUT:
+                    # This task has timed out
+                    future.cancel()
+                    timed_out_futures.append(future)
+            
+            # Process timed out futures
+            for future in timed_out_futures:
+                if future in futures:
+                    # Create a timeout result
+                    n, m, order, trackback_depth, _, verbose, _ = futures[future]
+                    result = {
+                        "n": n,
+                        "m": m,
+                        "trackback_depth": trackback_depth,
+                        "order": order,
+                        "challenge": "",
+                        "correct_answer": None,
+                        "openai_answer": None,
+                        "is_correct": False,
+                        "has_error": True,
+                        "error_message": f"Task timed out after {TASK_TIMEOUT} seconds"
+                    }
+                    results.append(result)
+                    
+                    # Update counters
+                    timeouts += 1
+                    completed += 1
+                    in_progress -= 1
+                    
+                    # Clean up
+                    del futures[future]
+                    del future_start_times[future]
+                    
+                    # Submit a new task if available
+                    if submitted < total:
+                        new_future = executor.submit(run_single_evaluation, *tasks[submitted])
+                        futures[new_future] = tasks[submitted]
+                        future_start_times[new_future] = time.time()
+                        submitted += 1
+                        in_progress += 1
+                    
+                    # Update progress display
+                    _update_progress_display(submitted, in_progress, completed, total, timeouts, errors)
+            
+            # Wait for the next future to complete (with timeout to allow checking for task timeouts)
+            done, _ = concurrent.futures.wait(
+                futures, 
+                return_when=concurrent.futures.FIRST_COMPLETED,
+                timeout=0.1
+            )
+            
+            if not done:
+                continue  # No futures completed, continue checking for timeouts
+            
+            # Process completed futures
+            for future in done:
+                try:
+                    # Get result (the answer has been returned and evaluated at this point)
+                    result = future.result()
+                    results.append(result)
+                    completed += 1
+                    in_progress -= 1
+                    
+                    # Track errors
+                    if result.get("has_error", False):
+                        errors += 1
+                        
+                except Exception as e:
+                    # Handle unexpected exceptions in the task
+                    print(f"\nTask failed with unexpected exception: {e}")
+                    n, m, order, trackback_depth, _, verbose, _ = futures[future]
+                    result = {
+                        "n": n,
+                        "m": m,
+                        "trackback_depth": trackback_depth,
+                        "order": order,
+                        "challenge": "",
+                        "correct_answer": None,
+                        "openai_answer": None,
+                        "is_correct": False,
+                        "has_error": True,
+                        "error_message": f"Unexpected error: {str(e)}"
+                    }
+                    results.append(result)
+                    errors += 1
+                    completed += 1
+                    in_progress -= 1
+                
+                # Clean up
+                if future in future_start_times:
+                    del future_start_times[future]
+                del futures[future]
+                
+                # Submit a new task if available
+                if submitted < total:
+                    new_future = executor.submit(run_single_evaluation, *tasks[submitted])
+                    futures[new_future] = tasks[submitted]
+                    future_start_times[new_future] = time.time()
+                    submitted += 1
+                    in_progress += 1
+                
+                # Update progress display
+                _update_progress_display(submitted, in_progress, completed, total, timeouts, errors)
+    
+    # Print final summary
+    print("\nAll evaluations completed!")
+    if timeouts > 0 or errors > 0:
+        print(f"{RED}Issues:{RESET} {timeouts} timeouts, {errors} API errors")
     
     return results
+
+def _update_progress_display(submitted, in_progress, completed, total, timeouts, errors):
+    """
+    Update the progress display with current status
+    
+    Args:
+        submitted (int): Number of tasks submitted/started
+        in_progress (int): Number of tasks currently in progress
+        completed (int): Number of tasks completed (answers returned and evaluated)
+        total (int): Total number of tasks
+        timeouts (int): Number of tasks that timed out
+        errors (int): Number of tasks with API errors
+    """
+    # Get terminal width for dynamic sizing
+    try:
+        term_width = shutil.get_terminal_size().columns
+    except:
+        term_width = 80  # Default width
+    
+    # Calculate progress percentage
+    percentage = (completed / total) * 100 if total > 0 else 0
+    
+    # Create progress bar (scales with terminal width)
+    bar_length = min(20, max(10, term_width // 8))
+    filled_length = int(bar_length * completed // total) if total > 0 else 0
+    progress_bar = f"[{GREEN}{'=' * filled_length}{RESET}{' ' * (bar_length - filled_length)}]"
+    
+    # Calculate successful completions
+    successful = completed - timeouts - errors
+    
+    # Create status line
+    status_line = (
+        f"Progress: {progress_bar} {BLUE}{percentage:.1f}%{RESET} | "
+        f"Submitted: {YELLOW}{submitted}/{total}{RESET} | "
+        f"Running: {YELLOW}{in_progress}{RESET} | "
+        f"Evaluated: {GREEN}{successful}{RESET}"
+    )
+    
+    # Add error information if any
+    if timeouts > 0 or errors > 0:
+        status_line += f" | {RED}Timeouts: {timeouts}, Errors: {errors}{RESET}"
+    
+    # Ensure the status line fits in the terminal
+    if len(status_line) - (len(GREEN) + len(BLUE) + len(YELLOW) + len(RED) + len(RESET) * 5) > term_width:
+        # Simplified version without colors for narrow terminals
+        status_line = f"Progress: {percentage:.1f}% | Running: {in_progress} | Success: {successful} | Issues: {timeouts+errors}"
+    
+    # Clear the line and print status
+    print("\r" + " " * (term_width - 1) + "\r" + status_line, end="")
 
 def calculate_success_rates(results):
     """
@@ -214,20 +415,21 @@ def calculate_success_rates(results):
     Returns:
         dict: Success rates by order mode
     """
-    # Group results by order
+    # Group results by order and trackback_depth
     grouped_results = defaultdict(list)
     for result in results:
-        grouped_results[result["order"]].append(result)
+        key = f"{result['order']}"
+        grouped_results[key].append(result)
     
     # Calculate success rates and error rates
     success_rates = {}
-    for order, order_results in grouped_results.items():
-        total = len(order_results)
-        successful = sum(1 for r in order_results if r["is_correct"])
-        errors = sum(1 for r in order_results if r.get("has_error", False))
+    for key, key_results in grouped_results.items():
+        total = len(key_results)
+        successful = sum(1 for r in key_results if r["is_correct"])
+        errors = sum(1 for r in key_results if r.get("has_error", False))
         incorrect = total - successful - errors
         
-        success_rates[order] = {
+        success_rates[key] = {
             "total": total,
             "successful": successful,
             "errors": errors,
@@ -257,7 +459,10 @@ def main():
     parser = argparse.ArgumentParser(description="Evaluate variable reference challenges using OpenAI API")
     parser.add_argument("--n", type=int, default=50, help="Number of levels")
     parser.add_argument("--m", type=int, default=2, help="Number of variables per level")
-    parser.add_argument("--num-per-order", type=int, default=100, help="Number of evaluations per order type")
+    parser.add_argument("--trackback-depth", type=int, default=0, 
+                        help="How many levels back variables can reference (0=previous level only)")
+    parser.add_argument("--question-padding", type=str, default="", help="Padding for the question")
+    parser.add_argument("--num-per-order", type=int, default=10, help="Number of evaluations per order type")
     parser.add_argument("--format", type=str, default="json_object", choices=["json_object", "text"], 
                         help="Response format from OpenAI")
     parser.add_argument("--verbose", action="store_true", help="Print detailed output for each evaluation")
@@ -270,6 +475,8 @@ def main():
     results = run_multiple_evaluations(
         n=args.n,
         m=args.m,
+        trackback_depth=args.trackback_depth,
+        question_padding=args.question_padding,
         orders=orders,
         num_per_order=args.num_per_order,
         response_format=args.format,
@@ -281,12 +488,12 @@ def main():
     
     # Print results
     print("\n===== EVALUATION RESULTS =====")
-    print(f"Parameters: N={args.n}, M={args.m}, {args.num_per_order} evaluations per order type")
+    print(f"Parameters: N={args.n}, M={args.m}, trackback_depth={args.trackback_depth}, {args.num_per_order} evaluations per order type")
     print("\nSuccess Rates:")
     
-    for order, stats in success_rates.items():
-        if order != "overall":
-            print(f"  {order.capitalize()}: {stats['successful']}/{stats['total']} " 
+    for key, stats in success_rates.items():
+        if key != "overall":
+            print(f"  {key}: {stats['successful']}/{stats['total']} " 
                   f"({stats['success_rate']*100:.1f}%) | "
                   f"Errors: {stats['errors']} ({stats['error_rate']*100:.1f}%) | "
                   f"Incorrect: {stats['incorrect']} ({(1-stats['success_rate']-stats['error_rate'])*100:.1f}%)")
