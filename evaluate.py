@@ -93,7 +93,7 @@ def evaluate_with_openai(challenge, response_format="json_object"):
     # Make the API call
     try:
         response = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gpt-4o",
             messages=[system_message, user_message],
             response_format=format_param
         )
