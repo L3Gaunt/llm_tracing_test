@@ -38,7 +38,7 @@ def generate_challenge(num_vars, initializations_per_symbol, num_symbols, seed=N
     assert num_vars <= 1000, "Number of variables must be less than or equal to 1000"
 
 
-    variables = [f"V_{i:03d}" for i in random.sample(range(1, 1000), k=num_vars)]
+    variables = [f"V_{i:03d}" for i in random.sample(range(100, 1000), k=num_vars)]
 
     assert num_symbols <= len(vocab)
     # Generate symbols (e.g., '100', '101', ...)
