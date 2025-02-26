@@ -1,5 +1,15 @@
 import random
 
+    # Generate variable names
+    # experimental: vocab instead of symbols
+vocab = [
+    "Lantern", "Breeze", "Marble", "Quantum", "Cactus", "Whisper", "Falcon", 
+    "Jigsaw", "Velvet", "Orbit", "Echo", "Glacier", "Sprocket", "Nimbus", 
+    "Tundra", "Latch", "Zephyr", "Fable", "Alloy", "Harbor", "Riddle", 
+    "Monsoon", "Pylon", "Serpent", "Chisel", "Vortex", "Waffle", "Ponder", 
+    "Thistle", "Lush"
+]
+
 def generate_challenge(num_vars, initializations_per_symbol, num_symbols, seed=None, mode="normal"):
     """
     Generate a variable resolution challenge where each symbol is initialized exactly
@@ -27,12 +37,12 @@ def generate_challenge(num_vars, initializations_per_symbol, num_symbols, seed=N
 
     assert num_vars <= 1000, "Number of variables must be less than or equal to 1000"
 
-    # Generate variable names
 
-    variables = [f"V{i:03d}" for i in random.sample(range(1, 1000), k=num_vars)]
+    variables = [f"V_{i:03d}" for i in random.sample(range(1, 1000), k=num_vars)]
 
+    assert num_symbols <= len(vocab)
     # Generate symbols (e.g., '100', '101', ...)
-    symbols = [str(i) for i in random.sample(range(100, 999), k=num_symbols)]
+    symbols = random.sample(vocab, k=num_symbols)
 
     # Create values list with each symbol appearing exactly initializations_per_symbol times
     values_list = [symbol for symbol in symbols for _ in range(initializations_per_symbol)]
@@ -46,34 +56,43 @@ def generate_challenge(num_vars, initializations_per_symbol, num_symbols, seed=N
     currently_unreferenced_vars = list(directly_defined)
 
     # Initialize sequence and value tracking
-    sequence = []
+    starter_sequence = []
     var_values = {}  # Maps each variable to its resolved symbol
 
     # Assign direct initializations
     for var, value in zip(directly_defined, values_list):
-        sequence.append(f"{var} = {value}")
+        starter_sequence.append(f"{var} = {value}")
         var_values[var] = value
 
+    sequence_afterwards = []
     # Define remaining variables
     for var in remaining:
         chosen_var_index = random.randint(0, len(currently_unreferenced_vars) - 1)
-        sequence.append(f"{var} = {currently_unreferenced_vars[chosen_var_index]}")
+        sequence_afterwards.append(f"{var} = {currently_unreferenced_vars[chosen_var_index]}")
         var_values[var] = var_values[currently_unreferenced_vars[chosen_var_index]]  # Inherit resolved value
 
         currently_unreferenced_vars[chosen_var_index] = var
 
     # Store the last variable's value and name before any reordering
     last_var = remaining[-1]
-    last_var_value = var_values[last_var]
+    last_var_value = var_values[last_var]  
 
     if mode == "normal":
         pass
     elif mode == "inverse":
-        sequence.reverse()
+        # Reverse all but the last entry
+        if len(sequence_afterwards) > 1:
+            last_entry = sequence_afterwards.pop()
+            sequence_afterwards.reverse()
+            sequence_afterwards.append(last_entry)
     elif mode == "random":
-        random.shuffle(sequence)
+        # Shuffle all but the last entry
+        if len(sequence_afterwards) > 1:
+            last_entry = sequence_afterwards.pop()
+            random.shuffle(sequence_afterwards)
+            sequence_afterwards.append(last_entry)
 
-    return sequence, last_var_value, last_var
+    return starter_sequence + sequence_afterwards, last_var_value, last_var
 
 
 def generate_question(last_var):
@@ -97,7 +116,7 @@ def resolve_value(sequence, var):
     assignments = {line.split(" = ")[0]: line.split(" = ")[1] for line in sequence}
     current = var
     counter = 0
-    while not assignments[current].isdigit():
+    while not (assignments[current] in vocab):
         counter += 1
         current = assignments[current]
     print(f"Resolved {var} to {current} in {counter} steps")
