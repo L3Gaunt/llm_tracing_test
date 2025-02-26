@@ -16,7 +16,7 @@ def generate_challenge(num_vars, initializations_per_symbol, num_symbols, seed=N
     initializations_per_symbol times.
 
     Parameters:
-    - num_vars: Total number of variables (e.g., V001, V002, ...)
+    - num_vars: Total number of variables (e.g., V_001, V_002, ...)
     - initializations_per_symbol: Number of times each symbol is directly initialized
     - num_symbols: Number of distinct 3-digit symbols (e.g., 100, 101, ...)
     - seed (optional): Random seed for reproducibility
