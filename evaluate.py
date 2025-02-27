@@ -142,7 +142,7 @@ def run_single_evaluation(num_symbols, num_vars, initializations_per_symbol, mod
     from challenge_generator import generate_question
     challenge_text = "\n".join(sequence)
     question = generate_question(last_var)
-    challenge = question + "\n\n" + challenge_text + question_padding
+    challenge = question + "\n\n" + challenge_text + "\n\n" + question + question_padding
     
     if verbose:
         print(f"\nRunning evaluation with num_symbols={num_symbols}, num_vars={num_vars}, initializations_per_symbol={initializations_per_symbol}, mode={mode}")
