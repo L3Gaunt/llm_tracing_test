@@ -77,7 +77,7 @@ def generate_question(last_var):
     Returns:
     - question: A string containing the question
     """
-    return f"What is the value of {last_var}? Output only the result."
+    return f"Output only the result: What is the value of {last_var}?"
 
 
 ## Remaining code is for testing, here we resolve the value of a variable based on the
