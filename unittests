@@ -1,0 +1,458 @@
+
+Test: 5 vars, 1 per symbol, 3 symbols
+Mode: normal, Seed: None
+V_759 = Falcon
+V_504 = Lantern
+V_305 = Glacier
+V_384 = V_305
+V_247 = V_504
+  V_759 = Falcon
+  V_504 = Lantern
+  V_305 = Glacier
+  V_384 = V_305
+  V_247 = V_504
+
+Question: What is the value of V_247? Output only the result.
+Answer: Lantern
+Expected resolution steps: 2
+Resolved V_247 to Lantern in 2 steps
+Resolved V_247 to Lantern in 2 steps
+✓ Resolution steps match: 2
+Test passed!
+
+Test: 10 vars, 2 per symbol, 3 symbols
+Mode: normal, Seed: None
+V_586 = Glacier
+V_489 = Ponder
+V_700 = Zephyr
+V_981 = Ponder
+V_368 = Glacier
+V_766 = Zephyr
+V_886 = V_981
+V_517 = V_586
+V_552 = V_766
+V_112 = V_368
+  V_586 = Glacier
+  V_489 = Ponder
+  V_700 = Zephyr
+  V_981 = Ponder
+  V_368 = Glacier
+  V_766 = Zephyr
+  V_886 = V_981
+  V_517 = V_586
+  V_552 = V_766
+  V_112 = V_368
+
+Question: What is the value of V_112? Output only the result.
+Answer: Glacier
+Expected resolution steps: 2
+Resolved V_112 to Glacier in 2 steps
+Resolved V_112 to Glacier in 2 steps
+✓ Resolution steps match: 2
+Test passed!
+
+Test: 31 vars, 2 per symbol, 3 symbols
+Mode: normal, Seed: None
+V_819 = Lantern
+V_429 = Orbit
+V_705 = Orbit
+V_641 = Fable
+V_481 = Lantern
+V_444 = Fable
+V_790 = V_641
+V_165 = V_819
+V_754 = V_481
+V_742 = V_705
+V_459 = V_429
+V_823 = V_444
+V_921 = V_742
+V_455 = V_165
+V_406 = V_754
+V_546 = V_459
+V_824 = V_823
+V_553 = V_790
+V_516 = V_546
+V_195 = V_824
+V_114 = V_921
+V_171 = V_553
+V_631 = V_455
+V_329 = V_406
+V_803 = V_114
+V_390 = V_195
+V_872 = V_329
+V_668 = V_516
+V_439 = V_171
+V_757 = V_631
+V_186 = V_872
+  V_819 = Lantern
+  V_429 = Orbit
+  V_705 = Orbit
+  V_641 = Fable
+  V_481 = Lantern
+  V_444 = Fable
+  V_790 = V_641
+  V_165 = V_819
+  V_754 = V_481
+  V_742 = V_705
+  V_459 = V_429
+  V_823 = V_444
+  V_921 = V_742
+  V_455 = V_165
+  V_406 = V_754
+  V_546 = V_459
+  V_824 = V_823
+  V_553 = V_790
+  V_516 = V_546
+  V_195 = V_824
+  V_114 = V_921
+  V_171 = V_553
+  V_631 = V_455
+  V_329 = V_406
+  V_803 = V_114
+  V_390 = V_195
+  V_872 = V_329
+  V_668 = V_516
+  V_439 = V_171
+  V_757 = V_631
+  V_186 = V_872
+
+Question: What is the value of V_186? Output only the result.
+Answer: Lantern
+Expected resolution steps: 6
+Resolved V_186 to Lantern in 6 steps
+Resolved V_186 to Lantern in 6 steps
+✓ Resolution steps match: 6
+Test passed!
+
+Test: 50 vars, 2 per symbol, 3 symbols
+Mode: normal, Seed: 42
+V_754 = Ponder
+V_214 = Glacier
+V_125 = Harbor
+V_859 = Harbor
+V_381 = Glacier
+V_350 = Ponder
+V_328 = V_350
+V_242 = V_125
+V_854 = V_859
+V_204 = V_754
+V_792 = V_214
+V_858 = V_381
+V_658 = V_858
+V_189 = V_204
+V_704 = V_792
+V_532 = V_242
+V_132 = V_328
+V_130 = V_854
+V_195 = V_132
+V_323 = V_189
+V_338 = V_658
+V_617 = V_130
+V_716 = V_532
+V_127 = V_704
+V_674 = V_716
+V_303 = V_195
+V_833 = V_617
+V_765 = V_127
+V_818 = V_323
+V_529 = V_338
+V_325 = V_833
+V_559 = V_765
+V_703 = V_674
+V_384 = V_529
+V_928 = V_303
+V_990 = V_818
+V_106 = V_325
+V_877 = V_990
+V_925 = V_928
+V_263 = V_559
+V_814 = V_703
+V_448 = V_384
+V_259 = V_263
+V_320 = V_925
+V_881 = V_814
+V_444 = V_448
+V_194 = V_877
+V_489 = V_106
+V_199 = V_194
+V_467 = V_444
+  V_754 = Ponder
+  V_214 = Glacier
+  V_125 = Harbor
+  V_859 = Harbor
+  V_381 = Glacier
+  V_350 = Ponder
+  V_328 = V_350
+  V_242 = V_125
+  V_854 = V_859
+  V_204 = V_754
+  V_792 = V_214
+  V_858 = V_381
+  V_658 = V_858
+  V_189 = V_204
+  V_704 = V_792
+  V_532 = V_242
+  V_132 = V_328
+  V_130 = V_854
+  V_195 = V_132
+  V_323 = V_189
+  V_338 = V_658
+  V_617 = V_130
+  V_716 = V_532
+  V_127 = V_704
+  V_674 = V_716
+  V_303 = V_195
+  V_833 = V_617
+  V_765 = V_127
+  V_818 = V_323
+  V_529 = V_338
+  V_325 = V_833
+  V_559 = V_765
+  V_703 = V_674
+  V_384 = V_529
+  V_928 = V_303
+  V_990 = V_818
+  V_106 = V_325
+  V_877 = V_990
+  V_925 = V_928
+  V_263 = V_559
+  V_814 = V_703
+  V_448 = V_384
+  V_259 = V_263
+  V_320 = V_925
+  V_881 = V_814
+  V_444 = V_448
+  V_194 = V_877
+  V_489 = V_106
+  V_199 = V_194
+  V_467 = V_444
+
+Question: What is the value of V_467? Output only the result.
+Answer: Glacier
+Expected resolution steps: 9
+Resolved V_467 to Glacier in 9 steps
+Resolved V_467 to Glacier in 9 steps
+✓ Resolution steps match: 9
+Test passed!
+
+Test: 50 vars, 2 per symbol, 3 symbols
+Mode: inverse, Seed: 43
+V_139 = Whisper
+V_392 = Breeze
+V_812 = Breeze
+V_880 = Whisper
+V_247 = Waffle
+V_573 = Waffle
+V_478 = V_139
+V_787 = V_392
+V_815 = V_880
+V_911 = V_247
+V_198 = V_812
+V_564 = V_573
+V_713 = V_815
+V_610 = V_911
+V_723 = V_198
+V_119 = V_478
+V_626 = V_564
+V_542 = V_787
+V_690 = V_610
+V_481 = V_713
+V_739 = V_119
+V_972 = V_542
+V_660 = V_723
+V_873 = V_626
+V_544 = V_481
+V_503 = V_972
+V_280 = V_739
+V_159 = V_690
+V_971 = V_660
+V_209 = V_873
+V_939 = V_544
+V_227 = V_503
+V_484 = V_971
+V_257 = V_209
+V_264 = V_159
+V_624 = V_280
+V_954 = V_227
+V_607 = V_624
+V_231 = V_484
+V_890 = V_264
+V_496 = V_257
+V_711 = V_939
+V_618 = V_496
+V_378 = V_890
+V_688 = V_711
+V_286 = V_954
+V_485 = V_607
+V_165 = V_231
+V_150 = V_286
+V_693 = V_378
+  V_693 = V_378
+  V_150 = V_286
+  V_165 = V_231
+  V_485 = V_607
+  V_286 = V_954
+  V_688 = V_711
+  V_378 = V_890
+  V_618 = V_496
+  V_711 = V_939
+  V_496 = V_257
+  V_890 = V_264
+  V_231 = V_484
+  V_607 = V_624
+  V_954 = V_227
+  V_624 = V_280
+  V_264 = V_159
+  V_257 = V_209
+  V_484 = V_971
+  V_227 = V_503
+  V_939 = V_544
+  V_209 = V_873
+  V_971 = V_660
+  V_159 = V_690
+  V_280 = V_739
+  V_503 = V_972
+  V_544 = V_481
+  V_873 = V_626
+  V_660 = V_723
+  V_972 = V_542
+  V_739 = V_119
+  V_481 = V_713
+  V_690 = V_610
+  V_542 = V_787
+  V_626 = V_564
+  V_119 = V_478
+  V_723 = V_198
+  V_610 = V_911
+  V_713 = V_815
+  V_564 = V_573
+  V_198 = V_812
+  V_911 = V_247
+  V_815 = V_880
+  V_787 = V_392
+  V_478 = V_139
+  V_573 = Waffle
+  V_247 = Waffle
+  V_880 = Whisper
+  V_812 = Breeze
+  V_392 = Breeze
+  V_139 = Whisper
+
+Question: What is the value of V_693? Output only the result.
+Answer: Waffle
+Expected resolution steps: 9
+Resolved V_693 to Waffle in 9 steps
+Resolved V_693 to Waffle in 9 steps
+✓ Resolution steps match: 9
+Test passed!
+
+Test: 50 vars, 2 per symbol, 3 symbols
+Mode: random, Seed: 44
+V_518 = Latch
+V_632 = Falcon
+V_654 = Latch
+V_818 = Falcon
+V_982 = Lush
+V_219 = Lush
+V_280 = V_518
+V_488 = V_818
+V_330 = V_632
+V_396 = V_982
+V_129 = V_654
+V_682 = V_219
+V_109 = V_330
+V_202 = V_396
+V_260 = V_280
+V_893 = V_488
+V_626 = V_682
+V_805 = V_129
+V_410 = V_626
+V_810 = V_805
+V_749 = V_202
+V_487 = V_109
+V_705 = V_260
+V_514 = V_893
+V_884 = V_487
+V_807 = V_705
+V_786 = V_749
+V_433 = V_514
+V_466 = V_810
+V_175 = V_410
+V_446 = V_175
+V_961 = V_884
+V_389 = V_433
+V_732 = V_807
+V_262 = V_466
+V_214 = V_786
+V_623 = V_961
+V_171 = V_262
+V_702 = V_732
+V_196 = V_446
+V_376 = V_214
+V_422 = V_389
+V_210 = V_171
+V_740 = V_702
+V_941 = V_376
+V_135 = V_422
+V_452 = V_623
+V_495 = V_196
+V_198 = V_495
+V_588 = V_452
+  V_941 = V_376
+  V_210 = V_171
+  V_495 = V_196
+  V_262 = V_466
+  V_280 = V_518
+  V_702 = V_732
+  V_202 = V_396
+  V_171 = V_262
+  V_807 = V_705
+  V_786 = V_749
+  V_740 = V_702
+  V_632 = Falcon
+  V_488 = V_818
+  V_219 = Lush
+  V_705 = V_260
+  V_452 = V_623
+  V_884 = V_487
+  V_514 = V_893
+  V_810 = V_805
+  V_749 = V_202
+  V_214 = V_786
+  V_330 = V_632
+  V_129 = V_654
+  V_654 = Latch
+  V_260 = V_280
+  V_196 = V_446
+  V_175 = V_410
+  V_466 = V_810
+  V_422 = V_389
+  V_396 = V_982
+  V_893 = V_488
+  V_410 = V_626
+  V_623 = V_961
+  V_961 = V_884
+  V_487 = V_109
+  V_389 = V_433
+  V_198 = V_495
+  V_626 = V_682
+  V_446 = V_175
+  V_135 = V_422
+  V_818 = Falcon
+  V_109 = V_330
+  V_376 = V_214
+  V_732 = V_807
+  V_682 = V_219
+  V_588 = V_452
+  V_433 = V_514
+  V_518 = Latch
+  V_982 = Lush
+  V_805 = V_129
+
+Question: What is the value of V_588? Output only the result.
+Answer: Falcon
+Expected resolution steps: 9
+Resolved V_588 to Falcon in 9 steps
+Resolved V_588 to Falcon in 9 steps
+✓ Resolution steps match: 9
+Test passed!

@@ -32,60 +32,37 @@ def generate_challenge(num_vars, initializations_per_symbol, num_symbols, seed=N
 
     # Calculate total direct initializations
     num_initializations = num_symbols * initializations_per_symbol
+
     if num_initializations > num_vars:
         raise ValueError("Not enough variables to satisfy initializations per symbol")
 
     assert num_vars <= 900, "Number of variables must be less than or equal to 900"
-
-
     variables = [f"V_{i:03d}" for i in random.sample(range(100, 1000), k=num_vars)]
 
     assert num_symbols <= len(vocab)
-    # Generate symbols (e.g., '100', '101', ...)
-    symbols = random.sample(vocab, k=num_symbols)
 
-    # Create values list with each symbol appearing exactly initializations_per_symbol times
-    values_list = [symbol for symbol in symbols for _ in range(initializations_per_symbol)]
-    
-    
-    random.shuffle(values_list)
+    symbols = random.sample(vocab, k=num_symbols)*initializations_per_symbol
+    random.shuffle(symbols)
 
-    # Split variables into directly initialized and remaining
-    directly_defined = variables[:num_initializations]
-    remaining = variables[num_initializations:]
-
-    # Track variables available for referencing
-    currently_unreferenced_vars = list(directly_defined)
-
-    # Initialize sequence and value tracking
     sequence = []
-    var_values = {}  # Maps each variable to its resolved symbol
+    values = {}
 
-    # Assign direct initializations
-    for var, value in zip(directly_defined, values_list):
-        sequence.append(f"{var} = {value}")
-        var_values[var] = value
+    for i, var in enumerate(variables):
+        if i % num_initializations == 0:
+            random.shuffle(symbols)
 
-    sequence_afterwards = []
-    # Define remaining variables
-    for var in remaining:
-        chosen_var_index = random.randint(0, len(currently_unreferenced_vars) - 1)
-        sequence_afterwards.append(f"{var} = {currently_unreferenced_vars[chosen_var_index]}")
-        var_values[var] = var_values[currently_unreferenced_vars[chosen_var_index]]  # Inherit resolved value
+        values[var] = symbols[i] if i < num_initializations else values[symbols[i % num_initializations]]
+        sequence.append(f"{var} = {symbols[i % num_initializations]}")
+        symbols[i % num_initializations] = var
+        print(sequence[-1])
+    
+    last_var_value = values[variables[-1]]
+    last_var = variables[-1]
 
-        currently_unreferenced_vars[chosen_var_index] = var
-
-    sequence = starter_sequence + sequence_afterwards[:-1]
     if mode == "inverse":
         sequence.reverse()
     if mode == "random":
         random.shuffle(sequence)
-    
-    sequence.append(sequence_afterwards[-1])
-
-    # Store the last variable's value and name before any reordering
-    last_var = remaining[-1]
-    last_var_value = var_values[last_var]  
 
     return sequence, last_var_value, last_var
 
@@ -107,15 +84,49 @@ def generate_question(last_var):
 # sequence of assignments, so we have somewhat robust tracking
 
 def resolve_value(sequence, var):
-    """Helper to resolve a variable's initial value."""
+    """
+    Helper to resolve a variable's initial value.
+    
+    Parameters:
+    - sequence: List of assignment strings
+    - var: Variable to resolve
+    
+    Returns:
+    - resolved_value: The initial value the variable resolves to
+    - steps: Number of steps taken to resolve the variable
+    """
     assignments = {line.split(" = ")[0]: line.split(" = ")[1] for line in sequence}
     current = var
-    counter = 0
-    while not (assignments[current] in vocab):
-        counter += 1
+    steps = 0
+    while not (current in vocab):
+        steps += 1
         current = assignments[current]
-    print(f"Resolved {var} to {current} in {counter} steps")
-    return assignments[current]
+    print(f"Resolved {var} to {current} in {steps} steps")
+    return current, steps
+
+def calculate_expected_steps(num_vars, initializations_per_symbol, num_symbols, mode="normal"):
+    """
+    Calculate the expected number of steps to resolve the last variable.
+    This is determined based on the problem parameters.
+    
+    Parameters:
+    - num_vars: Total number of variables
+    - initializations_per_symbol: Number of times each symbol is directly initialized
+    - num_symbols: Number of distinct symbols
+    - mode: The mode of the challenge ("normal", "inverse", or "random")
+    
+    Returns:
+    - expected_steps: Expected number of steps to resolve the last variable
+    """    
+    # Calculate the number of direct initializations
+    num_initializations = num_symbols * initializations_per_symbol
+    
+    # For normal or inverse mode, we can calculate the expected steps
+    # The last variable resolves to the initial value after traversing through the dependency chain
+    # The depth is roughly: (num_vars / num_initializations) - 1
+    depth = (num_vars + num_initializations - 1) // num_initializations
+        
+    return depth
 
 def run_tests():
     test_cases = [
@@ -154,16 +165,42 @@ def run_tests():
         question = generate_question(last_var)
         print(f"\nQuestion: {question}")
         print(f"Answer: {last_var_value}")
+        
+        # Calculate expected steps based on problem parameters
+        expected_steps = calculate_expected_steps(
+            num_vars, 
+            initializations_per_symbol, 
+            num_symbols, 
+            mode
+        )
+        if expected_steps is not None:
+            print(f"Expected resolution steps: {expected_steps}")
             
-        resolved = resolve_value(sequence, last_var)
-        print(f"Resolved {last_var} to {resolved}")
-        assert resolved == last_var_value, "Value mismatch"
+        # Resolve the value and get actual steps
+        resolved, actual_steps = resolve_value(sequence, last_var)
+        print(f"Resolved {last_var} to {resolved} in {actual_steps} steps")
+        
+        # Verify the resolved value matches the expected value
+        assert resolved == last_var_value, f"Value mismatch: got {resolved}, expected {last_var_value}"
+        
+        # Compare expected and actual steps 
+        if expected_steps is not None:
+            assert actual_steps == expected_steps, f"Steps mismatch: got {actual_steps}, expected {expected_steps}"
+            print(f"✓ Resolution steps match: {actual_steps}")
+        else:
+            print(f"✓ No expected steps prediction for {mode} mode")
 
         # Verify symbol counts
-        direct = [line.split(" = ")[1] for line in sequence if line.split(" = ")[1].isdigit()]
-        counts = {s: direct.count(s) for s in direct}
-        for s in set(direct):
+        direct_assignments = []
+        for line in sequence:
+            parts = line.split(" = ")
+            if parts[1] in vocab:
+                direct_assignments.append(parts[1])
+                
+        counts = {s: direct_assignments.count(s) for s in set(direct_assignments)}
+        for s in set(direct_assignments):
             assert counts[s] == initializations_per_symbol, f"Symbol {s} used {counts[s]} times, expected {initializations_per_symbol}"
+        
         print("Test passed!")
 
 if __name__ == "__main__":
