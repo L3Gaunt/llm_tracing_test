@@ -54,27 +54,31 @@ def rate_limit():
     # Add current timestamp to the list
     REQUEST_TIMESTAMPS.append(time.time())
 
-def evaluate_with_openai(challenge, response_format="json_object"):
+def evaluate_with_openrouter(challenge, response_format="json_object"):
     """
-    Evaluate a challenge using OpenAI API with GPT-4o-mini in JSON mode
+    Evaluate a challenge using OpenRouter API with GPT-4o-mini in JSON mode
     
     Args:
         challenge (str): The challenge to evaluate
         response_format (str): The response format (json_object or text)
         
     Returns:
-        dict: The response from OpenAI
+        dict: The response from OpenRouter
     """
     # Apply rate limiting
     rate_limit()
     
     # Get API key from environment
-    api_key = os.getenv("OPENAI_API_KEY")
+    api_key = os.getenv("OPENROUTER_KEY")
     if not api_key:
-        raise ValueError("OPENAI_API_KEY not found in .env file")
+        raise ValueError("OPENROUTER_KEY not found in .env file")
     
-    # Initialize OpenAI client
-    client = OpenAI(api_key=api_key, timeout=5.0)  # 5 second timeout
+    # Initialize OpenAI client with OpenRouter base URL
+    client = OpenAI(
+        base_url="https://openrouter.ai/api/v1",
+        api_key=api_key,
+        timeout=5.0  # 5 second timeout
+    )
     
     # Define the system message and user prompt
     system_message = {
@@ -93,7 +97,7 @@ def evaluate_with_openai(challenge, response_format="json_object"):
     # Make the API call
     try:
         response = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="openai/gpt-4o-mini",  # Using OpenAI's model through OpenRouter
             messages=[system_message, user_message],
             response_format=format_param
         )
@@ -143,8 +147,8 @@ def run_single_evaluation(num_symbols, num_vars, initializations_per_symbol, mod
     if verbose:
         print(f"\nRunning evaluation with num_symbols={num_symbols}, num_vars={num_vars}, initializations_per_symbol={initializations_per_symbol}, mode={mode}")
     
-    # Evaluate with OpenAI
-    result = evaluate_with_openai(challenge, response_format=response_format)
+    # Evaluate with OpenRouter
+    result = evaluate_with_openrouter(challenge, response_format=response_format)
     
     # Check if there was an error
     if "error" in result:
@@ -161,7 +165,7 @@ def run_single_evaluation(num_symbols, num_vars, initializations_per_symbol, mod
             "mode": mode,
             "challenge": challenge,
             "correct_answer": correct_answer,
-            "openai_answer": None,
+            "openrouter_answer": None,
             "is_correct": False,
             "has_error": True,
             "error_message": error_message
@@ -169,20 +173,20 @@ def run_single_evaluation(num_symbols, num_vars, initializations_per_symbol, mod
     
     # Check if the answer is correct
     is_correct = False
-    openai_answer = None
+    openrouter_answer = None
     
     if "answer" in result:
-        openai_answer = result["answer"]
+        openrouter_answer = result["answer"]
         # Compare as strings to handle both numerical and non-numerical answers
-        openai_answer_str = str(openai_answer).strip()
+        openrouter_answer_str = str(openrouter_answer).strip()
         correct_answer_str = str(correct_answer).strip()
-        is_correct = openai_answer_str == correct_answer_str
+        is_correct = openrouter_answer_str == correct_answer_str
     
     if verbose:
         print("Challenge:")
         print(challenge)
         print(f"Correct answer: {correct_answer}")
-        print(f"OpenAI answer: {openai_answer}")
+        print(f"OpenRouter answer: {openrouter_answer}")
         print(f"Is correct: {is_correct}")
     
     # Return evaluation details
@@ -193,7 +197,7 @@ def run_single_evaluation(num_symbols, num_vars, initializations_per_symbol, mod
         "mode": mode,
         "challenge": challenge,
         "correct_answer": correct_answer,
-        "openai_answer": openai_answer,
+        "openrouter_answer": openrouter_answer,
         "is_correct": is_correct,
         "has_error": False,
         "error_message": None
@@ -276,7 +280,7 @@ def run_multiple_evaluations(num_symbols, num_vars, initializations_per_symbol, 
                         "mode": mode,
                         "challenge": "",
                         "correct_answer": None,
-                        "openai_answer": None,
+                        "openrouter_answer": None,
                         "is_correct": False,
                         "has_error": True,
                         "error_message": f"Task timed out after {TASK_TIMEOUT} seconds"
@@ -337,7 +341,7 @@ def run_multiple_evaluations(num_symbols, num_vars, initializations_per_symbol, 
                         "mode": mode,
                         "challenge": "",
                         "correct_answer": None,
-                        "openai_answer": None,
+                        "openrouter_answer": None,
                         "is_correct": False,
                         "has_error": True,
                         "error_message": f"Unexpected error: {str(e)}"
@@ -470,7 +474,7 @@ def calculate_success_rates(results):
     return success_rates
 
 def main():
-    parser = argparse.ArgumentParser(description="Evaluate variable reference challenges using OpenAI API")
+    parser = argparse.ArgumentParser(description="Evaluate variable reference challenges using OpenRouter API")
     parser.add_argument("--num-symbols", type=int, default=5, 
                         help="Number of distinct 3-digit symbols (default: 5)")
     parser.add_argument("--num-vars", type=int, default=50, 
@@ -482,7 +486,7 @@ def main():
     parser.add_argument("--num-per-mode", type=int, default=10, 
                         help="Number of evaluations per mode (default: 10)")
     parser.add_argument("--format", type=str, default="json_object", choices=["json_object", "text"], 
-                        help="Response format from OpenAI (default: json_object)")
+                        help="Response format from OpenRouter (default: json_object)")
     parser.add_argument("--verbose", action="store_true", 
                         help="Print detailed output for each evaluation (default: False)")
     args = parser.parse_args()
