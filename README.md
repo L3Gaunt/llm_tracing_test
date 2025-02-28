@@ -1,5 +1,6 @@
 # When talking with an LLM, think about the order in which you present information, and where to put the prompt!
 
+It is well-known that it is important to optimize _what_ to put into an LLM's context, and not to overload it. But maybe the _arrangement_ of the information is underrated.
 This is a simple eval of LLM ability to follow and resolve references, made to understand the impact of rearranging the information and prompt placement on the LLM's abilities.
 
 Hoping to understand how to make LLMs work better with large codebases.
