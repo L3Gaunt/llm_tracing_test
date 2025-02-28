@@ -6,7 +6,7 @@ This is a simple eval of LLM ability to follow and resolve references, made to u
 Hoping to understand how to make LLMs work better with large codebases.
 
 ## Task description
-A sample input to the LLM looks like this:
+A sample input to the LLM (before changing the input line ordering and prompt arrangement) looks like this:
 ```
 V_584 = Zephyr
 V_650 = Velvet
