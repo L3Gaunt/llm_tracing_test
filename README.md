@@ -1,4 +1,4 @@
-# When talking with an LLM, think about the order in which you present information, and where to put the prompt.
+# When talking with an LLM, think about the order in which you present information, and where to put the prompt!
 
 This is a simple eval of LLM ability to follow and resolve references, made to understand the impact of rearranging the information and prompt placement on the LLM's abilities.
 
@@ -30,7 +30,7 @@ V_890 = V_288
 
 Output only the result: What is the value of V_890?
 ```
-note that "Output only the result" prevents explicit chain-of-thought reasoning, which intentionally hobbles the LLM's abilities so we can see how well it does without. See the "Reproduction" section for variants currently supported by the evaluation script.
+Note that "Output only the result" prevents explicit chain-of-thought reasoning, which intentionally hobbles the LLM's abilities so we can see how well it does without. See the "Reproduction" section for variants currently supported by the evaluation script.
 
 In this "normal mode", variable definitions only reference variables defined earlier (to be precise, definitions in lines `[5i, 5i+4]` reference something at random from lines `[5i-5, 5i-1]`, so the LLM needs to follow 3 resolution steps). In inverse/random mode, the lines were reversed/randomized. I also evaluated putting the query before or after the question, or both. 
 
@@ -47,22 +47,23 @@ In this "normal mode", variable definitions only reference variables defined ear
 (100 attempts per mode and placement, gpt-4o-mini. For some of the entries, 1/100 queries resulted in an API timeout)
 
 
-The clear result is that asking the question before the input data is better than asking it afterwards, though note that [^1] found the opposite for a needle-in-a-haystack problem and much longer inputs. Another result is that the order in which information is presented does matter for performance.
+The clear result is that asking the question before the input data is better than asking it afterwards, though note that the experiment by Lars Wiik [here][wiik-exp] found the opposite for a needle-in-a-haystack benchmark and much longer inputs (see Section [Related](#related)). Another result is that the order in which the input is presented does matter for performance.
 The explanation that makes sense to me is that without chains of thought, LLMs have a hard time reading backwards: If they get the prompt first, they can spend all the input processing thinking about how to answer the specific question the user is having. If they get it last, they have to guess and keep track of many more things at once.
 
 In contrast to the result I got, I was expecting to see random mode perform worse than inverse mode as well (at least when the question is asked before the input), as for the latter, there is a strategy to keep track of the first reference whenever we see a new token. The advantage of random mode (from the LLM's perspective) may be that there is a chance that the needed reference resolution chain comes in an early part of the query -- making the task easier in those cases -- while in normal+reverse mode, it is guaranteed that the chain spans the entire input.
 
 # Preliminary conclusion
-Think about and experiment with where you put your prompts! And about the order in which you present your context code files and similar.
+As in the title: Think about and experiment with where you put your prompts! And about the order in which you present your context code files and similar.
 
-# See also
-[^1]
-[Here](https://archive.is/cLoNp), [Lars Wijk](https://github.com/LarsChrWiik) actually found that putting the prompt after the input is better for long inputs - but we are not in that regime yet. Inspired by that, I tried to put the query before and after the input as well - but didn't see an across-the-board improvement so far (maybe because the input here is a lot shorter than in Lars' experiments).
+# Related/References {#related}
+1. [An experiment regarding instruction placement][wiik-exp] by [Lars Wiik][wiik-gh], for a needle-in-a-haystack problem. This found that putting the prompt after the input is better for long inputs (for Gemini 1.5 Pro), and is worse for not-so-long inputs (like we find in this repo) - but either we are not in that regime yet, or 4o-mini is different than Gemini 1.5 Pro in that regard. It found that the prompt is worse for not-so-long inputs as well. This inspired me to try putting the query before and after the input as well - but I didn't see a statistically significant improvement so far (maybe because the input here is a lot shorter than in Lars' experiments).
 
-[^2]
-See also the [RULER](https://github.com/NVIDIA/RULER) benchmark - a more complex needle-in-a-haystack test with more complex tasks, including reference following, but doesn't seem to focus on ordering.
+[wiik-exp]: https://archive.is/cLoNp
+[wiik-gh]: https://github.com/LarsChrWiik
 
-# Reproduction
+2. The [RULER](https://github.com/NVIDIA/RULER) benchmark is a needle-in-a-haystack like test with more complex tasks, including reference following, though it doesn't seem to explicitly consider ordering.
+
+# Appendix: Reproduction
 To reproduce the given commit results log, populate a .env file with an OPENROUTER_KEY (example.env in the commits mentioned here mistakenly asks for an OPENAI_API_KEY) and run `python3 evaluate.py --num-symbols 5 --num-vars 20 --initializations-per-symbol 1 --question-padding "" --num-per-mode 100 --verbose > results.md`. This sets
 - 5 different words for direct definitions
 - 20 lines/variable definitions in total, including direct definitions
