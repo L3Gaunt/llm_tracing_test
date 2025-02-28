@@ -73,11 +73,11 @@ As in the title: Think about and experiment with where you put your prompts! And
 3. Run `pip3 install -r requirements.txt`
 4. Add OPENROUTER_KEY key to `.env` (example.env in the commits mentioned here mistakenly asks for an OPENAI_API_KEY)
 5. Run: `python3 evaluate.py --num-symbols 5 --num-vars 20 --initializations-per-symbol 1 --question-padding "" --num-per-mode 100 --verbose > results.md`. This sets
-- 5 different words for direct definitions
-- 20 lines/variable definitions in total, including direct definitions
-- for each word, 1 variable that is directly defined as that word (>1 would reuse words and randomize the order)
-- no padding after the input (I wanted to see whether empty "thinking tokens" would improve the result)
-- 100 tries per mode (normal/inverse/random). The summary statistics come from `tail -n results.md`
+    - 5 different words for direct definitions
+    - 20 lines/variable definitions in total, including direct definitions
+    - for each word, 1 variable that is directly defined as that word (>1 would reuse words and randomize the order)
+    - no padding after the input (I wanted to see whether empty "thinking tokens" would improve the result)
+    - 100 tries per mode (normal/inverse/random). The summary statistics come from `tail -n results.md`
 
 Code is messy/research-grade. Eval result files are not always up-to-date with code in the commit! Only trust in that for files mentioned here. Look for the diffs if you _really_ want to know whether the results.md of a commit is stale.
 
