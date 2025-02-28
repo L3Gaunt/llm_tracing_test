@@ -1,6 +1,6 @@
 # When talking with an LLM, think about the order in which you present information, and where to put the prompt!
 # TL;DR
-**On this variable resolution challenge, placing prompts before input data boosted GPT-4o-mini's accuracy by 25-100% in variable resolution tasks compared to placing them afterwards.**  
+**Placing prompts before input data boosted GPT-4o-mini's accuracy by 25-100% on this variable resolution task compared to placing them afterwards.**  
 Input ordering (**normal/reverse/random**) significantly impacts performance.
 
 # Context
