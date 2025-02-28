@@ -33,7 +33,7 @@ Output only the result: What is the value of V_890?
 ```
 Note that "Output only the result" prevents explicit chain-of-thought reasoning, which intentionally hobbles the LLM's abilities so we can see how well it does without. See the [Reproduction](#reproduction) section for variants currently supported by the evaluation script.
 
-In this "normal mode", variable definitions only reference variables defined earlier (to be precise, definitions in lines `[5i, 5i+4]` reference something at random from lines `[5i-5, 5i-1]`, so the LLM needs to follow 3 resolution steps). In inverse/random mode, the lines were reversed/randomized. I also evaluated putting the query before or after the question, or both. 
+In this "normal mode", variable definitions only reference variables defined earlier (to be precise, the references used for the definitions in lines `[5i, 5i+4]` are a random permutation of the definitions in lines `[5i-5, 5i-1]`, so the LLM needs to follow 3 resolution steps). In inverse/random mode, the lines were reversed/randomized. I also evaluated putting the query before or after the question, or both. 
 
 
 ## Results: Success Rates by Mode and Question Placement relative to input data
