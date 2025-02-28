@@ -37,7 +37,7 @@ In this "normal mode", variable definitions only reference variables defined ear
 
 
 ## Results: Success Rates by Mode and Question Placement relative to input data
-| Mode | After input only | Before input only | Before and after input |
+| Mode | Question after input | Question before input | Question before and after input |
 |------|------------------|-------------------|------------------------|
 | Normal | 46 % | 84 % | 94 % |
 | Inverse | 39 % | 47 % | 48 % |
