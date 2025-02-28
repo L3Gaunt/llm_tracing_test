@@ -30,7 +30,7 @@ V_890 = V_288
 
 Output only the result: What is the value of V_890?
 ```
-Note that "Output only the result" prevents explicit chain-of-thought reasoning, which intentionally hobbles the LLM's abilities so we can see how well it does without. See the "Reproduction" section for variants currently supported by the evaluation script.
+Note that "Output only the result" prevents explicit chain-of-thought reasoning, which intentionally hobbles the LLM's abilities so we can see how well it does without. See the [Reproduction](#reproduction) section for variants currently supported by the evaluation script.
 
 In this "normal mode", variable definitions only reference variables defined earlier (to be precise, definitions in lines `[5i, 5i+4]` reference something at random from lines `[5i-5, 5i-1]`, so the LLM needs to follow 3 resolution steps). In inverse/random mode, the lines were reversed/randomized. I also evaluated putting the query before or after the question, or both. 
 
@@ -55,7 +55,7 @@ In contrast to the result I got, I was expecting to see random mode perform wors
 # Preliminary conclusion
 As in the title: Think about and experiment with where you put your prompts! And about the order in which you present your context code files and similar.
 
-# Related/References {#related}
+# Related
 1. [An experiment regarding instruction placement][wiik-exp] by [Lars Wiik][wiik-gh], for a needle-in-a-haystack problem. This found that putting the prompt after the input is better for long inputs (for Gemini 1.5 Pro), and is worse for not-so-long inputs (like we find in this repo) - but either we are not in that regime yet, or 4o-mini is different than Gemini 1.5 Pro in that regard. It found that the prompt is worse for not-so-long inputs as well. This inspired me to try putting the query before and after the input as well - but I didn't see a statistically significant improvement so far (maybe because the input here is a lot shorter than in Lars' experiments).
 
 [wiik-exp]: https://archive.is/cLoNp
@@ -63,8 +63,8 @@ As in the title: Think about and experiment with where you put your prompts! And
 
 2. The [RULER](https://github.com/NVIDIA/RULER) benchmark is a needle-in-a-haystack like test with more complex tasks, including reference following, though it doesn't seem to explicitly consider ordering.
 
-# Appendix: Reproduction
-To reproduce the given commit results log, populate a .env file with an OPENROUTER_KEY (example.env in the commits mentioned here mistakenly asks for an OPENAI_API_KEY) and run `python3 evaluate.py --num-symbols 5 --num-vars 20 --initializations-per-symbol 1 --question-padding "" --num-per-mode 100 --verbose > results.md`. This sets
+# Reproduction
+To reproduce the given commit results log: install dependencies, populate a .env file with an OPENROUTER_KEY (example.env in the commits mentioned here mistakenly asks for an OPENAI_API_KEY) and run `python3 evaluate.py --num-symbols 5 --num-vars 20 --initializations-per-symbol 1 --question-padding "" --num-per-mode 100 --verbose > results.md`. This sets
 - 5 different words for direct definitions
 - 20 lines/variable definitions in total, including direct definitions
 - for each word, 1 variable that is directly defined as that word (>1 would reuse words and randomize the order)
