@@ -2,6 +2,7 @@
 # TL;DR
 **Placing query before context data boosted GPT-4o-mini's accuracy by 20-80% on this variable resolution task compared to placing them afterwards.**  
 Input ordering (**normal/reverse/random**) significantly impacts performance.
+(I cherry-picked the task complexity so it would be neither too easy nor too hard for that model).
 
 # Context
 It is well-known that it is important to optimize _what_ to put into an LLM's input, and not to overload it. But maybe the _arrangement_ of the information is underrated.
