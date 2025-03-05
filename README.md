@@ -2,6 +2,7 @@
 # TL;DR
 **Placing query before context data boosted GPT-4o-mini's accuracy by 20-80% on this variable resolution task compared to placing them afterwards.**  
 Input ordering (**normal/reverse/random**) significantly impacts performance.
+
 (I cherry-picked the task complexity so it would be neither too easy nor too hard for that model).
 
 # Context
