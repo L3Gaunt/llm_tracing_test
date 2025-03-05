@@ -51,16 +51,16 @@ In normal mode, variable definitions reference earlier entries. For example, in 
 (100 attempts per mode and placement, gpt-4o-mini. For some of the entries, 1/100 queries resulted in an API timeout)
 
 
-The clear result is that putting the query before the context data is better than afterwards, though note that the experiment by Lars Wiik [here][wiik-exp] found the opposite for a needle-in-a-haystack benchmark and much longer contexts (see Section [Related](#related) for details). Another result is that the order in which parts of the input (individual definitions) are presented does matter for performance.
-The explanation that makes sense to me is that without chains of thought, LLMs have a hard time reading backwards: If they get the query first, they can spend all the input processing thinking about how to answer the specific query the user is having. If they get it last, they have to guess and keep track of many more things at once.
+The clear result is that putting the query before the context data is better than afterwards, though note that the experiment by Lars Wiik [here][wiik-exp] found the opposite for a needle-in-a-haystack benchmark and much longer contexts (see Section [Related](#related) for details). Another result is that the order in which parts of the context (individual definitions) are presented does matter for performance.
+The explanation that makes sense to me is that without chains of thought, LLMs have a hard time reading backwards: If they get the query first, they can spend all the context processing thinking about how to answer the specific query the user is having. If they get it last, they have to guess and keep track of many more things at once.
 
-In contrast to the result I got, I was expecting to see random mode perform worse than inverse mode as well (at least when the query is put before the input), as for the latter, there is a strategy to keep track of the first reference whenever we see a new token. The advantage of random mode (from the LLM's perspective) may be that there is a chance that the needed reference resolution chain is completed in an early part of the input -- making the task easier in those cases -- while in normal+inverse mode, it is guaranteed that the chain spans the entire input.
+In contrast to the result I got, I was expecting to see random mode perform worse than inverse mode as well (at least when the query is put before the context), as for the latter, there is a strategy to keep track of the first reference whenever we see a new token. The advantage of random mode (from the LLM's perspective) may be that there is a chance that the needed reference resolution chain is completed in an early part of the context -- making the task easier in those cases -- while in normal+inverse mode, it is guaranteed that the chain spans the entire context.
 
 # Preliminary conclusion
-As in the title: Think about and experiment with where you put your queries! And about the order in which you present your input code files and similar.
+As in the title: Think about and experiment with where you put your queries! And about the order in which you present your context code files and similar.
 
 # Related
-1. [An experiment regarding instruction placement][wiik-exp] by [Lars Wiik][wiik-gh], for a needle-in-a-haystack problem. This found that putting the query after the context is better for long inputs (for Gemini 1.5 Pro), and is worse for not-so-long inputs (like we find in this repo) - but either we are not in that regime yet, or 4o-mini is different than Gemini 1.5 Pro in that regard. For inputs of lesser length, it found that placing the query afterwards is worse as well. This inspired me to try putting the query before and after the context as well - but I didn't see a statistically significant improvement so far (maybe because the input here is a lot shorter than in Lars' experiments).
+1. [An experiment regarding instruction placement][wiik-exp] by [Lars Wiik][wiik-gh], for a needle-in-a-haystack problem. This found that putting the query after the context is better for long contexts (for Gemini 1.5 Pro), and is worse for not-so-long context (like we find in this repo) - but either we are not in that regime yet, or 4o-mini is different than Gemini 1.5 Pro in that regard. For contexts of lesser length, it found that placing the query afterwards is worse as well. This inspired me to try putting the query before and after the context as well - but I didn't see a statistically significant improvement so far (maybe because the context here is a lot shorter than in Lars's experiments).
 
 [wiik-exp]: https://archive.is/cLoNp
 [wiik-gh]: https://github.com/LarsChrWiik
@@ -76,7 +76,7 @@ As in the title: Think about and experiment with where you put your queries! And
     - 5 different words for direct definitions
     - 20 lines/variable definitions in total, including direct definitions
     - for each word, 1 variable that is directly defined as that word (>1 would reuse words and randomize the order)
-    - no padding after the input (I wanted to see whether empty "thinking tokens" would improve the result)
+    - no padding after the prompt (I wanted to see whether empty "thinking tokens" would improve the result)
     - 100 tries per mode (normal/inverse/random). The summary statistics come from `tail -n results.md`
 
 Code is messy/research-grade. Eval result files are not always up-to-date with code in the commit! Only trust in that for files mentioned here. Look for the diffs if you _really_ want to know whether the results.md of a commit is stale.
