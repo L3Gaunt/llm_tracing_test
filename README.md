@@ -1,16 +1,16 @@
-# When talking with an LLM, think about the order in which you present information, and where to put the prompt!
+# When talking with an LLM, think about the order in which you present information, and where to put the query!
 # TL;DR
-**Placing prompts before input data boosted GPT-4o-mini's accuracy by 20-80% on this variable resolution task compared to placing them afterwards.**  
+**Placing query before context data boosted GPT-4o-mini's accuracy by 20-80% on this variable resolution task compared to placing them afterwards.**  
 Input ordering (**normal/reverse/random**) significantly impacts performance.
 
 # Context
 It is well-known that it is important to optimize _what_ to put into an LLM's input, and not to overload it. But maybe the _arrangement_ of the information is underrated.
-This is a simple eval of LLM ability to follow and resolve references, made to understand the impact of rearranging the information and prompt placement on the LLM's abilities.
+This is a simple eval of LLM ability to follow and resolve references, made to understand the impact of rearranging the information and query placement on the LLM's abilities.
 
 Hoping to understand how to make LLMs work better with large codebases.
 
 ## Task description
-A sample input to the LLM (before changing the line ordering and prompt arrangement) looks like this:
+A sample input to the LLM (before changing the line ordering and query arrangement) looks like this:
 ```
 V_584 = Zephyr
 V_650 = Velvet
@@ -37,10 +37,10 @@ Output only the result: What is the value of V_890?
 ```
 Note that "Output only the result" prevents explicit chain-of-thought reasoning, which intentionally hobbles the LLM's abilities so we can see how well it does without. See the [Reproduction](#reproduction) section for variants currently supported by the evaluation script.
 
-In normal mode, variable definitions reference earlier entries. For example, in lines 6-10, variables reference definitions from lines 1-5 in random order; in lines 11-15, they reference definitions from lines 6-10, and so on - to resolve the final variable, the LLM needs to follow 3 resolution steps. In inverse/random mode, the lines were reversed/randomized. I also evaluated putting the query before or after the prompt, or both. 
+In normal mode, variable definitions reference earlier entries. For example, in lines 6-10, variables reference definitions from lines 1-5 in random order; in lines 11-15, they reference definitions from lines 6-10, and so on - to resolve the final variable, the LLM needs to follow 3 resolution steps. In inverse/random mode, the lines were reversed/randomized. I also evaluated putting the query before or after the context, or both. 
 
-## Results: Success Rates by Mode and Prompt Placement relative to input data
-| Mode | Prompt after input | Prompt before input | Prompt before and after input |
+## Results: Success Rates by Mode and Query Placement relative to context data
+| Mode | Query after context | Query before context | Query before and after context |
 |------|------------------|-------------------|------------------------|
 | Normal | 46 % | 84 % | 94 % |
 | Inverse | 39 % | 47 % | 48 % |
@@ -51,16 +51,16 @@ In normal mode, variable definitions reference earlier entries. For example, in 
 (100 attempts per mode and placement, gpt-4o-mini. For some of the entries, 1/100 queries resulted in an API timeout)
 
 
-The clear result is that putting the prompt before the input data is better than afterwards, though note that the experiment by Lars Wiik [here][wiik-exp] found the opposite for a needle-in-a-haystack benchmark and much longer contexts (see Section [Related](#related) for details). Another result is that the order in which parts of the input (individual definitions) are presented does matter for performance.
-The explanation that makes sense to me is that without chains of thought, LLMs have a hard time reading backwards: If they get the prompt first, they can spend all the input processing thinking about how to answer the specific prompt the user is having. If they get it last, they have to guess and keep track of many more things at once.
+The clear result is that putting the query before the context data is better than afterwards, though note that the experiment by Lars Wiik [here][wiik-exp] found the opposite for a needle-in-a-haystack benchmark and much longer contexts (see Section [Related](#related) for details). Another result is that the order in which parts of the input (individual definitions) are presented does matter for performance.
+The explanation that makes sense to me is that without chains of thought, LLMs have a hard time reading backwards: If they get the query first, they can spend all the input processing thinking about how to answer the specific query the user is having. If they get it last, they have to guess and keep track of many more things at once.
 
-In contrast to the result I got, I was expecting to see random mode perform worse than inverse mode as well (at least when the prompt is put before the input), as for the latter, there is a strategy to keep track of the first reference whenever we see a new token. The advantage of random mode (from the LLM's perspective) may be that there is a chance that the needed reference resolution chain is completed in an early part of the input -- making the task easier in those cases -- while in normal+inverse mode, it is guaranteed that the chain spans the entire input.
+In contrast to the result I got, I was expecting to see random mode perform worse than inverse mode as well (at least when the query is put before the input), as for the latter, there is a strategy to keep track of the first reference whenever we see a new token. The advantage of random mode (from the LLM's perspective) may be that there is a chance that the needed reference resolution chain is completed in an early part of the input -- making the task easier in those cases -- while in normal+inverse mode, it is guaranteed that the chain spans the entire input.
 
 # Preliminary conclusion
-As in the title: Think about and experiment with where you put your prompts! And about the order in which you present your input code files and similar.
+As in the title: Think about and experiment with where you put your queries! And about the order in which you present your input code files and similar.
 
 # Related
-1. [An experiment regarding instruction placement][wiik-exp] by [Lars Wiik][wiik-gh], for a needle-in-a-haystack problem. This found that putting the prompt after the input is better for long inputs (for Gemini 1.5 Pro), and is worse for not-so-long inputs (like we find in this repo) - but either we are not in that regime yet, or 4o-mini is different than Gemini 1.5 Pro in that regard. It found that the prompt is worse for not-so-long inputs as well. This inspired me to try putting the query before and after the input as well - but I didn't see a statistically significant improvement so far (maybe because the input here is a lot shorter than in Lars' experiments).
+1. [An experiment regarding instruction placement][wiik-exp] by [Lars Wiik][wiik-gh], for a needle-in-a-haystack problem. This found that putting the query after the context is better for long inputs (for Gemini 1.5 Pro), and is worse for not-so-long inputs (like we find in this repo) - but either we are not in that regime yet, or 4o-mini is different than Gemini 1.5 Pro in that regard. For inputs of lesser length, it found that placing the query afterwards is worse as well. This inspired me to try putting the query before and after the context as well - but I didn't see a statistically significant improvement so far (maybe because the input here is a lot shorter than in Lars' experiments).
 
 [wiik-exp]: https://archive.is/cLoNp
 [wiik-gh]: https://github.com/LarsChrWiik
@@ -83,7 +83,7 @@ Code is messy/research-grade. Eval result files are not always up-to-date with c
 
 Raw data from the individual commits:
 ```
-161381278fc4a9438e5c479d83fc863e21702ece: the prompt is put after the input
+161381278fc4a9438e5c479d83fc863e21702ece: the query is put after the context
 .venvname@name llm_tracing_test % 
 Progress: 100.0% | Running: 0 | Success: 299 | Issues: 1
 All evaluations completed!
@@ -104,7 +104,7 @@ Error Examples:
 Error 1: Task timed out after 10.0 seconds
 Mode: normal, num_symbols=5, num_vars=20, initializations_per_symbol=1
 
-fea7ca67a9d55a7f6ceae550fdf0f605dc6d5453: the prompt is put before and after the input
+fea7ca67a9d55a7f6ceae550fdf0f605dc6d5453: the query is put before and after the context
 .venvname@name llm_tracing_test % tail -n 18 results.md                                
 Progress: 100.0% | Running: 0 | Success: 299 | Issues: 1
 All evaluations completed!
@@ -125,7 +125,7 @@ Error Examples:
 Error 1: Expecting value: line 1 column 1 (char 0)
 Mode: inverse, num_symbols=5, num_vars=20, initializations_per_symbol=1
 
-cff30ae07783647e84319fc616d12424b1b05629: the prompt is put before the input.
+cff30ae07783647e84319fc616d12424b1b05629: the query is put before the context.
 .venvname@name llm_tracing_test % tail -n 10 results.md
 
 ===== EVALUATION RESULTS =====
